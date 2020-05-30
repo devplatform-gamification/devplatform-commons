@@ -39,7 +39,7 @@ public class GitlabLabel {
 	private String type = null;
 
 	@JsonProperty("group_id")
-	private String group_id = null;
+	private String groupId = null;
 
 	@ApiModelProperty(value = "")
 	public BigDecimal getId() {
@@ -154,16 +154,16 @@ public class GitlabLabel {
 	}
 
 	@ApiModelProperty(value = "")
-	public String getGroup_id() {
-		return group_id;
+	public String getGroupId() {
+		return groupId;
 	}
 
-	public void setGroup_id(String group_id) {
-		this.group_id = group_id;
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
 	}
 
-	public GitlabLabel group_id(String group_id) {
-		this.group_id = group_id;
+	public GitlabLabel groupId(String groupId) {
+		this.groupId = groupId;
 		return this;
 	}
 
@@ -186,10 +186,10 @@ public class GitlabLabel {
 				return false;
 		} else if (!description.equals(other.description))
 			return false;
-		if (group_id == null) {
-			if (other.group_id != null)
+		if (groupId == null) {
+			if (other.groupId != null)
 				return false;
-		} else if (!group_id.equals(other.group_id))
+		} else if (!groupId.equals(other.groupId))
 			return false;
 		if (id == null) {
 			if (other.id != null)
@@ -227,7 +227,7 @@ public class GitlabLabel {
 		sb.append("    template: ").append(toIndentedString(template)).append("\n");
 		sb.append("    description: ").append(toIndentedString(description)).append("\n");
 		sb.append("    type: ").append(toIndentedString(type)).append("\n");
-		sb.append("    group_id: ").append(toIndentedString(group_id)).append("\n");
+		sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
 		sb.append("}");
 		return sb.toString();
 	}
