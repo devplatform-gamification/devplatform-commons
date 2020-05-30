@@ -1,11 +1,16 @@
 # Compiled class file
 *.class
 
+\~/
+
 target/
 bin/
 
 # Log file
 *.log
+
+# eclipse files
+.settings/
 
 # BlueJ files
 *.ctxt

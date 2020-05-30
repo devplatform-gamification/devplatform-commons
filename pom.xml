@@ -72,5 +72,11 @@
 		    <version>2.10.2</version>
 		</dependency>		
     </dependencies>
-  
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub devplatform-commons Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/zeniel/devplatform-commons</url>
+        </repository>
+    </distributionManagement>
 </project>

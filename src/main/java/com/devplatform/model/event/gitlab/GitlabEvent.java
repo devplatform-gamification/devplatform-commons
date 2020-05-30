@@ -68,7 +68,7 @@ public class GitlabEvent {
 	public enum EventTypeEnum {
 		MERGE_REQUEST("merge_request"),
 
-		COMMENT("comment"),
+		COMMENT("note"),
 
 		TAG_PUSHED("tag_pushed"),
 
@@ -115,7 +115,7 @@ public class GitlabEvent {
 
 	@JsonProperty("labels")
 	@Valid
-	private List<String> labels = null;
+	private List<GitlabLabel> labels = null;
 
 	@JsonProperty("changes")
 	private GitlabEventChanges changes = null;
@@ -195,24 +195,24 @@ public class GitlabEvent {
 		this.objectAttributes = objectAttributes;
 	}
 
-	public GitlabEvent labels(List<String> labels) {
+	public GitlabEvent labels(List<GitlabLabel> labels) {
 		this.labels = labels;
 		return this;
 	}
 
-	public GitlabEvent addLabelsItem(String labelsItem) {
+	public GitlabEvent addLabelsItem(GitlabLabel labelsItem) {
 		if (this.labels == null) {
-			this.labels = new ArrayList<String>();
+			this.labels = new ArrayList<GitlabLabel>();
 		}
 		this.labels.add(labelsItem);
 		return this;
 	}
 
-	public List<String> getLabels() {
+	public List<GitlabLabel> getLabels() {
 		return labels;
 	}
 
-	public void setLabels(List<String> labels) {
+	public void setLabels(List<GitlabLabel> labels) {
 		this.labels = labels;
 	}
 
