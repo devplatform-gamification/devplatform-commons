@@ -26,7 +26,7 @@ public class GitlabNoteAttributes {
 	@JsonProperty("note")
 	private String note = null;
 
-	@JsonProperty("note")
+	@JsonProperty("noteable_type")
 	private NoteableTypeEnum noteableType = null;
 
 	@JsonProperty("description")

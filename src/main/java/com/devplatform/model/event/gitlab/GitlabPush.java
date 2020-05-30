@@ -2,6 +2,7 @@ package com.devplatform.model.event.gitlab;
 
 import java.math.BigDecimal;
 import java.util.List;
+import java.util.Map;
 
 import javax.annotation.Generated;
 import javax.validation.Valid;
@@ -20,8 +21,8 @@ public class GitlabPush {
 	@JsonProperty("object_kind")
 	private GitlabObjectKindEnum objectKind = null;
 
-	@JsonProperty("event_type")
-	private GitlabEventTypeEnum eventType = null;
+	@JsonProperty("event_name")
+	private GitlabEventTypeEnum eventName = null;
 
 	@JsonProperty("before")
 	private String before = null;
@@ -63,7 +64,7 @@ public class GitlabPush {
 	private Integer totalCommitsCount = null;
 
 	@JsonProperty("push_options")
-	private List<String> pushOptions = null;
+	private Map<String, String> pushOptions = null;
 
 	@JsonProperty("repository")
 	private GitlabRepository repository = null;
@@ -82,112 +83,19 @@ public class GitlabPush {
 		this.objectKind = objectKind;
 	}
 
-	public GitlabPush eventType(GitlabEventTypeEnum eventType) {
-		this.eventType = eventType;
+	public GitlabPush eventName(GitlabEventTypeEnum eventName) {
+		this.eventName = eventName;
 		return this;
 	}
 
 	@NotNull
-	public GitlabEventTypeEnum getEventType() {
-		return eventType;
+	public GitlabEventTypeEnum getEventName() {
+		return eventName;
 	}
 
-	public void setEventType(GitlabEventTypeEnum eventType) {
-		this.eventType = eventType;
+	public void setEventName(GitlabEventTypeEnum eventName) {
+		this.eventName = eventName;
 	}
-
-//	public GitlabPush user(GitlabUser user) {
-//		this.user = user;
-//		return this;
-//	}
-//
-//	@NotNull
-//	@Valid
-//	public GitlabUser getUser() {
-//		return user;
-//	}
-//
-//	public void setUser(GitlabUser user) {
-//		this.user = user;
-//	}
-//
-//	public GitlabPush project(GitlabProject project) {
-//		this.project = project;
-//		return this;
-//	}
-//
-//	@NotNull
-//	@Valid
-//	public GitlabProject getProject() {
-//		return project;
-//	}
-//
-//	public void setProject(GitlabProject project) {
-//		this.project = project;
-//	}
-//
-//	public GitlabPush objectAttributes(GitlabMergeRequestAttributes objectAttributes) {
-//		this.objectAttributes = objectAttributes;
-//		return this;
-//	}
-//
-//	@Valid
-//	public GitlabMergeRequestAttributes getObjectAttributes() {
-//		return objectAttributes;
-//	}
-//
-//	public void setObjectAttributes(GitlabMergeRequestAttributes objectAttributes) {
-//		this.objectAttributes = objectAttributes;
-//	}
-//
-//	public GitlabPush labels(List<GitlabLabel> labels) {
-//		this.labels = labels;
-//		return this;
-//	}
-//
-//	public GitlabPush addLabelsItem(GitlabLabel labelsItem) {
-//		if (this.labels == null) {
-//			this.labels = new ArrayList<GitlabLabel>();
-//		}
-//		this.labels.add(labelsItem);
-//		return this;
-//	}
-//
-//	public List<GitlabLabel> getLabels() {
-//		return labels;
-//	}
-//
-//	public void setLabels(List<GitlabLabel> labels) {
-//		this.labels = labels;
-//	}
-//
-//	public GitlabPush changes(GitlabEventChanges changes) {
-//		this.changes = changes;
-//		return this;
-//	}
-//
-//	@Valid
-//	public GitlabEventChanges getChanges() {
-//		return changes;
-//	}
-//
-//	public void setChanges(GitlabEventChanges changes) {
-//		this.changes = changes;
-//	}
-//
-//	public GitlabPush repository(GitlabRepository repository) {
-//		this.repository = repository;
-//		return this;
-//	}
-//
-//	@Valid
-//	public GitlabRepository getRepository() {
-//		return repository;
-//	}
-//
-//	public void setRepository(GitlabRepository repository) {
-//		this.repository = repository;
-//	}
 
 	public GitlabPush before(String before) {
 		this.before = before;
@@ -365,16 +273,16 @@ public class GitlabPush {
 		this.totalCommitsCount = totalCommitsCount;
 	}
 
-	public GitlabPush pushOptions(List<String> pushOptions) {
+	public GitlabPush pushOptions(Map<String, String> pushOptions) {
 		this.pushOptions = pushOptions;
 		return this;
 	}
 
-	public List<String> getPushOptions() {
+	public Map<String, String> getPushOptions() {
 		return pushOptions;
 	}
 
-	public void setPushOptions(List<String> pushOptions) {
+	public void setPushOptions(Map<String, String> pushOptions) {
 		this.pushOptions = pushOptions;
 	}
 	
@@ -401,7 +309,7 @@ public class GitlabPush {
 		result = prime * result + ((before == null) ? 0 : before.hashCode());
 		result = prime * result + ((checkoutSha == null) ? 0 : checkoutSha.hashCode());
 		result = prime * result + ((commits == null) ? 0 : commits.hashCode());
-		result = prime * result + ((eventType == null) ? 0 : eventType.hashCode());
+		result = prime * result + ((eventName == null) ? 0 : eventName.hashCode());
 		result = prime * result + ((message == null) ? 0 : message.hashCode());
 		result = prime * result + ((objectKind == null) ? 0 : objectKind.hashCode());
 		result = prime * result + ((project == null) ? 0 : project.hashCode());
@@ -446,7 +354,7 @@ public class GitlabPush {
 				return false;
 		} else if (!commits.equals(other.commits))
 			return false;
-		if (eventType != other.eventType)
+		if (eventName != other.eventName)
 			return false;
 		if (message == null) {
 			if (other.message != null)
@@ -514,7 +422,7 @@ public class GitlabPush {
 		sb.append("class GitlabPush {\n");
 
 		sb.append("    objectKind: ").append(toIndentedString(objectKind)).append("\n");
-		sb.append("    eventType: ").append(toIndentedString(eventType)).append("\n");
+		sb.append("    eventName: ").append(toIndentedString(eventName)).append("\n");
 		sb.append("    before: ").append(toIndentedString(before)).append("\n");
 		sb.append("    after: ").append(toIndentedString(after)).append("\n");
 		sb.append("    ref: ").append(toIndentedString(ref)).append("\n");
