@@ -10,99 +10,19 @@ import javax.validation.constraints.NotNull;
 
 import org.springframework.validation.annotation.Validated;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * GitlabEvent
+ * GitlabMergeRequest
  */
 @Validated
 @Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2020-03-18T01:03:28.811Z[GMT]")
-public class GitlabEvent {
-	/**
-	 * Gets or Sets objectKind
-	 */
-	public enum ObjectKindEnum {
-		MERGE_REQUEST("merge_request"),
-
-		COMMENT("comment"),
-
-		TAG_PUSHED("tag_pushed"),
-
-		PUSH("push"),
-
-		JOB_CHANGES("job_changes"),
-
-		PIPELINE_CHANGES("pipeline_changes");
-
-		private String value;
-
-		ObjectKindEnum(String value) {
-			this.value = value;
-		}
-
-		@Override
-		@JsonValue
-		public String toString() {
-			return String.valueOf(value);
-		}
-
-		@JsonCreator
-		public static ObjectKindEnum fromValue(String text) {
-			for (ObjectKindEnum b : ObjectKindEnum.values()) {
-				if (String.valueOf(b.value).equals(text)) {
-					return b;
-				}
-			}
-			return null;
-		}
-	}
-
+public class GitlabMergeRequest {
 	@JsonProperty("object_kind")
-	private ObjectKindEnum objectKind = null;
-
-	/**
-	 * Gets or Sets eventType
-	 */
-	public enum EventTypeEnum {
-		MERGE_REQUEST("merge_request"),
-
-		COMMENT("note"),
-
-		TAG_PUSHED("tag_pushed"),
-
-		PUSH("push"),
-
-		JOB_CHANGES("job_changes"),
-
-		PIPELINE_CHANGES("pipeline_changes");
-
-		private String value;
-
-		EventTypeEnum(String value) {
-			this.value = value;
-		}
-
-		@Override
-		@JsonValue
-		public String toString() {
-			return String.valueOf(value);
-		}
-
-		@JsonCreator
-		public static EventTypeEnum fromValue(String text) {
-			for (EventTypeEnum b : EventTypeEnum.values()) {
-				if (String.valueOf(b.value).equals(text)) {
-					return b;
-				}
-			}
-			return null;
-		}
-	}
+	private GitlabObjectKindEnum objectKind = null;
 
 	@JsonProperty("event_type")
-	private EventTypeEnum eventType = null;
+	private GitlabEventTypeEnum eventType = null;
 
 	@JsonProperty("user")
 	private GitlabUser user = null;
@@ -121,37 +41,37 @@ public class GitlabEvent {
 	private GitlabEventChanges changes = null;
 
 	@JsonProperty("repository")
-	private GitlabEventRepository repository = null;
+	private GitlabRepository repository = null;
 
-	public GitlabEvent objectKind(ObjectKindEnum objectKind) {
+	public GitlabMergeRequest objectKind(GitlabObjectKindEnum objectKind) {
 		this.objectKind = objectKind;
 		return this;
 	}
 
 	@NotNull
-	public ObjectKindEnum getObjectKind() {
+	public GitlabObjectKindEnum getObjectKind() {
 		return objectKind;
 	}
 
-	public void setObjectKind(ObjectKindEnum objectKind) {
+	public void setObjectKind(GitlabObjectKindEnum objectKind) {
 		this.objectKind = objectKind;
 	}
 
-	public GitlabEvent eventType(EventTypeEnum eventType) {
+	public GitlabMergeRequest eventType(GitlabEventTypeEnum eventType) {
 		this.eventType = eventType;
 		return this;
 	}
 
 	@NotNull
-	public EventTypeEnum getEventType() {
+	public GitlabEventTypeEnum getEventType() {
 		return eventType;
 	}
 
-	public void setEventType(EventTypeEnum eventType) {
+	public void setEventType(GitlabEventTypeEnum eventType) {
 		this.eventType = eventType;
 	}
 
-	public GitlabEvent user(GitlabUser user) {
+	public GitlabMergeRequest user(GitlabUser user) {
 		this.user = user;
 		return this;
 	}
@@ -166,7 +86,7 @@ public class GitlabEvent {
 		this.user = user;
 	}
 
-	public GitlabEvent project(GitlabProject project) {
+	public GitlabMergeRequest project(GitlabProject project) {
 		this.project = project;
 		return this;
 	}
@@ -181,7 +101,7 @@ public class GitlabEvent {
 		this.project = project;
 	}
 
-	public GitlabEvent objectAttributes(GitlabMergeRequestAttributes objectAttributes) {
+	public GitlabMergeRequest objectAttributes(GitlabMergeRequestAttributes objectAttributes) {
 		this.objectAttributes = objectAttributes;
 		return this;
 	}
@@ -195,12 +115,12 @@ public class GitlabEvent {
 		this.objectAttributes = objectAttributes;
 	}
 
-	public GitlabEvent labels(List<GitlabLabel> labels) {
+	public GitlabMergeRequest labels(List<GitlabLabel> labels) {
 		this.labels = labels;
 		return this;
 	}
 
-	public GitlabEvent addLabelsItem(GitlabLabel labelsItem) {
+	public GitlabMergeRequest addLabelsItem(GitlabLabel labelsItem) {
 		if (this.labels == null) {
 			this.labels = new ArrayList<GitlabLabel>();
 		}
@@ -216,7 +136,7 @@ public class GitlabEvent {
 		this.labels = labels;
 	}
 
-	public GitlabEvent changes(GitlabEventChanges changes) {
+	public GitlabMergeRequest changes(GitlabEventChanges changes) {
 		this.changes = changes;
 		return this;
 	}
@@ -230,17 +150,17 @@ public class GitlabEvent {
 		this.changes = changes;
 	}
 
-	public GitlabEvent repository(GitlabEventRepository repository) {
+	public GitlabMergeRequest repository(GitlabRepository repository) {
 		this.repository = repository;
 		return this;
 	}
 
 	@Valid
-	public GitlabEventRepository getRepository() {
+	public GitlabRepository getRepository() {
 		return repository;
 	}
 
-	public void setRepository(GitlabEventRepository repository) {
+	public void setRepository(GitlabRepository repository) {
 		this.repository = repository;
 	}
 
@@ -252,13 +172,13 @@ public class GitlabEvent {
 		if (o == null || getClass() != o.getClass()) {
 			return false;
 		}
-		GitlabEvent gitlabEvent = (GitlabEvent) o;
-		return Objects.equals(this.objectKind, gitlabEvent.objectKind)
-				&& Objects.equals(this.eventType, gitlabEvent.eventType) && Objects.equals(this.user, gitlabEvent.user)
-				&& Objects.equals(this.project, gitlabEvent.project)
-				&& Objects.equals(this.objectAttributes, gitlabEvent.objectAttributes)
-				&& Objects.equals(this.labels, gitlabEvent.labels) && Objects.equals(this.changes, gitlabEvent.changes)
-				&& Objects.equals(this.repository, gitlabEvent.repository);
+		GitlabMergeRequest GitlabMergeRequest = (GitlabMergeRequest) o;
+		return Objects.equals(this.objectKind, GitlabMergeRequest.objectKind)
+				&& Objects.equals(this.eventType, GitlabMergeRequest.eventType) && Objects.equals(this.user, GitlabMergeRequest.user)
+				&& Objects.equals(this.project, GitlabMergeRequest.project)
+				&& Objects.equals(this.objectAttributes, GitlabMergeRequest.objectAttributes)
+				&& Objects.equals(this.labels, GitlabMergeRequest.labels) && Objects.equals(this.changes, GitlabMergeRequest.changes)
+				&& Objects.equals(this.repository, GitlabMergeRequest.repository);
 	}
 
 	@Override
@@ -269,7 +189,7 @@ public class GitlabEvent {
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
-		sb.append("class GitlabEvent {\n");
+		sb.append("class GitlabMergeRequest {\n");
 
 		sb.append("    objectKind: ").append(toIndentedString(objectKind)).append("\n");
 		sb.append("    eventType: ").append(toIndentedString(eventType)).append("\n");

@@ -1,5 +1,6 @@
 package com.devplatform.model.event.gitlab;
 
+import java.util.List;
 import java.util.Objects;
 
 import javax.annotation.Generated;
@@ -21,6 +22,9 @@ public class GitlabCommit {
 	@JsonProperty("message")
 	private String message = null;
 
+	@JsonProperty("title")
+	private String title = null;
+
 	@JsonProperty("timestamp")
 	private String timestamp = null;
 
@@ -29,6 +33,16 @@ public class GitlabCommit {
 
 	@JsonProperty("author")
 	private GitlabCommitAuthor author = null;
+	
+	@JsonProperty("added")
+	private List<String> added = null;
+	
+	@JsonProperty("modified")
+	private List<String> modified = null;
+
+	@JsonProperty("removed")
+	private List<String> removed = null;
+
 
 	public GitlabCommit id(String id) {
 		this.id = id;
@@ -55,6 +69,19 @@ public class GitlabCommit {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public GitlabCommit title(String title) {
+		this.title = title;
+		return this;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
 	}
 
 	public GitlabCommit timestamp(String timestamp) {
@@ -96,6 +123,45 @@ public class GitlabCommit {
 
 	public void setAuthor(GitlabCommitAuthor author) {
 		this.author = author;
+	}
+
+	public GitlabCommit added(List<String> added) {
+		this.added = added;
+		return this;
+	}
+
+	public List<String> getAdded() {
+		return added;
+	}
+
+	public void setAdded(List<String> added) {
+		this.added = added;
+	}
+
+	public GitlabCommit modified(List<String> modified) {
+		this.modified = modified;
+		return this;
+	}
+
+	public List<String> getModified() {
+		return modified;
+	}
+
+	public void setModified(List<String> modified) {
+		this.modified = modified;
+	}
+
+	public GitlabCommit removed(List<String> removed) {
+		this.removed = removed;
+		return this;
+	}
+
+	public List<String> getRemoved() {
+		return removed;
+	}
+
+	public void setRemoved(List<String> removed) {
+		this.removed = removed;
 	}
 
 	@Override

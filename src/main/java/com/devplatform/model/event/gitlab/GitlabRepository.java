@@ -9,11 +9,11 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModelProperty;
 
 /**
- * GitlabEventRepository
+ * GitlabRepository
  */
 @Validated
 @javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2020-03-18T01:03:28.811Z[GMT]")
-public class GitlabEventRepository   {
+public class GitlabRepository   {
   @JsonProperty("name")
   private String name = null;
 
@@ -26,7 +26,7 @@ public class GitlabEventRepository   {
   @JsonProperty("homepage")
   private String homepage = null;
 
-  public GitlabEventRepository name(String name) {
+  public GitlabRepository name(String name) {
     this.name = name;
     return this;
   }
@@ -45,7 +45,7 @@ public class GitlabEventRepository   {
     this.name = name;
   }
 
-  public GitlabEventRepository url(String url) {
+  public GitlabRepository url(String url) {
     this.url = url;
     return this;
   }
@@ -64,7 +64,7 @@ public class GitlabEventRepository   {
     this.url = url;
   }
 
-  public GitlabEventRepository description(String description) {
+  public GitlabRepository description(String description) {
     this.description = description;
     return this;
   }
@@ -83,7 +83,7 @@ public class GitlabEventRepository   {
     this.description = description;
   }
 
-  public GitlabEventRepository homepage(String homepage) {
+  public GitlabRepository homepage(String homepage) {
     this.homepage = homepage;
     return this;
   }
@@ -111,11 +111,11 @@ public class GitlabEventRepository   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    GitlabEventRepository gitlabEventRepository = (GitlabEventRepository) o;
-    return Objects.equals(this.name, gitlabEventRepository.name) &&
-        Objects.equals(this.url, gitlabEventRepository.url) &&
-        Objects.equals(this.description, gitlabEventRepository.description) &&
-        Objects.equals(this.homepage, gitlabEventRepository.homepage);
+    GitlabRepository GitlabRepository = (GitlabRepository) o;
+    return Objects.equals(this.name, GitlabRepository.name) &&
+        Objects.equals(this.url, GitlabRepository.url) &&
+        Objects.equals(this.description, GitlabRepository.description) &&
+        Objects.equals(this.homepage, GitlabRepository.homepage);
   }
 
   @Override
@@ -126,7 +126,7 @@ public class GitlabEventRepository   {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class GitlabEventRepository {\n");
+    sb.append("class GitlabRepository {\n");
     
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    url: ").append(toIndentedString(url)).append("\n");
