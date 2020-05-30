@@ -24,10 +24,10 @@ public class GitlabLabel {
 	private String color = null;
 
 	@JsonProperty("project_id")
-	private BigDecimal project_id = null;
+	private BigDecimal projectId = null;
 
 	@JsonProperty("created_at")
-	private String created_at = null;
+	private String createdAt = null;
 
 	@JsonProperty("template")
 	private String template = null;
@@ -84,30 +84,30 @@ public class GitlabLabel {
 	}
 
 	@ApiModelProperty(value = "")
-	public BigDecimal getProject_id() {
-		return project_id;
+	public BigDecimal getprojectId() {
+		return projectId;
 	}
 
-	public void setProject_id(BigDecimal project_id) {
-		this.project_id = project_id;
+	public void setprojectId(BigDecimal projectId) {
+		this.projectId = projectId;
 	}
 
-	public GitlabLabel project_id(BigDecimal project_id) {
-		this.project_id = project_id;
+	public GitlabLabel projectId(BigDecimal projectId) {
+		this.projectId = projectId;
 		return this;
 	}
 
 	@ApiModelProperty(value = "")
-	public String getCreated_at() {
-		return created_at;
+	public String getcreatedAt() {
+		return createdAt;
 	}
 
-	public void setCreated_at(String created_at) {
-		this.created_at = created_at;
+	public void setcreatedAt(String createdAt) {
+		this.createdAt = createdAt;
 	}
 
-	public GitlabLabel created_at(String created_at) {
-		this.created_at = created_at;
+	public GitlabLabel createdAt(String createdAt) {
+		this.createdAt = createdAt;
 		return this;
 	}
 
@@ -176,10 +176,10 @@ public class GitlabLabel {
 		if (getClass() != obj.getClass())
 			return false;
 		GitlabLabel other = (GitlabLabel) obj;
-		if (created_at == null) {
-			if (other.created_at != null)
+		if (createdAt == null) {
+			if (other.createdAt != null)
 				return false;
-		} else if (!created_at.equals(other.created_at))
+		} else if (!createdAt.equals(other.createdAt))
 			return false;
 		if (description == null) {
 			if (other.description != null)
@@ -196,10 +196,10 @@ public class GitlabLabel {
 				return false;
 		} else if (!id.equals(other.id))
 			return false;
-		if (project_id == null) {
-			if (other.project_id != null)
+		if (projectId == null) {
+			if (other.projectId != null)
 				return false;
-		} else if (!project_id.equals(other.project_id))
+		} else if (!projectId.equals(other.projectId))
 			return false;
 		if (title == null) {
 			if (other.title != null)
@@ -217,11 +217,14 @@ public class GitlabLabel {
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
-		sb.append("class GitlabUser {\n");
+		sb.append("class GitlabLabel {\n");
 
 		sb.append("    id: ").append(toIndentedString(id)).append("\n");
 		sb.append("    title: ").append(toIndentedString(title)).append("\n");
-		sb.append("    project_id: ").append(toIndentedString(project_id)).append("\n");
+		sb.append("    color: ").append(toIndentedString(color)).append("\n");
+		sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
+		sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
+		sb.append("    template: ").append(toIndentedString(template)).append("\n");
 		sb.append("    description: ").append(toIndentedString(description)).append("\n");
 		sb.append("    type: ").append(toIndentedString(type)).append("\n");
 		sb.append("    group_id: ").append(toIndentedString(group_id)).append("\n");

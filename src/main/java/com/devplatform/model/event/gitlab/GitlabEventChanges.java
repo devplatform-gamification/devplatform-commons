@@ -18,10 +18,10 @@ import io.swagger.annotations.ApiModelProperty;
 @javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2020-03-18T01:03:28.811Z[GMT]")
 public class GitlabEventChanges {
 	@JsonProperty("updated_at")
-	private GitlabEventChangedItem<String> updated_at = null;
+	private GitlabEventChangedItem<String> updatedAt = null;
 
 	@JsonProperty("updated_by_id")
-	private GitlabEventChangedItem<Integer> updated_by_id = null;
+	private GitlabEventChangedItem<Integer> updatedById = null;
 	
 	@JsonProperty("total_time_spent")
 	private GitlabEventChangedItem<Integer> totalTimeSpent = null;
@@ -32,30 +32,30 @@ public class GitlabEventChanges {
 	
 	
 	@ApiModelProperty(value = "")
-	public GitlabEventChangedItem<String> getUpdated_at() {
-		return updated_at;
+	public GitlabEventChangedItem<String> getupdatedAt() {
+		return updatedAt;
 	}
 
-	public void setUpdated_at(GitlabEventChangedItem<String> updated_at) {
-		this.updated_at = updated_at;
+	public void setupdatedAt(GitlabEventChangedItem<String> updatedAt) {
+		this.updatedAt = updatedAt;
 	}
 
-	public GitlabEventChanges updated_at(GitlabEventChangedItem<String> updated_at) {
-		this.updated_at = updated_at;
+	public GitlabEventChanges updatedAt(GitlabEventChangedItem<String> updatedAt) {
+		this.updatedAt = updatedAt;
 		return this;
 	}
 
 	@ApiModelProperty(value = "")
-	public GitlabEventChangedItem<Integer> getUpdated_by_id() {
-		return updated_by_id;
+	public GitlabEventChangedItem<Integer> getupdatedById() {
+		return updatedById;
 	}
 
-	public void setUpdated_by_id(GitlabEventChangedItem<Integer> updated_by_id) {
-		this.updated_by_id = updated_by_id;
+	public void setupdatedById(GitlabEventChangedItem<Integer> updatedById) {
+		this.updatedById = updatedById;
 	}
 
-	public GitlabEventChanges updated_by_id(GitlabEventChangedItem<Integer> updated_by_id) {
-		this.updated_by_id = updated_by_id;
+	public GitlabEventChanges updatedById(GitlabEventChangedItem<Integer> updatedById) {
+		this.updatedById = updatedById;
 		return this;
 	}
 	
