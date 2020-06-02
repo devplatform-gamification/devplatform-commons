@@ -10,7 +10,6 @@ import org.springframework.validation.annotation.Validated;
 
 import com.devplatform.model.gitlab.GitlabMergeRequestAttributes;
 import com.devplatform.model.gitlab.GitlabNoteAttributes;
-import com.devplatform.model.gitlab.GitlabObjectKindEnum;
 import com.devplatform.model.gitlab.GitlabProject;
 import com.devplatform.model.gitlab.GitlabRepository;
 import com.devplatform.model.gitlab.GitlabUser;
@@ -23,10 +22,7 @@ import io.swagger.annotations.ApiModelProperty;
  */
 @Validated
 @Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2020-03-18T01:03:28.811Z[GMT]")
-public class GitlabEventNote {
-	@JsonProperty("object_kind")
-	private GitlabObjectKindEnum objectKind = null;
-
+public class GitlabEventNote extends GitlabEvent {
 	@JsonProperty("event_type")
 	private GitlabEventTypeEnum eventType = null;
 
@@ -47,22 +43,6 @@ public class GitlabEventNote {
 
 	@JsonProperty("merge_request")
 	private GitlabMergeRequestAttributes mergeRequest = null;
-
-	public GitlabEventNote objectKind(GitlabObjectKindEnum objectKind) {
-		this.objectKind = objectKind;
-		return this;
-	}
-
-	@ApiModelProperty(value = "")
-	@NotNull
-
-	public GitlabObjectKindEnum getObjectKind() {
-		return objectKind;
-	}
-
-	public void setObjectKind(GitlabObjectKindEnum objectKind) {
-		this.objectKind = objectKind;
-	}
 
 	public GitlabEventNote eventType(GitlabEventTypeEnum eventType) {
 		this.eventType = eventType;

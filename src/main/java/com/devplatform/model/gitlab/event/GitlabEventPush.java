@@ -11,7 +11,6 @@ import javax.validation.constraints.NotNull;
 import org.springframework.validation.annotation.Validated;
 
 import com.devplatform.model.gitlab.GitlabCommit;
-import com.devplatform.model.gitlab.GitlabObjectKindEnum;
 import com.devplatform.model.gitlab.GitlabProject;
 import com.devplatform.model.gitlab.GitlabRepository;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -21,10 +20,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 @Validated
 @Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2020-03-18T01:03:28.811Z[GMT]")
-public class GitlabEventPush {
-	@JsonProperty("object_kind")
-	private GitlabObjectKindEnum objectKind = null;
-
+public class GitlabEventPush extends GitlabEvent{
 	@JsonProperty("event_name")
 	private GitlabEventTypeEnum eventName = null;
 
@@ -72,20 +68,6 @@ public class GitlabEventPush {
 
 	@JsonProperty("repository")
 	private GitlabRepository repository = null;
-
-	public GitlabEventPush objectKind(GitlabObjectKindEnum objectKind) {
-		this.objectKind = objectKind;
-		return this;
-	}
-
-	@NotNull
-	public GitlabObjectKindEnum getObjectKind() {
-		return objectKind;
-	}
-
-	public void setObjectKind(GitlabObjectKindEnum objectKind) {
-		this.objectKind = objectKind;
-	}
 
 	public GitlabEventPush eventName(GitlabEventTypeEnum eventName) {
 		this.eventName = eventName;

@@ -22,20 +22,20 @@ import io.swagger.annotations.ApiModelProperty;
  */
 @Validated
 @javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2020-03-18T01:03:28.811Z[GMT]")
-public class JiraEventIssue {
-	@JsonProperty("timestamp")
-	private String timestamp = null;
-
-	@JsonProperty("webhookEvent")
-	private JiraWebhookEventEnum webhookEvent = null;
-
+public class JiraEventIssue extends JiraEvent{
 	/**
 	 * Gets or Sets issueEventTypeName
 	 */
 	public enum IssueEventTypeNameEnum {
-		ISSUE_CREATED("issue_created"), ISSUE_UPDATED("issue_updated"), ISSUE_ASSIGNED("issue_assigned"),
-		ISSUE_RESOLVED("issue_resolved"), ISSUE_CLOSED("issue_closed"), ISSUE_GENERIC("issue_generic"),
-		ISSUE_COMMENTED("issue_commented"), ISSUE_COMMENT_EDITED("issue_comment_edited"),
+		ISSUE_CREATED("issue_created"),
+		ISSUE_UPDATED("issue_updated"),
+		ISSUE_ASSIGNED("issue_assigned"),
+		ISSUE_WORK_STARTED("issue_work_started"),
+		ISSUE_RESOLVED("issue_resolved"),
+		ISSUE_CLOSED("issue_closed"),
+		ISSUE_GENERIC("issue_generic"),
+		ISSUE_COMMENTED("issue_commented"),
+		ISSUE_COMMENT_EDITED("issue_comment_edited"),
 		ISSUE_COMMENT_DELETED("issue_comment_deleted");
 
 		private String value;
@@ -75,49 +75,6 @@ public class JiraEventIssue {
 
 	@JsonProperty("comment")
 	private JiraIssueComment comment = null;
-
-	public JiraEventIssue timestamp(String timestamp) {
-		this.timestamp = timestamp;
-		return this;
-	}
-
-	/**
-	 * Get timestamp
-	 * 
-	 * @return timestamp
-	 **/
-	@ApiModelProperty(required = true, value = "")
-	@NotNull
-
-	@Valid
-	public String getTimestamp() {
-		return timestamp;
-	}
-
-	public void setTimestamp(String timestamp) {
-		this.timestamp = timestamp;
-	}
-
-	public JiraEventIssue webhookEvent(JiraWebhookEventEnum webhookEvent) {
-		this.webhookEvent = webhookEvent;
-		return this;
-	}
-
-	/**
-	 * Get webhookEvent
-	 * 
-	 * @return webhookEvent
-	 **/
-	@ApiModelProperty(required = true, value = "")
-	@NotNull
-
-	public JiraWebhookEventEnum getWebhookEvent() {
-		return webhookEvent;
-	}
-
-	public void setWebhookEvent(JiraWebhookEventEnum webhookEvent) {
-		this.webhookEvent = webhookEvent;
-	}
 
 	public JiraEventIssue issueEventTypeName(IssueEventTypeNameEnum issueEventTypeName) {
 		this.issueEventTypeName = issueEventTypeName;

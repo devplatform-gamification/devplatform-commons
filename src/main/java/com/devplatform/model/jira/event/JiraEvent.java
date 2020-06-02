@@ -7,7 +7,6 @@ import javax.validation.constraints.NotNull;
 
 import org.springframework.validation.annotation.Validated;
 
-import com.devplatform.model.jira.JiraVersion;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import io.swagger.annotations.ApiModelProperty;
@@ -17,48 +16,91 @@ import io.swagger.annotations.ApiModelProperty;
  */
 @Validated
 @javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2020-03-18T01:03:28.811Z[GMT]")
-public class JiraEventVersion extends JiraEvent{
-	@JsonProperty("version")
-	private JiraVersion version = null;
+public class JiraEvent {
+	@JsonProperty("timestamp")
+	protected String timestamp = null;
 
-	@JsonProperty("mergedTo")
-	private JiraVersion mergedTo = null;
+	@JsonProperty("webhookEvent")
+	protected JiraWebhookEventEnum webhookEvent = null;
 
-	public JiraEventVersion version(JiraVersion version) {
-		this.version = version;
+	@JsonProperty("userName")
+	protected String userName = null;
+
+	@JsonProperty("userKey")
+	protected String userKey = null;
+
+	public JiraEvent timestamp(String timestamp) {
+		this.timestamp = timestamp;
 		return this;
 	}
 
 	/**
-	 * Get issueEventTypeName
+	 * Get timestamp
 	 * 
-	 * @return issueEventTypeName
+	 * @return timestamp
 	 **/
 	@ApiModelProperty(required = true, value = "")
 	@NotNull
-	public JiraVersion getVersion() {
-		return version;
+	@Valid
+	public String getTimestamp() {
+		return timestamp;
 	}
 
-	public void setVersion(JiraVersion version) {
-		this.version = version;
+	public void setTimestamp(String timestamp) {
+		this.timestamp = timestamp;
 	}
-	
-	public JiraEventVersion mergedTo(JiraVersion mergedTo) {
-		this.mergedTo = mergedTo;
+
+	public JiraEvent webhookEvent(JiraWebhookEventEnum webhookEvent) {
+		this.webhookEvent = webhookEvent;
+		return this;
+	}
+
+	/**
+	 * Get webhookEvent
+	 * 
+	 * @return webhookEvent
+	 **/
+	@ApiModelProperty(required = true, value = "")
+	@NotNull
+
+	public JiraWebhookEventEnum getWebhookEvent() {
+		return webhookEvent;
+	}
+
+	public void setWebhookEvent(JiraWebhookEventEnum webhookEvent) {
+		this.webhookEvent = webhookEvent;
+	}
+
+	public JiraEvent userName(String userName) {
+		this.userName = userName;
 		return this;
 	}
 
 	@ApiModelProperty(value = "")
 	@Valid
-	public JiraVersion getMergedTo() {
-		return mergedTo;
+	public String getUserName() {
+		return userName;
 	}
 
-	public void setMergedTo(JiraVersion mergedTo) {
-		this.mergedTo = mergedTo;
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
-	
+
+	public JiraEvent userKey(String userKey) {
+		this.userKey = userKey;
+		return this;
+	}
+
+	@ApiModelProperty(value = "")
+	@Valid
+	public String getUserKey() {
+		return userKey;
+	}
+
+	public void setUserKey(String userKey) {
+		this.userKey = userKey;
+	}
+
 	@Override
 	public boolean equals(java.lang.Object o) {
 		if (this == o) {
@@ -67,29 +109,25 @@ public class JiraEventVersion extends JiraEvent{
 		if (o == null || getClass() != o.getClass()) {
 			return false;
 		}
-		JiraEventVersion jiraEvent = (JiraEventVersion) o;
+		JiraEvent jiraEvent = (JiraEvent) o;
 		return Objects.equals(this.timestamp, jiraEvent.timestamp)
 				&& Objects.equals(this.webhookEvent, jiraEvent.webhookEvent)
-				&& Objects.equals(this.version, jiraEvent.version)
-				&& Objects.equals(this.mergedTo, jiraEvent.mergedTo)
 				&& Objects.equals(this.userName, jiraEvent.userName)
 				&& Objects.equals(this.userKey, jiraEvent.userKey);
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(timestamp, webhookEvent, version, mergedTo, userName, userKey);
+		return Objects.hash(timestamp, webhookEvent, userName, userKey);
 	}
 
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
-		sb.append("class JiraEventVersion {\n");
+		sb.append("class JiraEvent {\n");
 
 		sb.append("    timestamp: ").append(toIndentedString(timestamp)).append("\n");
 		sb.append("    webhookEvent: ").append(toIndentedString(webhookEvent)).append("\n");
-		sb.append("    version: ").append(toIndentedString(version)).append("\n");
-		sb.append("    mergedTo: ").append(toIndentedString(mergedTo)).append("\n");
 		sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
 		sb.append("    userKey: ").append(toIndentedString(userKey)).append("\n");
 		sb.append("}");

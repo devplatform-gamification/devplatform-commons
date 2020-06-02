@@ -2,7 +2,6 @@ package com.devplatform.model.jira.event;
 
 import java.util.Objects;
 
-import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 
 import org.springframework.validation.annotation.Validated;
@@ -17,57 +16,9 @@ import io.swagger.annotations.ApiModelProperty;
  */
 @Validated
 @javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2020-03-18T01:03:28.811Z[GMT]")
-public class JiraEventComment {
-	@JsonProperty("timestamp")
-	private String timestamp = null;
-
-	@JsonProperty("webhookEvent")
-	private JiraWebhookEventEnum webhookEvent = null;
-
+public class JiraEventComment extends JiraEvent{
 	@JsonProperty("comment")
 	private JiraIssueComment comment = null;
-
-	public JiraEventComment timestamp(String timestamp) {
-		this.timestamp = timestamp;
-		return this;
-	}
-
-	/**
-	 * Get timestamp
-	 * 
-	 * @return timestamp
-	 **/
-	@ApiModelProperty(required = true, value = "")
-	@NotNull
-	@Valid
-	public String getTimestamp() {
-		return timestamp;
-	}
-
-	public void setTimestamp(String timestamp) {
-		this.timestamp = timestamp;
-	}
-
-	public JiraEventComment webhookEvent(JiraWebhookEventEnum webhookEvent) {
-		this.webhookEvent = webhookEvent;
-		return this;
-	}
-
-	/**
-	 * Get webhookEvent
-	 * 
-	 * @return webhookEvent
-	 **/
-	@ApiModelProperty(required = true, value = "")
-	@NotNull
-
-	public JiraWebhookEventEnum getWebhookEvent() {
-		return webhookEvent;
-	}
-
-	public void setWebhookEvent(JiraWebhookEventEnum webhookEvent) {
-		this.webhookEvent = webhookEvent;
-	}
 
 	public JiraEventComment comment(JiraIssueComment comment) {
 		this.comment = comment;

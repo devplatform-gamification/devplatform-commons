@@ -7,7 +7,6 @@ public enum JiraWebhookEventEnum {
 	  ISSUE_CREATED("jira:issue_created"),
 	  ISSUE_UPDATED("jira:issue_updated"),
 	  ISSUE_DELETED("jira:issue_deleted"),
-	  ISSUE_WORK_STARTED("issue_work_started"),
 	  COMMENT_CREATED("comment_created"),
 	  COMMENT_UPDATED("comment_updated"),
 	  COMMENT_DELETED("comment_deleted"),

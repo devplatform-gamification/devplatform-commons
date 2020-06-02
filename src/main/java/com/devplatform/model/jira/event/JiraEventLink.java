@@ -2,7 +2,6 @@ package com.devplatform.model.jira.event;
 
 import java.util.Objects;
 
-import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 
 import org.springframework.validation.annotation.Validated;
@@ -17,64 +16,10 @@ import io.swagger.annotations.ApiModelProperty;
  */
 @Validated
 @javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2020-03-18T01:03:28.811Z[GMT]")
-public class JiraEventLink {
-	@JsonProperty("timestamp")
-	private String timestamp = null;
-
-	@JsonProperty("webhookEvent")
-	private JiraWebhookEventEnum webhookEvent = null;
-
+public class JiraEventLink extends JiraEvent{
 	@JsonProperty("issueLink")
 	private JiraIssueLink issueLink = null;
 	
-	@JsonProperty("userName")
-	private String userName = null;
-
-	@JsonProperty("userKey")
-	private String userKey = null;
-
-	public JiraEventLink timestamp(String timestamp) {
-		this.timestamp = timestamp;
-		return this;
-	}
-
-	/**
-	 * Get timestamp
-	 * 
-	 * @return timestamp
-	 **/
-	@ApiModelProperty(required = true, value = "")
-	@NotNull
-	@Valid
-	public String getTimestamp() {
-		return timestamp;
-	}
-
-	public void setTimestamp(String timestamp) {
-		this.timestamp = timestamp;
-	}
-
-	public JiraEventLink webhookEvent(JiraWebhookEventEnum webhookEvent) {
-		this.webhookEvent = webhookEvent;
-		return this;
-	}
-
-	/**
-	 * Get webhookEvent
-	 * 
-	 * @return webhookEvent
-	 **/
-	@ApiModelProperty(required = true, value = "")
-	@NotNull
-
-	public JiraWebhookEventEnum getWebhookEvent() {
-		return webhookEvent;
-	}
-
-	public void setWebhookEvent(JiraWebhookEventEnum webhookEvent) {
-		this.webhookEvent = webhookEvent;
-	}
-
 	public JiraEventLink issueLink(JiraIssueLink issueLink) {
 		this.issueLink = issueLink;
 		return this;
@@ -95,36 +40,6 @@ public class JiraEventLink {
 		this.issueLink = issueLink;
 	}
 	
-	public JiraEventLink userName(String userName) {
-		this.userName = userName;
-		return this;
-	}
-
-	@ApiModelProperty(value = "")
-	@Valid
-	public String getUserName() {
-		return userName;
-	}
-
-	public void setUserName(String userName) {
-		this.userName = userName;
-	}
-
-	public JiraEventLink userKey(String userKey) {
-		this.userKey = userKey;
-		return this;
-	}
-
-	@ApiModelProperty(value = "")
-	@Valid
-	public String getUserKey() {
-		return userKey;
-	}
-
-	public void setUserKey(String userKey) {
-		this.userKey = userKey;
-	}
-
 	@Override
 	public boolean equals(java.lang.Object o) {
 		if (this == o) {
