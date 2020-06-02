@@ -4,7 +4,8 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 public enum SlackEventTypeEnum {
-    MESSAGE("message"),
+    EVENT_CALLBACK("event_callback"),
+	MESSAGE("message"),
     URL_VERIFICATION("url_verification");
 
     private String value;

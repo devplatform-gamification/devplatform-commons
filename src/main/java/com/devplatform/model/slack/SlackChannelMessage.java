@@ -1,8 +1,10 @@
 package com.devplatform.model.slack;
 
+import java.util.List;
 import java.util.Objects;
 
 import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 
 import org.springframework.validation.annotation.Validated;
 
@@ -16,189 +18,284 @@ import io.swagger.annotations.ApiModelProperty;
  */
 @Validated
 @javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2020-03-18T01:03:28.811Z[GMT]")
-public class SlackChannelMessage   {
-  /**
-   * Gets or Sets type
-   */
-  @JsonProperty("type")
-  private SlackEventTypeEnum type = null;
+public class SlackChannelMessage {
+	/**
+	 * Gets or Sets type
+	 */
+	@JsonProperty("type")
+	private SlackEventTypeEnum type = null;
 
-  @JsonProperty("subtype")
-  private String subtype = null;
+	@JsonProperty("subtype")
+	private String subtype = null;
 
-  @JsonProperty("text")
-  private String text = null;
+	@JsonProperty("text")
+	private String text = null;
 
-  @JsonProperty("ts")
-  private String ts = null;
+	@JsonProperty("ts")
+	private String ts = null;
 
-  @JsonProperty("user")
-  private String user = null;
+	@JsonProperty("user")
+	private String user = null;
 
-  @JsonProperty("edited")
-  private SlackChannelMessageEdited edited = null;
+	@JsonProperty("team")
+	private String team = null;
 
-  public SlackChannelMessage type(SlackEventTypeEnum type) {
-    this.type = type;
-    return this;
-  }
+	@JsonProperty("channel")
+	private String channel = null;
 
-  /**
-   * Get type
-   * @return type
-  **/
-  @ApiModelProperty(value = "")
-  
-    public SlackEventTypeEnum getType() {
-    return type;
-  }
+	@JsonProperty("event_ts")
+	private String event_ts = null;
 
-  public void setType(SlackEventTypeEnum type) {
-    this.type = type;
-  }
+	@JsonProperty("channel_type")
+	private String channel_type = null;
 
-  public SlackChannelMessage subtype(String subtype) {
-    this.subtype = subtype;
-    return this;
-  }
+	@JsonProperty("blocks")
+	private List<Object> blocks = null;
 
-  /**
-   * Get subtype
-   * @return subtype
-  **/
-  @ApiModelProperty(example = "channel_join", value = "")
-  
-    public String getSubtype() {
-    return subtype;
-  }
+	@JsonProperty("edited")
+	private SlackChannelMessageEdited edited = null;
 
-  public void setSubtype(String subtype) {
-    this.subtype = subtype;
-  }
+	public SlackChannelMessage type(SlackEventTypeEnum type) {
+		this.type = type;
+		return this;
+	}
 
-  public SlackChannelMessage text(String text) {
-    this.text = text;
-    return this;
-  }
+	/**
+	 * Get type
+	 * 
+	 * @return type
+	 **/
+	@ApiModelProperty(value = "")
 
-  /**
-   * Get text
-   * @return text
-  **/
-  @ApiModelProperty(example = "<@U023BECGF|bobby> has joined the channel", value = "")
-  
-    public String getText() {
-    return text;
-  }
+	public SlackEventTypeEnum getType() {
+		return type;
+	}
 
-  public void setText(String text) {
-    this.text = text;
-  }
+	public void setType(SlackEventTypeEnum type) {
+		this.type = type;
+	}
 
-  public SlackChannelMessage ts(String ts) {
-    this.ts = ts;
-    return this;
-  }
+	public SlackChannelMessage subtype(String subtype) {
+		this.subtype = subtype;
+		return this;
+	}
 
-  /**
-   * Get ts
-   * @return ts
-  **/
-  @ApiModelProperty(example = "1403051575.000407", value = "")
-  
-    public String getTs() {
-    return ts;
-  }
+	/**
+	 * Get subtype
+	 * 
+	 * @return subtype
+	 **/
+	@ApiModelProperty(example = "channel_join", value = "")
 
-  public void setTs(String ts) {
-    this.ts = ts;
-  }
+	public String getSubtype() {
+		return subtype;
+	}
 
-  public SlackChannelMessage user(String user) {
-    this.user = user;
-    return this;
-  }
+	public void setSubtype(String subtype) {
+		this.subtype = subtype;
+	}
 
-  /**
-   * Get user
-   * @return user
-  **/
-  @ApiModelProperty(example = "U023BECGF", value = "")
-  
-    public String getUser() {
-    return user;
-  }
+	public SlackChannelMessage text(String text) {
+		this.text = text;
+		return this;
+	}
 
-  public void setUser(String user) {
-    this.user = user;
-  }
+	/**
+	 * Get text
+	 * 
+	 * @return text
+	 **/
+	@ApiModelProperty(example = "<@U023BECGF|bobby> has joined the channel", value = "")
 
-  public SlackChannelMessage edited(SlackChannelMessageEdited edited) {
-    this.edited = edited;
-    return this;
-  }
+	public String getText() {
+		return text;
+	}
 
-  /**
-   * Get edited
-   * @return edited
-  **/
-  @ApiModelProperty(value = "")
-  
-    @Valid
-    public SlackChannelMessageEdited getEdited() {
-    return edited;
-  }
+	public void setText(String text) {
+		this.text = text;
+	}
 
-  public void setEdited(SlackChannelMessageEdited edited) {
-    this.edited = edited;
-  }
+	public SlackChannelMessage ts(String ts) {
+		this.ts = ts;
+		return this;
+	}
 
+	/**
+	 * Get ts
+	 * 
+	 * @return ts
+	 **/
+	@ApiModelProperty(example = "1403051575.000407", value = "")
+	@NotNull
+	public String getTs() {
+		return ts;
+	}
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    SlackChannelMessage slackChannelMessage = (SlackChannelMessage) o;
-    return Objects.equals(this.type, slackChannelMessage.type) &&
-        Objects.equals(this.subtype, slackChannelMessage.subtype) &&
-        Objects.equals(this.text, slackChannelMessage.text) &&
-        Objects.equals(this.ts, slackChannelMessage.ts) &&
-        Objects.equals(this.user, slackChannelMessage.user) &&
-        Objects.equals(this.edited, slackChannelMessage.edited);
-  }
+	public void setTs(String ts) {
+		this.ts = ts;
+	}
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(type, subtype, text, ts, user, edited);
-  }
+	public SlackChannelMessage user(String user) {
+		this.user = user;
+		return this;
+	}
 
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class SlackChannelMessage {\n");
-    
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("    subtype: ").append(toIndentedString(subtype)).append("\n");
-    sb.append("    text: ").append(toIndentedString(text)).append("\n");
-    sb.append("    ts: ").append(toIndentedString(ts)).append("\n");
-    sb.append("    user: ").append(toIndentedString(user)).append("\n");
-    sb.append("    edited: ").append(toIndentedString(edited)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
+	/**
+	 * Get user
+	 * 
+	 * @return user
+	 **/
+	@ApiModelProperty(value = "")
+	@Valid
+	public String getUser() {
+		return user;
+	}
 
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+	public void setUser(String user) {
+		this.user = user;
+	}
+
+	public SlackChannelMessage team(String team) {
+		this.team = team;
+		return this;
+	}
+
+	@ApiModelProperty(value = "")
+	@Valid
+	public String getTeam() {
+		return team;
+	}
+
+	public void setTeam(String team) {
+		this.team = team;
+	}
+
+	public SlackChannelMessage channel(String channel) {
+		this.channel = channel;
+		return this;
+	}
+
+	@ApiModelProperty(value = "")
+	@Valid
+	public String getChannel() {
+		return channel;
+	}
+
+	public void setChannel(String channel) {
+		this.channel = channel;
+	}
+
+	public SlackChannelMessage event_ts(String event_ts) {
+		this.event_ts = event_ts;
+		return this;
+	}
+
+	@ApiModelProperty(value = "")
+	@Valid
+	public String getEvent_ts() {
+		return event_ts;
+	}
+
+	public void setEvent_ts(String event_ts) {
+		this.event_ts = event_ts;
+	}
+
+	public SlackChannelMessage channel_type(String channel_type) {
+		this.channel_type = channel_type;
+		return this;
+	}
+
+	@ApiModelProperty(value = "")
+	@Valid
+	public String getChannel_type() {
+		return channel_type;
+	}
+
+	public void setChannel_type(String channel_type) {
+		this.channel_type = channel_type;
+	}
+
+	public SlackChannelMessage blocks(List<Object> blocks) {
+		this.blocks = blocks;
+		return this;
+	}
+
+	@ApiModelProperty(value = "")
+	@Valid
+	public List<Object> getBlocks() {
+		return blocks;
+	}
+
+	public void setBlocks(List<Object> blocks) {
+		this.blocks = blocks;
+	}
+
+	public SlackChannelMessage edited(SlackChannelMessageEdited edited) {
+		this.edited = edited;
+		return this;
+	}
+
+	/**
+	 * Get edited
+	 * 
+	 * @return edited
+	 **/
+	@ApiModelProperty(value = "")
+
+	@Valid
+	public SlackChannelMessageEdited getEdited() {
+		return edited;
+	}
+
+	public void setEdited(SlackChannelMessageEdited edited) {
+		this.edited = edited;
+	}
+
+	@Override
+	public boolean equals(java.lang.Object o) {
+		if (this == o) {
+			return true;
+		}
+		if (o == null || getClass() != o.getClass()) {
+			return false;
+		}
+		SlackChannelMessage slackChannelMessage = (SlackChannelMessage) o;
+		return Objects.equals(this.type, slackChannelMessage.type)
+				&& Objects.equals(this.subtype, slackChannelMessage.subtype)
+				&& Objects.equals(this.text, slackChannelMessage.text)
+				&& Objects.equals(this.ts, slackChannelMessage.ts)
+				&& Objects.equals(this.user, slackChannelMessage.user)
+				&& Objects.equals(this.edited, slackChannelMessage.edited);
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(type, subtype, text, ts, user, edited);
+	}
+
+	@Override
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		sb.append("class SlackChannelMessage {\n");
+
+		sb.append("    type: ").append(toIndentedString(type)).append("\n");
+		sb.append("    subtype: ").append(toIndentedString(subtype)).append("\n");
+		sb.append("    text: ").append(toIndentedString(text)).append("\n");
+		sb.append("    ts: ").append(toIndentedString(ts)).append("\n");
+		sb.append("    user: ").append(toIndentedString(user)).append("\n");
+		sb.append("    edited: ").append(toIndentedString(edited)).append("\n");
+		sb.append("}");
+		return sb.toString();
+	}
+
+	/**
+	 * Convert the given object to string with each line indented by 4 spaces
+	 * (except the first line).
+	 */
+	private String toIndentedString(java.lang.Object o) {
+		if (o == null) {
+			return "null";
+		}
+		return o.toString().replace("\n", "\n    ");
+	}
 }
