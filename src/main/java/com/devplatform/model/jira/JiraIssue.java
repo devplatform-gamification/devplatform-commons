@@ -29,6 +29,9 @@ public class JiraIssue   {
   @JsonProperty("fields")
   private JiraIssueFields fields = null;
 
+  @JsonProperty("operations")
+  private JiraIssueFields operations = null;
+
   public JiraIssue id(Long id) {
     this.id = id;
     return this;

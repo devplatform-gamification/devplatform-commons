@@ -1,6 +1,5 @@
 package com.devplatform.model.jira;
 
-import java.math.BigDecimal;
 import java.util.Objects;
 
 import javax.validation.Valid;
@@ -12,78 +11,63 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModelProperty;
 
 /**
- * JiraIssueOptionField
+ * JiraIssueComment
  */
 @Validated
 @javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2020-03-18T01:03:28.811Z[GMT]")
-public class JiraIssueFieldOption {
+public class JiraIssueTransition {
 	@JsonProperty("id")
-	protected BigDecimal id = null;
+	private String id = null;
 
-	@JsonProperty("value")
-	protected String value = null;
+	@JsonProperty("name")
+	private String name = null;
 
-	@JsonProperty("self")
-	protected String self = null;
+	@JsonProperty("to")
+	private JiraStatus to = null;
 
-	public JiraIssueFieldOption id(BigDecimal id) {
+	public JiraIssueTransition id(String id) {
 		this.id = id;
 		return this;
 	}
 
-	/**
-	 * Get id
-	 * 
-	 * @return id
-	 **/
 	@ApiModelProperty(value = "")
 	@Valid
-	public BigDecimal getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(BigDecimal id) {
+	public void setId(String id) {
 		this.id = id;
 	}
-
-	public JiraIssueFieldOption value(String value) {
-		this.value = value;
+	
+	public JiraIssueTransition name(String name) {
+		this.name = name;
 		return this;
 	}
 
-	/**
-	 * Get value
-	 * 
-	 * @return value
-	 **/
 	@ApiModelProperty(value = "")
-
-	public String getValue() {
-		return value;
+	@Valid
+	public String getName() {
+		return name;
 	}
 
-	public void setValue(String value) {
-		this.value = value;
+	public void setName(String name) {
+		this.name = name;
 	}
 
-	public JiraIssueFieldOption self(String self) {
-		this.self = self;
+	public JiraIssueTransition to(JiraStatus to) {
+		this.to = to;
 		return this;
 	}
 
-	/**
-	 * Get self
-	 * 
-	 * @return self
-	 **/
 	@ApiModelProperty(value = "")
-
-	public String getSelf() {
-		return self;
+	@Valid
+	public JiraStatus getTo() {
+		return to;
 	}
 
-	public void setSelf(String self) {
-		this.self = self;
+	public void setTo(JiraStatus to) {
+		this.to = to;
 	}
 
 	@Override
@@ -94,29 +78,28 @@ public class JiraIssueFieldOption {
 		if (o == null || getClass() != o.getClass()) {
 			return false;
 		}
-		JiraIssueFieldOption jiraIssueOptionField = (JiraIssueFieldOption) o;
-		return Objects.equals(this.id, jiraIssueOptionField.id)
-				&& Objects.equals(this.value, jiraIssueOptionField.value)
-				&& Objects.equals(this.self, jiraIssueOptionField.self);
+		JiraIssueTransition jiraIssueComment = (JiraIssueTransition) o;
+		return Objects.equals(this.id, jiraIssueComment.id) 
+				&& Objects.equals(this.name, jiraIssueComment.name)
+				&& Objects.equals(this.to, jiraIssueComment.to);
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(id, value, self);
+		return Objects.hash(id, name, to);
 	}
 
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
-		sb.append("class JiraIssueFieldOption {\n");
-
+		sb.append("class JiraIssueTransition {\n");
 		sb.append("    id: ").append(toIndentedString(id)).append("\n");
-		sb.append("    value: ").append(toIndentedString(value)).append("\n");
-		sb.append("    self: ").append(toIndentedString(self)).append("\n");
+		sb.append("    name: ").append(toIndentedString(name)).append("\n");
+		sb.append("    to: ").append(toIndentedString(to)).append("\n");
 		sb.append("}");
 		return sb.toString();
 	}
-
+	
 	/**
 	 * Convert the given object to string with each line indented by 4 spaces
 	 * (except the first line).

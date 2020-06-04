@@ -16,235 +16,271 @@ import io.swagger.annotations.ApiModelProperty;
  */
 @Validated
 @javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2020-03-18T01:03:28.811Z[GMT]")
-public class JiraUser   {
-  @JsonProperty("self")
-  private String self = null;
+public class JiraUser {
+	@JsonProperty("self")
+	private String self = null;
 
-  @JsonProperty("name")
-  private String name = null;
+	@JsonProperty("name")
+	private String name = null;
 
-  @JsonProperty("key")
-  private String key = null;
+	@JsonProperty("key")
+	private String key = null;
 
-  @JsonProperty("emailAddress")
-  private String emailAddress = null;
+	@JsonProperty("emailAddress")
+	private String emailAddress = null;
 
-  @JsonProperty("displayName")
-  private String displayName = null;
+	@JsonProperty("displayName")
+	private String displayName = null;
 
-  @JsonProperty("active")
-  private Boolean active = null;
+	@JsonProperty("active")
+	private Boolean active = null;
 
-  @JsonProperty("timeZone")
-  private String timeZone = null;
-  
-  @JsonProperty("avatarUrls")
-  private JiraAvatarurls avatarurls = null;
+	@JsonProperty("timeZone")
+	private String timeZone = null;
 
-  public JiraUser self(String self) {
-    this.self = self;
-    return this;
-  }
+	@JsonProperty("locale")
+	private String locale = "pt_BR";
 
-  /**
-   * Get self
-   * @return self
-  **/
-  @ApiModelProperty(value = "")
-  
-    public String getSelf() {
-    return self;
-  }
+	@JsonProperty("avatarUrls")
+	private JiraAvatarurls avatarurls = null;
 
-  public void setSelf(String self) {
-    this.self = self;
-  }
+	@JsonProperty("groups")
+	private JiraGroups groups = null;
 
-  public JiraUser name(String name) {
-    this.name = name;
-    return this;
-  }
+	public JiraUser self(String self) {
+		this.self = self;
+		return this;
+	}
 
-  /**
-   * Get name
-   * @return name
-  **/
-  @ApiModelProperty(required = true, value = "")
-      @NotNull
+	/**
+	 * Get self
+	 * 
+	 * @return self
+	 **/
+	@ApiModelProperty(value = "")
+	public String getSelf() {
+		return self;
+	}
 
-    public String getName() {
-    return name;
-  }
+	public void setSelf(String self) {
+		this.self = self;
+	}
 
-  public void setName(String name) {
-    this.name = name;
-  }
+	public JiraUser name(String name) {
+		this.name = name;
+		return this;
+	}
 
-  public JiraUser key(String key) {
-    this.key = key;
-    return this;
-  }
+	/**
+	 * Get name
+	 * 
+	 * @return name
+	 **/
+	@ApiModelProperty(required = true, value = "")
+	@NotNull
+	public String getName() {
+		return name;
+	}
 
-  /**
-   * Get key
-   * @return key
-  **/
-  @ApiModelProperty(required = true, value = "")
-      @NotNull
+	public void setName(String name) {
+		this.name = name;
+	}
 
-    public String getKey() {
-    return key;
-  }
+	public JiraUser key(String key) {
+		this.key = key;
+		return this;
+	}
 
-  public void setKey(String key) {
-    this.key = key;
-  }
+	/**
+	 * Get key
+	 * 
+	 * @return key
+	 **/
+	@ApiModelProperty(required = true, value = "")
+	@NotNull
+	public String getKey() {
+		return key;
+	}
 
-  public JiraUser emailAddress(String emailAddress) {
-    this.emailAddress = emailAddress;
-    return this;
-  }
+	public void setKey(String key) {
+		this.key = key;
+	}
 
-  /**
-   * Get emailAddress
-   * @return emailAddress
-  **/
-  @ApiModelProperty(value = "")
-  
-    public String getEmailAddress() {
-    return emailAddress;
-  }
+	public JiraUser emailAddress(String emailAddress) {
+		this.emailAddress = emailAddress;
+		return this;
+	}
 
-  public void setEmailAddress(String emailAddress) {
-    this.emailAddress = emailAddress;
-  }
+	/**
+	 * Get emailAddress
+	 * 
+	 * @return emailAddress
+	 **/
+	@ApiModelProperty(value = "")
+	public String getEmailAddress() {
+		return emailAddress;
+	}
 
-  public JiraUser displayName(String displayName) {
-    this.displayName = displayName;
-    return this;
-  }
+	public void setEmailAddress(String emailAddress) {
+		this.emailAddress = emailAddress;
+	}
 
-  /**
-   * Get displayName
-   * @return displayName
-  **/
-  @ApiModelProperty(value = "")
-  
-    public String getDisplayName() {
-    return displayName;
-  }
+	public JiraUser displayName(String displayName) {
+		this.displayName = displayName;
+		return this;
+	}
 
-  public void setDisplayName(String displayName) {
-    this.displayName = displayName;
-  }
+	/**
+	 * Get displayName
+	 * 
+	 * @return displayName
+	 **/
+	@ApiModelProperty(value = "")
+	public String getDisplayName() {
+		return displayName;
+	}
 
-  public JiraUser active(Boolean active) {
-    this.active = active;
-    return this;
-  }
+	public void setDisplayName(String displayName) {
+		this.displayName = displayName;
+	}
 
-  /**
-   * Get active
-   * @return active
-  **/
-  @ApiModelProperty(value = "")
-  
-    public Boolean isActive() {
-    return active;
-  }
+	public JiraUser active(Boolean active) {
+		this.active = active;
+		return this;
+	}
 
-  public void setActive(Boolean active) {
-    this.active = active;
-  }
+	/**
+	 * Get active
+	 * 
+	 * @return active
+	 **/
+	@ApiModelProperty(value = "")
+	public Boolean getActive() {
+		return active;
+	}
 
-  public JiraUser timeZone(String timeZone) {
-    this.timeZone = timeZone;
-    return this;
-  }
+	public void setActive(Boolean active) {
+		this.active = active;
+	}
 
-  /**
-   * Get timeZone
-   * @return timeZone
-  **/
-  @ApiModelProperty(value = "")
-  
-    public String getTimeZone() {
-    return timeZone;
-  }
+	public JiraUser timeZone(String timeZone) {
+		this.timeZone = timeZone;
+		return this;
+	}
 
-  public void setTimeZone(String timeZone) {
-    this.timeZone = timeZone;
-  }
+	/**
+	 * Get timeZone
+	 * 
+	 * @return timeZone
+	 **/
+	@ApiModelProperty(value = "")
+	public String getTimeZone() {
+		return timeZone;
+	}
 
-  public JiraUser avatarurls(JiraAvatarurls avatarurls) {
-    this.avatarurls = avatarurls;
-    return this;
-  }
+	public void setTimeZone(String timeZone) {
+		this.timeZone = timeZone;
+	}
+	
+	public JiraUser locale(String locale) {
+		this.locale = locale;
+		return this;
+	}
 
-  /**
-   * Get avatarurls
-   * @return avatarurls
-  **/
-  @ApiModelProperty(value = "")
-  
-    @Valid
-    public JiraAvatarurls getAvatarurls() {
-    return avatarurls;
-  }
+	@ApiModelProperty(value = "")
+	@Valid
+	public String getLocale() {
+		return locale;
+	}
 
-  public void setAvatarurls(JiraAvatarurls avatarurls) {
-    this.avatarurls = avatarurls;
-  }
+	public void setLocale(String locale) {
+		this.locale = locale;
+	}
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    JiraUser jiraUser = (JiraUser) o;
-    return Objects.equals(this.self, jiraUser.self) &&
-        Objects.equals(this.name, jiraUser.name) &&
-        Objects.equals(this.key, jiraUser.key) &&
-        Objects.equals(this.emailAddress, jiraUser.emailAddress) &&
-        Objects.equals(this.displayName, jiraUser.displayName) &&
-        Objects.equals(this.active, jiraUser.active) &&
-        Objects.equals(this.timeZone, jiraUser.timeZone) &&
-    	Objects.equals(this.avatarurls, jiraUser.avatarurls);
-  }
+	public JiraUser avatarurls(JiraAvatarurls avatarurls) {
+		this.avatarurls = avatarurls;
+		return this;
+	}
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(self, name, key, emailAddress, displayName, active, timeZone, avatarurls);
-  }
+	/**
+	 * Get avatarurls
+	 * 
+	 * @return avatarurls
+	 **/
+	@ApiModelProperty(value = "")
+	@Valid
+	public JiraAvatarurls getAvatarurls() {
+		return avatarurls;
+	}
 
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class JiraUser {\n");
-    
-    sb.append("    self: ").append(toIndentedString(self)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    key: ").append(toIndentedString(key)).append("\n");
-    sb.append("    emailAddress: ").append(toIndentedString(emailAddress)).append("\n");
-    sb.append("    displayName: ").append(toIndentedString(displayName)).append("\n");
-    sb.append("    active: ").append(toIndentedString(active)).append("\n");
-    sb.append("    timeZone: ").append(toIndentedString(timeZone)).append("\n");
-    sb.append("    avatarUrls: ").append(toIndentedString(avatarurls)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
+	public void setAvatarurls(JiraAvatarurls avatarurls) {
+		this.avatarurls = avatarurls;
+	}
 
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+	public JiraUser groups(JiraGroups groups) {
+		this.groups = groups;
+		return this;
+	}
+
+	@ApiModelProperty(value = "")
+	@Valid
+	public JiraGroups getGroups() {
+		return groups;
+	}
+
+	public void setGroups(JiraGroups groups) {
+		this.groups = groups;
+	}
+
+	@Override
+	public boolean equals(java.lang.Object o) {
+		if (this == o) {
+			return true;
+		}
+		if (o == null || getClass() != o.getClass()) {
+			return false;
+		}
+		JiraUser jiraUser = (JiraUser) o;
+		return Objects.equals(this.self, jiraUser.self) && Objects.equals(this.name, jiraUser.name)
+				&& Objects.equals(this.key, jiraUser.key) && Objects.equals(this.emailAddress, jiraUser.emailAddress)
+				&& Objects.equals(this.displayName, jiraUser.displayName)
+				&& Objects.equals(this.active, jiraUser.active) && Objects.equals(this.timeZone, jiraUser.timeZone)
+				&& Objects.equals(this.locale, jiraUser.locale)
+				&& Objects.equals(this.avatarurls, jiraUser.avatarurls)
+				&& Objects.equals(this.groups, jiraUser.groups);
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(self, name, key, emailAddress, displayName, active, timeZone, locale, avatarurls, groups);
+	}
+
+	@Override
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		sb.append("class JiraUser {\n");
+		sb.append("    self: ").append(toIndentedString(self)).append("\n");
+		sb.append("    name: ").append(toIndentedString(name)).append("\n");
+		sb.append("    key: ").append(toIndentedString(key)).append("\n");
+		sb.append("    emailAddress: ").append(toIndentedString(emailAddress)).append("\n");
+		sb.append("    displayName: ").append(toIndentedString(displayName)).append("\n");
+		sb.append("    active: ").append(toIndentedString(active)).append("\n");
+		sb.append("    timeZone: ").append(toIndentedString(timeZone)).append("\n");
+		sb.append("    locale: ").append(toIndentedString(locale)).append("\n");
+		sb.append("    avatarUrls: ").append(toIndentedString(avatarurls)).append("\n");
+		sb.append("    groups: ").append(toIndentedString(groups)).append("\n");
+		sb.append("}");
+		return sb.toString();
+	}
+
+	/**
+	 * Convert the given object to string with each line indented by 4 spaces
+	 * (except the first line).
+	 */
+	private String toIndentedString(java.lang.Object o) {
+		if (o == null) {
+			return "null";
+		}
+		return o.toString().replace("\n", "\n    ");
+	}
 }
