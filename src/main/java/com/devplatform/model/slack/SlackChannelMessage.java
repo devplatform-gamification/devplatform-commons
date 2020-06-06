@@ -34,8 +34,14 @@ public class SlackChannelMessage {
 	@JsonProperty("ts")
 	private String ts = null;
 
+	@JsonProperty("bot_id")
+	private String bot_id = null;
+
 	@JsonProperty("user")
 	private String user = null;
+
+	@JsonProperty("username")
+	private String username = null;
 
 	@JsonProperty("team")
 	private String team = null;
@@ -48,6 +54,9 @@ public class SlackChannelMessage {
 
 	@JsonProperty("channel_type")
 	private String channel_type = null;
+
+	@JsonProperty("attachments")
+	private List<Object> attachments = null;
 
 	@JsonProperty("blocks")
 	private List<Object> blocks = null;
@@ -140,11 +149,6 @@ public class SlackChannelMessage {
 		return this;
 	}
 
-	/**
-	 * Get user
-	 * 
-	 * @return user
-	 **/
 	@ApiModelProperty(value = "")
 	@Valid
 	public String getUser() {
@@ -153,6 +157,36 @@ public class SlackChannelMessage {
 
 	public void setUser(String user) {
 		this.user = user;
+	}
+	
+	public SlackChannelMessage bot_id(String bot_id) {
+		this.bot_id = bot_id;
+		return this;
+	}
+
+	@ApiModelProperty(value = "")
+	@Valid
+	public String getBot_id() {
+		return bot_id;
+	}
+
+	public void setBot_id(String bot_id) {
+		this.bot_id = bot_id;
+	}
+
+	public SlackChannelMessage username(String username) {
+		this.username = username;
+		return this;
+	}
+
+	@ApiModelProperty(value = "")
+	@Valid
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	public SlackChannelMessage team(String team) {
@@ -229,6 +263,21 @@ public class SlackChannelMessage {
 	public void setBlocks(List<Object> blocks) {
 		this.blocks = blocks;
 	}
+	
+	public SlackChannelMessage attachments(List<Object> attachments) {
+		this.attachments = attachments;
+		return this;
+	}
+
+	@ApiModelProperty(value = "")
+	@Valid
+	public List<Object> getAttachments() {
+		return attachments;
+	}
+
+	public void setAttachments(List<Object> attachments) {
+		this.attachments = attachments;
+	}
 
 	public SlackChannelMessage edited(SlackChannelMessageEdited edited) {
 		this.edited = edited;
@@ -270,7 +319,7 @@ public class SlackChannelMessage {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(type, subtype, text, ts, user, edited);
+		return Objects.hash(type, subtype, text, ts, user, team, channel, channel_type, event_ts, attachments, blocks, edited);
 	}
 
 	@Override
@@ -282,12 +331,20 @@ public class SlackChannelMessage {
 		sb.append("    subtype: ").append(toIndentedString(subtype)).append("\n");
 		sb.append("    text: ").append(toIndentedString(text)).append("\n");
 		sb.append("    ts: ").append(toIndentedString(ts)).append("\n");
+		sb.append("    bot_id: ").append(toIndentedString(bot_id)).append("\n");
+		sb.append("    username: ").append(toIndentedString(username)).append("\n");
 		sb.append("    user: ").append(toIndentedString(user)).append("\n");
+		sb.append("    team: ").append(toIndentedString(team)).append("\n");
+		sb.append("    channel: ").append(toIndentedString(channel)).append("\n");
+		sb.append("    channel_type: ").append(toIndentedString(channel_type)).append("\n");
+		sb.append("    event_ts: ").append(toIndentedString(event_ts)).append("\n");
+		sb.append("    attachments: ").append(toIndentedString(attachments)).append("\n");
+		sb.append("    blocks: ").append(toIndentedString(blocks)).append("\n");
 		sb.append("    edited: ").append(toIndentedString(edited)).append("\n");
 		sb.append("}");
 		return sb.toString();
 	}
-
+	
 	/**
 	 * Convert the given object to string with each line indented by 4 spaces
 	 * (except the first line).

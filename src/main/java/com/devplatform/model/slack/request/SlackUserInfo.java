@@ -1,4 +1,4 @@
-package com.devplatform.model.slack.response;
+package com.devplatform.model.slack.request;
 
 import java.util.Objects;
 
@@ -15,32 +15,31 @@ import io.swagger.annotations.ApiModelProperty;
  */
 @Validated
 @javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2020-03-18T01:03:28.811Z[GMT]")
-public class SlackResponseChallenge extends SlackResponse{
-	@JsonProperty("challenge")
-	private String challenge = null;
+public class SlackUserInfo {
+	/**
+	 * Gets or Sets type
+	 */
+	@JsonProperty("user")
+	private String user = null;
 	
-	public SlackResponseChallenge() {
+	public SlackUserInfo(String user) {
 		super();
+		this.user = user;
 	}
 
-	public SlackResponseChallenge(String challenge) {
-		super();
-		this.challenge = challenge;
-	}
-
-	public SlackResponseChallenge challenge(String challenge) {
-		this.challenge = challenge;
+	public SlackUserInfo user(String user) {
+		this.user = user;
 		return this;
 	}
 
 	@ApiModelProperty(required = true, value = "")
 	@NotNull
-	public String getChallenge() {
-		return challenge;
+	public String getUser() {
+		return user;
 	}
 
-	public void setChallenge(String challenge) {
-		this.challenge = challenge;
+	public void setUser(String user) {
+		this.user = user;
 	}
 
 	@Override
@@ -51,21 +50,21 @@ public class SlackResponseChallenge extends SlackResponse{
 		if (o == null || getClass() != o.getClass()) {
 			return false;
 		}
-		SlackResponseChallenge slackChannelMessage = (SlackResponseChallenge) o;
-		return Objects.equals(this.challenge, slackChannelMessage.challenge);
+		SlackUserInfo slackChannelMessage = (SlackUserInfo) o;
+		return Objects.equals(this.user, slackChannelMessage.user);
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(challenge);
+		return Objects.hash(user);
 	}
 
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
-		sb.append("class SlackResponseChallenge {\n");
+		sb.append("class SlackUserInfo {\n");
 
-		sb.append("    challenge: ").append(toIndentedString(challenge)).append("\n");
+		sb.append("    user: ").append(toIndentedString(user)).append("\n");
 		sb.append("}");
 		return sb.toString();
 	}

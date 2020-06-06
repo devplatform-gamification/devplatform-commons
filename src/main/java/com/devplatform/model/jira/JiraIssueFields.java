@@ -86,6 +86,10 @@ public class JiraIssueFields {
 	@JsonProperty("customfield_10204")
 	private Integer businessValue = null;
 
+	@JsonProperty("customfield_13921")
+	@Valid
+	private List<JiraIssueFieldOption> areasConhecimento = null;
+
 	@JsonProperty("customfield_10201")
 	@Valid
 	private List<String> epicTheme = null;
@@ -643,6 +647,20 @@ public class JiraIssueFields {
 		this.businessValue = businessValue;
 	}
 
+	public JiraIssueFields areasConhecimento(List<JiraIssueFieldOption> areasConhecimento) {
+		this.areasConhecimento = areasConhecimento;
+		return this;
+	}
+
+	@ApiModelProperty(value = "Áreas de conhecimento")
+	public List<JiraIssueFieldOption>  getAreasConhecimento() {
+		return areasConhecimento;
+	}
+
+	public void setAreasConhecimento(List<JiraIssueFieldOption>  areasConhecimento) {
+		this.areasConhecimento = areasConhecimento;
+	}
+
 	public JiraIssueFields epicTheme(List<String> epicTheme) {
 		this.epicTheme = epicTheme;
 		return this;
@@ -662,7 +680,6 @@ public class JiraIssueFields {
 	 * @return epicTheme
 	 **/
 	@ApiModelProperty(value = "Epic/Theme")
-
 	public List<String> getEpicTheme() {
 		return epicTheme;
 	}
