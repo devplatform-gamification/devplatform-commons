@@ -110,7 +110,7 @@ public class SlackMessageResponse {
 	}
 	
 	public SlackMessageResponse warning(String warning) {
-		this.message = message;
+		this.warning = warning;
 		return this;
 	}
 
