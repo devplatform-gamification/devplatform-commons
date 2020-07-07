@@ -20,13 +20,20 @@ public class GitlabScriptVersaoVO{
 			this.version = nameParts[1];
 			this.order = Integer.valueOf(nameParts[2]);
 			nameParts = name.split("__");
-			this.specificName = nameParts[1];
-			if(nameParts[1].contains("DML")) {
+			String scriptName = "";
+			for(int i=1; i < nameParts.length; i++) {
+				if(i!=1) {
+					scriptName += "__";
+				}
+				scriptName += nameParts[i];
+			}
+			this.specificName = scriptName;
+			if(scriptName.contains("DML")) {
 				this.type = "DML";
-				this.specificName = nameParts[1].replaceFirst("_DML", "");
-			}else if(nameParts[1].contains("DDL")) {
+				this.specificName = scriptName.replaceFirst("DML_", "");
+			}else if(scriptName.contains("DDL")) {
 				this.type = "DDL";
-				this.specificName = nameParts[1].replaceFirst("_DDL", "");
+				this.specificName = scriptName.replaceFirst("DDL_", "");
 			}
 		}
 	}
