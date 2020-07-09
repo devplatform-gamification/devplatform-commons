@@ -62,8 +62,8 @@ public class JiraEventChangelog   {
    * @return items
   **/
   @ApiModelProperty(value = "")
-      @Valid
-    public List<JiraEventChangelogItems> getItems() {
+  @Valid
+  public List<JiraEventChangelogItems> getItems() {
     return items;
   }
 

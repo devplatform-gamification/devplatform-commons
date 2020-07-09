@@ -178,11 +178,41 @@ public class JiraIssueFields {
 	@Valid
 	private List<JiraVersion> fixVersions = null;
 
-	@JsonProperty("customfield_13909")
+	@JsonProperty("customfield_13908")
 	private String destaquesReleaseNotes = null;
+
+	@JsonProperty("customfield_13909")
+	private String msgLancamentoGenerico = null;
+
+	@JsonProperty("customfield_13916")
+	private String msgLancamentoTelegram = null;
 
 	@JsonProperty("customfield_12800")
 	private JiraIssueFieldSimple grupoAtribuicao = null;
+
+	@JsonProperty("customfield_13906")
+	private JiraIssueFieldOption tipoVersao = null;
+
+	@JsonProperty("customfield_13913")
+	private String versaoSeraLancada = null;
+
+	@JsonProperty("customfield_13917")
+	private String proximaVersao = null;
+	
+	@JsonProperty("customfield_13310")
+	private String dtGeracaoReleaseNotes = null;
+
+	@JsonProperty("customfield_13911")
+	private String urlReleaseNotes = null;
+	
+	@JsonProperty("customfield_13912")
+	private String dtGeracaoCodigoFonte = null;
+
+	@JsonProperty("customfield_13805")
+	private String tagCodigoFonte = null;
+	
+	@JsonProperty("customfield_13903")
+	private JiraUser responsavelExecucao = null;
 
 	@JsonProperty("comment")
 	private JiraIssueFieldsComment comment = null;
@@ -1232,7 +1262,6 @@ public class JiraIssueFields {
 	 * @return notasRelease
 	 **/
 	@ApiModelProperty(value = "Notas de release")
-
 	public String getNotasRelease() {
 		return notasRelease;
 	}
@@ -1280,7 +1309,6 @@ public class JiraIssueFields {
 	 * @return destaquesReleaseNotes
 	 **/
 	@ApiModelProperty(value = "Destaques notas de release")
-
 	public String getDestaquesReleaseNotes() {
 		return destaquesReleaseNotes;
 	}
@@ -1310,18 +1338,142 @@ public class JiraIssueFields {
 	}
 
 
+	public JiraIssueFields msgLancamentoGenerico(String msgLancamentoGenerico) {
+		this.msgLancamentoGenerico = msgLancamentoGenerico;
+		return this;
+	}
+
+	public String getMsgLancamentoGenerico() {
+		return msgLancamentoGenerico;
+	}
+
+	public void setMsgLancamentoGenerico(String msgLancamentoGenerico) {
+		this.msgLancamentoGenerico = msgLancamentoGenerico;
+	}
+
+	public JiraIssueFields msgLancamentoTelegram(String msgLancamentoTelegram) {
+		this.msgLancamentoTelegram = msgLancamentoTelegram;
+		return this;
+	}
+
+	public String getMsgLancamentoTelegram() {
+		return msgLancamentoTelegram;
+	}
+
+	public void setMsgLancamentoTelegram(String msgLancamentoTelegram) {
+		this.msgLancamentoTelegram = msgLancamentoTelegram;
+	}
+
+	public JiraIssueFields tipoVersao(JiraIssueFieldOption tipoVersao) {
+		this.tipoVersao = tipoVersao;
+		return this;
+	}
+
+	public JiraIssueFieldOption getTipoVersao() {
+		return tipoVersao;
+	}
+
+	public void setTipoVersao(JiraIssueFieldOption tipoVersao) {
+		this.tipoVersao = tipoVersao;
+	}
+
+	public JiraIssueFields versaoSeraLancada(String versaoSeraLancada) {
+		this.versaoSeraLancada = versaoSeraLancada;
+		return this;
+	}
+
+	public String getVersaoSeraLancada() {
+		return versaoSeraLancada;
+	}
+
+	public void setVersaoSeraLancada(String versaoSeraLancada) {
+		this.versaoSeraLancada = versaoSeraLancada;
+	}
+
+	public JiraIssueFields proximaVersao(String proximaVersao) {
+		this.proximaVersao = proximaVersao;
+		return this;
+	}
+
+	public String getProximaVersao() {
+		return proximaVersao;
+	}
+
+	public void setProximaVersao(String proximaVersao) {
+		this.proximaVersao = proximaVersao;
+	}
+
+	public JiraIssueFields dtGeracaoReleaseNotes(String dtGeracaoReleaseNotes) {
+		this.dtGeracaoReleaseNotes = dtGeracaoReleaseNotes;
+		return this;
+	}
+
+	public String getDtGeracaoReleaseNotes() {
+		return dtGeracaoReleaseNotes;
+	}
+
+	public void setDtGeracaoReleaseNotes(String dtGeracaoReleaseNotes) {
+		this.dtGeracaoReleaseNotes = dtGeracaoReleaseNotes;
+	}
+
+	public JiraIssueFields urlReleaseNotes(String urlReleaseNotes) {
+		this.urlReleaseNotes = urlReleaseNotes;
+		return this;
+	}
+
+	public String getUrlReleaseNotes() {
+		return urlReleaseNotes;
+	}
+
+	public void setUrlReleaseNotes(String urlReleaseNotes) {
+		this.urlReleaseNotes = urlReleaseNotes;
+	}
+
+	public JiraIssueFields dtGeracaoCodigoFonte(String dtGeracaoCodigoFonte) {
+		this.dtGeracaoCodigoFonte = dtGeracaoCodigoFonte;
+		return this;
+	}
+
+	public String getDtGeracaoCodigoFonte() {
+		return dtGeracaoCodigoFonte;
+	}
+
+	public void setDtGeracaoCodigoFonte(String dtGeracaoCodigoFonte) {
+		this.dtGeracaoCodigoFonte = dtGeracaoCodigoFonte;
+	}
+
+	public JiraIssueFields tagCodigoFonte(String tagCodigoFonte) {
+		this.tagCodigoFonte = tagCodigoFonte;
+		return this;
+	}
+
+	public String getTagCodigoFonte() {
+		return tagCodigoFonte;
+	}
+
+	public void setTagCodigoFonte(String tagCodigoFonte) {
+		this.tagCodigoFonte = tagCodigoFonte;
+	}
+
+	public JiraIssueFields responsavelExecucao(JiraUser responsavelExecucao) {
+		this.responsavelExecucao = responsavelExecucao;
+		return this;
+	}
+
+	public JiraUser getResponsavelExecucao() {
+		return responsavelExecucao;
+	}
+
+	public void setResponsavelExecucao(JiraUser responsavelExecucao) {
+		this.responsavelExecucao = responsavelExecucao;
+	}
+
 	public JiraIssueFields comment(JiraIssueFieldsComment comment) {
-    this.comment = comment;
-    return this;
-  }
+		this.comment = comment;
+		return this;
+	}
 
-	/**
-	 * Get comment
-	 * 
-	 * @return comment
-	 **/
 	@ApiModelProperty(value = "")
-
 	@Valid
 	public JiraIssueFieldsComment getComment() {
 		return comment;
@@ -1389,6 +1541,19 @@ public class JiraIssueFields {
 				&& Objects.equals(this.notasRelease, jiraIssueFields.notasRelease)
 				&& Objects.equals(this.fixVersions, jiraIssueFields.fixVersions)
 				&& Objects.equals(this.destaquesReleaseNotes, jiraIssueFields.destaquesReleaseNotes)
+				
+				&& Objects.equals(this.msgLancamentoGenerico, jiraIssueFields.msgLancamentoGenerico)
+				&& Objects.equals(this.msgLancamentoTelegram, jiraIssueFields.msgLancamentoTelegram)
+				&& Objects.equals(this.grupoAtribuicao, jiraIssueFields.grupoAtribuicao)
+				&& Objects.equals(this.tipoVersao, jiraIssueFields.tipoVersao)
+				&& Objects.equals(this.versaoSeraLancada, jiraIssueFields.versaoSeraLancada)
+				&& Objects.equals(this.proximaVersao, jiraIssueFields.proximaVersao)
+				&& Objects.equals(this.dtGeracaoReleaseNotes, jiraIssueFields.dtGeracaoReleaseNotes)
+				&& Objects.equals(this.urlReleaseNotes, jiraIssueFields.urlReleaseNotes)
+				&& Objects.equals(this.dtGeracaoCodigoFonte, jiraIssueFields.dtGeracaoCodigoFonte)
+				&& Objects.equals(this.tagCodigoFonte, jiraIssueFields.tagCodigoFonte)
+				&& Objects.equals(this.responsavelExecucao, jiraIssueFields.responsavelExecucao)
+				
 				&& Objects.equals(this.comment, jiraIssueFields.comment);
 	}
 
@@ -1401,14 +1566,15 @@ public class JiraIssueFields {
 				sprintGrupo, responsavelCodificacao, desenvolvimento, gitBranch, gitCommitsReferenced, timeestimate,
 				timespent, duedate, fabricaTeste, responsavelTeste, aprovacoesNecessarias, aprovacoesRealizadas,
 				aprovadoPor, resolution, resolutiondate, notasRelease, fixVersions, destaquesReleaseNotes, 
-				grupoAtribuicao, comment);
+				grupoAtribuicao, msgLancamentoGenerico, msgLancamentoTelegram, tipoVersao, versaoSeraLancada, 
+				proximaVersao, dtGeracaoReleaseNotes, urlReleaseNotes, dtGeracaoCodigoFonte, tagCodigoFonte,
+				responsavelExecucao, comment);
 	}
 
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
 		sb.append("class JiraIssueFields {\n");
-
 		sb.append("    project: ").append(toIndentedString(project)).append("\n");
 		sb.append("    issuetype: ").append(toIndentedString(issuetype)).append("\n");
 		sb.append("    environment: ").append(toIndentedString(environment)).append("\n");
@@ -1459,6 +1625,16 @@ public class JiraIssueFields {
 		sb.append("    notasRelease: ").append(toIndentedString(notasRelease)).append("\n");
 		sb.append("    fixVersions: ").append(toIndentedString(fixVersions)).append("\n");
 		sb.append("    destaquesReleaseNotes: ").append(toIndentedString(destaquesReleaseNotes)).append("\n");
+		sb.append("    msgLancamentoGenerico: ").append(toIndentedString(msgLancamentoGenerico)).append("\n");
+		sb.append("    msgLancamentoTelegram: ").append(toIndentedString(msgLancamentoTelegram)).append("\n");
+		sb.append("    tipoVersao: ").append(toIndentedString(tipoVersao)).append("\n");
+		sb.append("    versaoSeraLancada: ").append(toIndentedString(versaoSeraLancada)).append("\n");
+		sb.append("    proximaVersao: ").append(toIndentedString(proximaVersao)).append("\n");
+		sb.append("    dtGeracaoReleaseNotes: ").append(toIndentedString(dtGeracaoReleaseNotes)).append("\n");
+		sb.append("    urlReleaseNotes: ").append(toIndentedString(urlReleaseNotes)).append("\n");
+		sb.append("    dtGeracaoCodigoFonte: ").append(toIndentedString(dtGeracaoCodigoFonte)).append("\n");
+		sb.append("    tagCodigoFonte: ").append(toIndentedString(tagCodigoFonte)).append("\n");
+		sb.append("    responsavelExecucao: ").append(toIndentedString(responsavelExecucao)).append("\n");
 		sb.append("    comment: ").append(toIndentedString(comment)).append("\n");
 		sb.append("}");
 		return sb.toString();
