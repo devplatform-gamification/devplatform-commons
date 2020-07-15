@@ -47,6 +47,12 @@ public class JiraUser {
 	@JsonProperty("groups")
 	private JiraGroups groups = null;
 
+	@JsonProperty("applicationRoles")
+	private Object applicationRoles = null;
+
+	@JsonProperty("expand")
+	private String expand = null;
+
 	public JiraUser self(String self) {
 		this.self = self;
 		return this;
@@ -230,6 +236,32 @@ public class JiraUser {
 
 	public void setGroups(JiraGroups groups) {
 		this.groups = groups;
+	}
+	
+	public JiraUser applicationRoles(Object applicationRoles) {
+		this.applicationRoles = applicationRoles;
+		return this;
+	}
+
+	public Object getApplicationRoles() {
+		return applicationRoles;
+	}
+
+	public void setApplicationRoles(Object applicationRoles) {
+		this.applicationRoles = applicationRoles;
+	}
+
+	public JiraUser expand(String expand) {
+		this.expand = expand;
+		return this;
+	}
+
+	public String getExpand() {
+		return expand;
+	}
+
+	public void setExpand(String expand) {
+		this.expand = expand;
 	}
 
 	@Override

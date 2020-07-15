@@ -14,26 +14,28 @@ public class GitlabScriptVersaoVO{
 		this.nameWithPath = nameWithPath;
 
 		String[] scriptPath = nameWithPath.split("/");
-		if(scriptPath.length > 0) {
+		if(scriptPath.length >= 0) {
 			this.name = scriptPath[scriptPath.length - 1];
 			String[] nameParts = name.split("_");
-			this.version = nameParts[1];
-			this.order = Integer.valueOf(nameParts[2]);
-			nameParts = name.split("__");
-			String scriptName = "";
-			for(int i=1; i < nameParts.length; i++) {
-				if(i!=1) {
-					scriptName += "__";
+			if(nameParts.length >= 2) {
+				this.version = nameParts[1];
+				this.order = Integer.valueOf(nameParts[2]);
+				nameParts = name.split("__");
+				String scriptName = "";
+				for(int i=1; i < nameParts.length; i++) {
+					if(i!=1) {
+						scriptName += "__";
+					}
+					scriptName += nameParts[i];
 				}
-				scriptName += nameParts[i];
-			}
-			this.specificName = scriptName;
-			if(scriptName.contains("DML")) {
-				this.type = "DML";
-				this.specificName = scriptName.replaceFirst("DML_", "");
-			}else if(scriptName.contains("DDL")) {
-				this.type = "DDL";
-				this.specificName = scriptName.replaceFirst("DDL_", "");
+				this.specificName = scriptName;
+				if(scriptName.contains("DML")) {
+					this.type = "DML";
+					this.specificName = scriptName.replaceFirst("DML_", "");
+				}else if(scriptName.contains("DDL")) {
+					this.type = "DDL";
+					this.specificName = scriptName.replaceFirst("DDL_", "");
+				}
 			}
 		}
 	}

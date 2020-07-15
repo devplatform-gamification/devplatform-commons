@@ -19,10 +19,10 @@ public class GitlabCommitActionRequest {
 	private GitlabCommitActionsEnum action = null;
 
 	@JsonProperty("file_path")
-	private String file_path = null;
+	private String filePath = null;
 
 	@JsonProperty("previous_path")
-	private String previous_path = null;
+	private String previousPath = null;
 
 	@JsonProperty("content")
 	private String content = null;
@@ -31,10 +31,10 @@ public class GitlabCommitActionRequest {
 	private String encoding = null;
 	
 	@JsonProperty("last_commit_id")
-	private String last_commit_id = null;
+	private String lastCommitId = null;
 	
 	@JsonProperty("execute_filemode")
-	private Boolean execute_filemode = null;
+	private Boolean executeFilemode = null;
 	
 	public GitlabCommitActionRequest action(GitlabCommitActionsEnum action) {
 		this.action = action;
@@ -50,32 +50,32 @@ public class GitlabCommitActionRequest {
 		this.action = action;
 	}
 
-	public GitlabCommitActionRequest file_path(String file_path) {
-		this.file_path = file_path;
+	public GitlabCommitActionRequest filePath(String filePath) {
+		this.filePath = filePath;
 		return this;
 	}
 
 	@Valid
-	public String getFile_path() {
-		return file_path;
+	public String getFilePath() {
+		return filePath;
 	}
 
-	public void setFile_path(String file_path) {
-		this.file_path = file_path;
+	public void setFilePath(String filePath) {
+		this.filePath = filePath;
 	}
 
-	public GitlabCommitActionRequest previous_path(String previous_path) {
-		this.previous_path = previous_path;
+	public GitlabCommitActionRequest previousPath(String previousPath) {
+		this.previousPath = previousPath;
 		return this;
 	}
 
 	@Valid
-	public String getPrevious_path() {
-		return previous_path;
+	public String getPreviousPath() {
+		return previousPath;
 	}
 
-	public void setPrevious_path(String previous_path) {
-		this.previous_path = previous_path;
+	public void setPreviousPath(String previousPath) {
+		this.previousPath = previousPath;
 	}
 
 	public GitlabCommitActionRequest content(String content) {
@@ -106,32 +106,32 @@ public class GitlabCommitActionRequest {
 		this.encoding = encoding;
 	}
 
-	public GitlabCommitActionRequest last_commit_id(String last_commit_id) {
-		this.last_commit_id = last_commit_id;
+	public GitlabCommitActionRequest lastCommitId(String lastCommitId) {
+		this.lastCommitId = lastCommitId;
 		return this;
 	}
 
 	@Valid
-	public String getLast_commit_id() {
-		return last_commit_id;
+	public String getLastCommitId() {
+		return lastCommitId;
 	}
 
-	public void setLast_commit_id(String last_commit_id) {
-		this.last_commit_id = last_commit_id;
+	public void setLastCommitId(String lastCommitId) {
+		this.lastCommitId = lastCommitId;
 	}
 
-	public GitlabCommitActionRequest execute_filemode(Boolean execute_filemode) {
-		this.execute_filemode = execute_filemode;
+	public GitlabCommitActionRequest executeFilemode(Boolean executeFilemode) {
+		this.executeFilemode = executeFilemode;
 		return this;
 	}
 
 	@Valid
 	public Boolean getExecute_filemode() {
-		return execute_filemode;
+		return executeFilemode;
 	}
 
-	public void setExecute_filemode(Boolean execute_filemode) {
-		this.execute_filemode = execute_filemode;
+	public void setExecute_filemode(Boolean executeFilemode) {
+		this.executeFilemode = executeFilemode;
 	}
 	
 	@Override
@@ -143,15 +143,15 @@ public class GitlabCommitActionRequest {
 			return false;
 		}
 		GitlabCommitActionRequest gitlabCommit = (GitlabCommitActionRequest) o;
-		return Objects.equals(this.action, gitlabCommit.action) && Objects.equals(this.file_path, gitlabCommit.file_path)
-				&& Objects.equals(this.previous_path, gitlabCommit.previous_path) && Objects.equals(this.content, gitlabCommit.content)
-				&& Objects.equals(this.encoding, gitlabCommit.encoding) && Objects.equals(this.last_commit_id, gitlabCommit.last_commit_id)
-				&& Objects.equals(this.execute_filemode, gitlabCommit.execute_filemode);
+		return Objects.equals(this.action, gitlabCommit.action) && Objects.equals(this.filePath, gitlabCommit.filePath)
+				&& Objects.equals(this.previousPath, gitlabCommit.previousPath) && Objects.equals(this.content, gitlabCommit.content)
+				&& Objects.equals(this.encoding, gitlabCommit.encoding) && Objects.equals(this.lastCommitId, gitlabCommit.lastCommitId)
+				&& Objects.equals(this.executeFilemode, gitlabCommit.executeFilemode);
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(action, file_path, previous_path, content, encoding, last_commit_id, execute_filemode);
+		return Objects.hash(action, filePath, previousPath, content, encoding, lastCommitId, executeFilemode);
 	}
 
 	@Override
@@ -160,12 +160,12 @@ public class GitlabCommitActionRequest {
 		sb.append("class GitlabCommitActionRequest {\n");
 
 		sb.append("    action: ").append(toIndentedString(action)).append("\n");
-		sb.append("    file_path: ").append(toIndentedString(file_path)).append("\n");
-		sb.append("    previous_path: ").append(toIndentedString(previous_path)).append("\n");
+		sb.append("    filePath: ").append(toIndentedString(filePath)).append("\n");
+		sb.append("    previousPath: ").append(toIndentedString(previousPath)).append("\n");
 		sb.append("    content: ").append(toIndentedString(content)).append("\n");
 		sb.append("    encoding: ").append(toIndentedString(encoding)).append("\n");
-		sb.append("    last_commit_id: ").append(toIndentedString(last_commit_id)).append("\n");
-		sb.append("    execute_filemode: ").append(toIndentedString(execute_filemode)).append("\n");
+		sb.append("    lastCommitId: ").append(toIndentedString(lastCommitId)).append("\n");
+		sb.append("    executeFilemode: ").append(toIndentedString(executeFilemode)).append("\n");
 		sb.append("}");
 		return sb.toString();
 	}

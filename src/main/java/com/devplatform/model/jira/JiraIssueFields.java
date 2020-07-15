@@ -178,10 +178,10 @@ public class JiraIssueFields {
 	@Valid
 	private List<JiraVersion> fixVersions = null;
 
-	@JsonProperty("customfield_13908")
+	@JsonProperty("customfield_13909")
 	private String destaquesReleaseNotes = null;
 
-	@JsonProperty("customfield_13909")
+	@JsonProperty("customfield_13908")
 	private String msgLancamentoGenerico = null;
 
 	@JsonProperty("customfield_13916")
@@ -199,7 +199,7 @@ public class JiraIssueFields {
 	@JsonProperty("customfield_13917")
 	private String proximaVersao = null;
 	
-	@JsonProperty("customfield_13310")
+	@JsonProperty("customfield_13910")
 	private String dtGeracaoReleaseNotes = null;
 
 	@JsonProperty("customfield_13911")
