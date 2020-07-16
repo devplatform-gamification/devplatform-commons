@@ -5,15 +5,10 @@ import com.fasterxml.jackson.annotation.JsonValue;
 
 public enum GitlabObjectKindEnum {
 	MERGE_REQUEST("merge_request"),
-
 	COMMENT("note"),
-
-	TAG_PUSHED("tag_pushed"),
-
+	TAG_PUSH("tag_push"),
 	PUSH("push"),
-
 	JOB_CHANGES("job_changes"),
-
 	PIPELINE_CHANGES("pipeline_changes");
 
 	private String value;
