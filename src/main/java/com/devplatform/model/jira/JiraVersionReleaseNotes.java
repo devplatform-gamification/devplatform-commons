@@ -13,6 +13,12 @@ public class JiraVersionReleaseNotes {
 	@JsonProperty("project")
 	private String project = null;
 
+	@JsonProperty("issueKey")
+	private String issueKey = null;
+
+	@JsonProperty("gitlab-project-id")
+	private String gitlabProjectId = null;
+
 	@JsonProperty("version")
 	private String version = null;
 
@@ -57,6 +63,22 @@ public class JiraVersionReleaseNotes {
 
 	public void setProject(String project) {
 		this.project = project;
+	}
+	
+	public String getIssueKey() {
+		return issueKey;
+	}
+
+	public void setIssueKey(String issueKey) {
+		this.issueKey = issueKey;
+	}
+
+	public String getGitlabProjectId() {
+		return gitlabProjectId;
+	}
+
+	public void setGitlabProjectId(String gitlabProjectId) {
+		this.gitlabProjectId = gitlabProjectId;
 	}
 
 	public JiraVersionReleaseNotes version(String version) {
@@ -212,6 +234,8 @@ public class JiraVersionReleaseNotes {
 		}
 		JiraVersionReleaseNotes jiraUser = (JiraVersionReleaseNotes) o;
 		return Objects.equals(this.project, jiraUser.project) && 
+				Objects.equals(this.issueKey, jiraUser.issueKey) &&
+				Objects.equals(this.gitlabProjectId, jiraUser.gitlabProjectId) &&
 				Objects.equals(this.version, jiraUser.version) && 
 				Objects.equals(this.nextVersion, jiraUser.nextVersion) &&
 				Objects.equals(this.releaseDate, jiraUser.releaseDate)
@@ -224,7 +248,7 @@ public class JiraVersionReleaseNotes {
 	
 	@Override
 	public int hashCode() {
-		return Objects.hash(project, version, nextVersion, releaseDate, versionType, author, versionHighlights, 
+		return Objects.hash(project, issueKey, gitlabProjectId, version, nextVersion, releaseDate, versionType, author, versionHighlights, 
 				newFeatures, improvements, bugs, minorChanges, jql);
 	}
 
@@ -233,6 +257,8 @@ public class JiraVersionReleaseNotes {
 		StringBuilder sb = new StringBuilder();
 		sb.append("class JiraVersionReleaseNotes {\n");
 		sb.append("    project: ").append(toIndentedString(project)).append("\n");
+		sb.append("    issueKey: ").append(toIndentedString(issueKey)).append("\n");
+		sb.append("    gitlabProjectId: ").append(toIndentedString(gitlabProjectId)).append("\n");
 		sb.append("    version: ").append(toIndentedString(version)).append("\n");
 		sb.append("    nextVersion: ").append(toIndentedString(nextVersion)).append("\n");
 		sb.append("    releaseDate: ").append(toIndentedString(releaseDate)).append("\n");

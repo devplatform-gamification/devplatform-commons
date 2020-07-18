@@ -20,7 +20,7 @@ import io.swagger.annotations.ApiModelProperty;
  */
 @Validated
 @javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2020-03-18T01:03:28.811Z[GMT]")
-public class GitlabMergeRequestAttributes   {
+public class GitlabMergeRequestAttributes {
   @JsonProperty("id")
   private BigDecimal id = null;
 
@@ -57,16 +57,13 @@ public class GitlabMergeRequestAttributes   {
   @JsonProperty("merge_params")
   private GitlabMergeRequestAttributesMergeParams mergeParams = null;
 
-  /**
+  /**	
    * Gets or Sets mergeStatus
    */
   public enum MergeStatusEnum {
     CAN_BE_MERGED("can_be_merged"),
-    
     UNCHECKED("unchecked"),
-    
     CAN_NOT__BE_MERGED("can(not)_be_merged"),
-    
     CHECKING("checking");
 
     private String value;
@@ -109,42 +106,8 @@ public class GitlabMergeRequestAttributes   {
   @JsonProperty("source_project_id")
   private BigDecimal sourceProjectId = null;
 
-  /**
-   * Gets or Sets state
-   */
-  public enum StateEnum {
-    MERGED("merged"),
-    
-    OPENED("opened"),
-    
-    CLOSED("closed"),
-    
-    LOCKED("locked");
-
-    private String value;
-
-    StateEnum(String value) {
-      this.value = value;
-    }
-
-    @Override
-    @JsonValue
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    @JsonCreator
-    public static StateEnum fromValue(String text) {
-      for (StateEnum b : StateEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-  }
   @JsonProperty("state")
-  private StateEnum state = null;
+  private GitlabMergeRequestStateEnum state = null;
 
   @JsonProperty("target_branch")
   private String targetBranch = "master";
@@ -546,7 +509,7 @@ public class GitlabMergeRequestAttributes   {
     this.sourceProjectId = sourceProjectId;
   }
 
-  public GitlabMergeRequestAttributes state(StateEnum state) {
+  public GitlabMergeRequestAttributes state(GitlabMergeRequestStateEnum state) {
     this.state = state;
     return this;
   }
@@ -557,11 +520,11 @@ public class GitlabMergeRequestAttributes   {
   **/
   @ApiModelProperty(value = "")
   
-    public StateEnum getState() {
+    public GitlabMergeRequestStateEnum getState() {
     return state;
   }
 
-  public void setState(StateEnum state) {
+  public void setState(GitlabMergeRequestStateEnum state) {
     this.state = state;
   }
 

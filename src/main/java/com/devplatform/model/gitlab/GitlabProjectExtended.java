@@ -16,7 +16,7 @@ import io.swagger.annotations.ApiModelProperty;
  */
 @Validated
 @javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2020-03-18T01:03:28.811Z[GMT]")
-public class GitlabProject   {
+public class GitlabProjectExtended   {
   @JsonProperty("id")
   private BigDecimal id = null;
 
@@ -39,7 +39,7 @@ public class GitlabProject   {
   private String gitHttpUrl = null;
 
   @JsonProperty("namespace")
-  private String namespace = null;
+  private GitlabProjectNamespace namespace = null;
 
   @JsonProperty("visibility_level")
   private Integer visibilityLevel = null;
@@ -62,7 +62,7 @@ public class GitlabProject   {
   @JsonProperty("http_url")
   private String httpUrl = null;
 
-  public GitlabProject id(BigDecimal id) {
+  public GitlabProjectExtended id(BigDecimal id) {
     this.id = id;
     return this;
   }
@@ -82,7 +82,7 @@ public class GitlabProject   {
     this.id = id;
   }
 
-  public GitlabProject name(String name) {
+  public GitlabProjectExtended name(String name) {
     this.name = name;
     return this;
   }
@@ -101,7 +101,7 @@ public class GitlabProject   {
     this.name = name;
   }
 
-  public GitlabProject description(String description) {
+  public GitlabProjectExtended description(String description) {
     this.description = description;
     return this;
   }
@@ -120,7 +120,7 @@ public class GitlabProject   {
     this.description = description;
   }
 
-  public GitlabProject webUrl(String webUrl) {
+  public GitlabProjectExtended webUrl(String webUrl) {
     this.webUrl = webUrl;
     return this;
   }
@@ -139,7 +139,7 @@ public class GitlabProject   {
     this.webUrl = webUrl;
   }
 
-  public GitlabProject avatarUrl(String avatarUrl) {
+  public GitlabProjectExtended avatarUrl(String avatarUrl) {
     this.avatarUrl = avatarUrl;
     return this;
   }
@@ -158,7 +158,7 @@ public class GitlabProject   {
     this.avatarUrl = avatarUrl;
   }
 
-  public GitlabProject gitSshUrl(String gitSshUrl) {
+  public GitlabProjectExtended gitSshUrl(String gitSshUrl) {
     this.gitSshUrl = gitSshUrl;
     return this;
   }
@@ -177,7 +177,7 @@ public class GitlabProject   {
     this.gitSshUrl = gitSshUrl;
   }
 
-  public GitlabProject gitHttpUrl(String gitHttpUrl) {
+  public GitlabProjectExtended gitHttpUrl(String gitHttpUrl) {
     this.gitHttpUrl = gitHttpUrl;
     return this;
   }
@@ -196,7 +196,7 @@ public class GitlabProject   {
     this.gitHttpUrl = gitHttpUrl;
   }
 
-  public GitlabProject namespace(String namespace) {
+  public GitlabProjectExtended namespace(GitlabProjectNamespace namespace) {
     this.namespace = namespace;
     return this;
   }
@@ -207,15 +207,15 @@ public class GitlabProject   {
   **/
   @ApiModelProperty(value = "")
   
-    public String getNamespace() {
+    public GitlabProjectNamespace getNamespace() {
     return namespace;
   }
 
-  public void setNamespace(String namespace) {
+  public void setNamespace(GitlabProjectNamespace namespace) {
     this.namespace = namespace;
   }
 
-  public GitlabProject visibilityLevel(Integer visibilityLevel) {
+  public GitlabProjectExtended visibilityLevel(Integer visibilityLevel) {
     this.visibilityLevel = visibilityLevel;
     return this;
   }
@@ -234,7 +234,7 @@ public class GitlabProject   {
     this.visibilityLevel = visibilityLevel;
   }
 
-  public GitlabProject pathWithNamespace(String pathWithNamespace) {
+  public GitlabProjectExtended pathWithNamespace(String pathWithNamespace) {
     this.pathWithNamespace = pathWithNamespace;
     return this;
   }
@@ -253,7 +253,7 @@ public class GitlabProject   {
     this.pathWithNamespace = pathWithNamespace;
   }
 
-  public GitlabProject defaultBranch(String defaultBranch) {
+  public GitlabProjectExtended defaultBranch(String defaultBranch) {
     this.defaultBranch = defaultBranch;
     return this;
   }
@@ -272,7 +272,7 @@ public class GitlabProject   {
     this.defaultBranch = defaultBranch;
   }
 
-  public GitlabProject homepage(String homepage) {
+  public GitlabProjectExtended homepage(String homepage) {
     this.homepage = homepage;
     return this;
   }
@@ -291,7 +291,7 @@ public class GitlabProject   {
     this.homepage = homepage;
   }
 
-  public GitlabProject url(String url) {
+  public GitlabProjectExtended url(String url) {
     this.url = url;
     return this;
   }
@@ -310,7 +310,7 @@ public class GitlabProject   {
     this.url = url;
   }
 
-  public GitlabProject sshUrl(String sshUrl) {
+  public GitlabProjectExtended sshUrl(String sshUrl) {
     this.sshUrl = sshUrl;
     return this;
   }
@@ -329,7 +329,7 @@ public class GitlabProject   {
     this.sshUrl = sshUrl;
   }
 
-  public GitlabProject httpUrl(String httpUrl) {
+  public GitlabProjectExtended httpUrl(String httpUrl) {
     this.httpUrl = httpUrl;
     return this;
   }
@@ -357,7 +357,7 @@ public class GitlabProject   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    GitlabProject gitlabProject = (GitlabProject) o;
+    GitlabProjectExtended gitlabProject = (GitlabProjectExtended) o;
     return Objects.equals(this.id, gitlabProject.id) &&
         Objects.equals(this.name, gitlabProject.name) &&
         Objects.equals(this.description, gitlabProject.description) &&
