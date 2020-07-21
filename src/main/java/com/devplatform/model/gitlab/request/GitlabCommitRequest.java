@@ -17,9 +17,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Validated
 @Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2020-03-18T01:03:28.811Z[GMT]")
 public class GitlabCommitRequest {
-	@JsonProperty("id")
-	private String id = null;
-
 	@JsonProperty("branch")
 	private String branch = null;
 
@@ -38,20 +35,6 @@ public class GitlabCommitRequest {
 	@JsonProperty("actions")
 	private List<GitlabCommitActionRequest> actions = new ArrayList<>();
 
-	public GitlabCommitRequest id(String id) {
-		this.id = id;
-		return this;
-	}
-
-	@Valid
-	public String getId() {
-		return id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
-	}
-	
 	public GitlabCommitRequest branch(String branch) {
 		this.branch = branch;
 		return this;
@@ -141,7 +124,7 @@ public class GitlabCommitRequest {
 			return false;
 		}
 		GitlabCommitRequest gitlabCommit = (GitlabCommitRequest) o;
-		return Objects.equals(this.id, gitlabCommit.id) && Objects.equals(this.commitMessage, gitlabCommit.commitMessage)
+		return Objects.equals(this.commitMessage, gitlabCommit.commitMessage)
 				&& Objects.equals(this.branch, gitlabCommit.branch) && Objects.equals(this.authorEmail, gitlabCommit.authorEmail)
 				&& Objects.equals(this.authorName, gitlabCommit.authorName) && Objects.equals(this.stats, gitlabCommit.stats)
 				 && Objects.equals(this.actions, gitlabCommit.actions);
@@ -149,7 +132,7 @@ public class GitlabCommitRequest {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(id, commitMessage, branch, authorEmail, authorName, stats, actions);
+		return Objects.hash(commitMessage, branch, authorEmail, authorName, stats, actions);
 	}
 
 	@Override
@@ -157,7 +140,6 @@ public class GitlabCommitRequest {
 		StringBuilder sb = new StringBuilder();
 		sb.append("class GitlabCommitRequest {\n");
 
-		sb.append("    id: ").append(toIndentedString(id)).append("\n");
 		sb.append("    commitMessage: ").append(toIndentedString(commitMessage)).append("\n");
 		sb.append("    branch: ").append(toIndentedString(branch)).append("\n");
 		sb.append("    authorEmail: ").append(toIndentedString(authorEmail)).append("\n");
