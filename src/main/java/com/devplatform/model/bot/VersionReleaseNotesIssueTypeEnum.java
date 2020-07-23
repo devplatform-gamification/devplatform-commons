@@ -1,9 +1,9 @@
-package com.devplatform.model.jira;
+package com.devplatform.model.bot;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-public enum JiraVersionReleaseNotesIssueTypeEnum {
+public enum VersionReleaseNotesIssueTypeEnum {
 	NEW_FEATURE("Novas funcionalidades"),
 	IMPROVEMENT("Melhorias"),
 	BUGFIX("Correções"),
@@ -11,7 +11,7 @@ public enum JiraVersionReleaseNotesIssueTypeEnum {
 
 	private String value;
 
-	JiraVersionReleaseNotesIssueTypeEnum(String value) {
+	VersionReleaseNotesIssueTypeEnum(String value) {
 		this.value = value;
 	}
 
@@ -22,8 +22,8 @@ public enum JiraVersionReleaseNotesIssueTypeEnum {
 	}
 
 	@JsonCreator
-	public static JiraVersionReleaseNotesIssueTypeEnum fromValue(String text) {
-		for (JiraVersionReleaseNotesIssueTypeEnum b : JiraVersionReleaseNotesIssueTypeEnum.values()) {
+	public static VersionReleaseNotesIssueTypeEnum fromValue(String text) {
+		for (VersionReleaseNotesIssueTypeEnum b : VersionReleaseNotesIssueTypeEnum.values()) {
 			if (String.valueOf(b.value).equals(text)) {
 				return b;
 			}

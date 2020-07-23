@@ -1,14 +1,15 @@
-package com.devplatform.model.jira;
+package com.devplatform.model.bot;
 
 import java.util.Objects;
 
 import org.springframework.validation.annotation.Validated;
 
+import com.devplatform.model.jira.JiraUser;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 @Validated
 @javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2020-03-18T01:03:28.811Z[GMT]")
-public class JiraVersionReleaseNoteIssues {
+public class VersionReleaseNoteIssues {
 	@JsonProperty("issueKey")
 	private String issueKey = null;
 	
@@ -27,7 +28,7 @@ public class JiraVersionReleaseNoteIssues {
 	@JsonProperty("priority")
 	private Integer priority = null;
 
-	public JiraVersionReleaseNoteIssues issueKey(String issueKey) {
+	public VersionReleaseNoteIssues issueKey(String issueKey) {
 		this.issueKey = issueKey;
 		return this;
 	}
@@ -40,7 +41,7 @@ public class JiraVersionReleaseNoteIssues {
 		this.issueKey = issueKey;
 	}
 
-	public JiraVersionReleaseNoteIssues author(JiraUser author) {
+	public VersionReleaseNoteIssues author(JiraUser author) {
 		this.author = author;
 		return this;
 	}
@@ -53,7 +54,7 @@ public class JiraVersionReleaseNoteIssues {
 		this.author = author;
 	}
 
-	public JiraVersionReleaseNoteIssues summary(String summary) {
+	public VersionReleaseNoteIssues summary(String summary) {
 		this.summary = summary;
 		return this;
 	}
@@ -66,7 +67,7 @@ public class JiraVersionReleaseNoteIssues {
 		this.summary = summary;
 	}
 
-	public JiraVersionReleaseNoteIssues releaseObservation(String releaseObservation) {
+	public VersionReleaseNoteIssues releaseObservation(String releaseObservation) {
 		this.releaseObservation = releaseObservation;
 		return this;
 	}
@@ -79,7 +80,7 @@ public class JiraVersionReleaseNoteIssues {
 		this.releaseObservation = releaseObservation;
 	}
 
-	public JiraVersionReleaseNoteIssues issueType(String issueType) {
+	public VersionReleaseNoteIssues issueType(String issueType) {
 		this.issueType = issueType;
 		return this;
 	}
@@ -92,7 +93,7 @@ public class JiraVersionReleaseNoteIssues {
 		this.issueType = issueType;
 	}
 
-	public JiraVersionReleaseNoteIssues priority(Integer priority) {
+	public VersionReleaseNoteIssues priority(Integer priority) {
 		this.priority = priority;
 		return this;
 	}
@@ -113,7 +114,7 @@ public class JiraVersionReleaseNoteIssues {
 		if (o == null || getClass() != o.getClass()) {
 			return false;
 		}
-		JiraVersionReleaseNoteIssues releaseItem = (JiraVersionReleaseNoteIssues) o;
+		VersionReleaseNoteIssues releaseItem = (VersionReleaseNoteIssues) o;
 		return Objects.equals(this.issueKey, releaseItem.issueKey) && Objects.equals(this.author, releaseItem.author)
 			&& Objects.equals(this.summary, releaseItem.summary) && Objects.equals(this.releaseObservation, releaseItem.releaseObservation)
 			&& Objects.equals(this.issueType, releaseItem.issueType) && Objects.equals(this.priority, releaseItem.priority);

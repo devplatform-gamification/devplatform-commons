@@ -1,15 +1,16 @@
-package com.devplatform.model.jira;
+package com.devplatform.model.bot;
 
 import java.util.List;
 import java.util.Objects;
 
 import org.springframework.validation.annotation.Validated;
 
+import com.devplatform.model.jira.JiraUser;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 @Validated
 @javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2020-03-18T01:03:28.811Z[GMT]")
-public class JiraVersionReleaseNotes {
+public class VersionReleaseNotes {
 	@JsonProperty("project")
 	private String project = null;
 
@@ -41,18 +42,18 @@ public class JiraVersionReleaseNotes {
 	private String jql = null;
 
 	@JsonProperty("new-features")
-	private List<JiraVersionReleaseNoteIssues> newFeatures = null;
+	private List<VersionReleaseNoteIssues> newFeatures = null;
 
 	@JsonProperty("improvements")
-	private List<JiraVersionReleaseNoteIssues> improvements = null;
+	private List<VersionReleaseNoteIssues> improvements = null;
 	
 	@JsonProperty("bugs")
-	private List<JiraVersionReleaseNoteIssues> bugs = null;
+	private List<VersionReleaseNoteIssues> bugs = null;
 
 	@JsonProperty("minor-changes")
-	private List<JiraVersionReleaseNoteIssues> minorChanges = null;
+	private List<VersionReleaseNoteIssues> minorChanges = null;
 
-	public JiraVersionReleaseNotes project(String project) {
+	public VersionReleaseNotes project(String project) {
 		this.project = project;
 		return this;
 	}
@@ -81,7 +82,7 @@ public class JiraVersionReleaseNotes {
 		this.gitlabProjectId = gitlabProjectId;
 	}
 
-	public JiraVersionReleaseNotes version(String version) {
+	public VersionReleaseNotes version(String version) {
 		this.version = version;
 		return this;
 	}
@@ -94,7 +95,7 @@ public class JiraVersionReleaseNotes {
 		this.version = version;
 	}
 	
-	public JiraVersionReleaseNotes nextVersion(String nextVersion) {
+	public VersionReleaseNotes nextVersion(String nextVersion) {
 		this.nextVersion = nextVersion;
 		return this;
 	}
@@ -107,7 +108,7 @@ public class JiraVersionReleaseNotes {
 		this.nextVersion = nextVersion;
 	}
 
-	public JiraVersionReleaseNotes releaseDate(String releaseDate) {
+	public VersionReleaseNotes releaseDate(String releaseDate) {
 		this.releaseDate = releaseDate;
 		return this;
 	}
@@ -120,7 +121,7 @@ public class JiraVersionReleaseNotes {
 		this.releaseDate = releaseDate;
 	}
 
-	public JiraVersionReleaseNotes versionType(String versionType) {
+	public VersionReleaseNotes versionType(String versionType) {
 		this.versionType = versionType;
 		return this;
 	}
@@ -133,7 +134,7 @@ public class JiraVersionReleaseNotes {
 		this.versionType = versionType;
 	}
 
-	public JiraVersionReleaseNotes author(JiraUser author) {
+	public VersionReleaseNotes author(JiraUser author) {
 		this.author = author;
 		return this;
 	}
@@ -146,7 +147,7 @@ public class JiraVersionReleaseNotes {
 		this.author = author;
 	}
 
-	public JiraVersionReleaseNotes versionHighlights(String versionHighlights) {
+	public VersionReleaseNotes versionHighlights(String versionHighlights) {
 		this.versionHighlights = versionHighlights;
 		return this;
 	}
@@ -159,59 +160,59 @@ public class JiraVersionReleaseNotes {
 		this.versionHighlights = versionHighlights;
 	}
 
-	public JiraVersionReleaseNotes newFeatures(List<JiraVersionReleaseNoteIssues> newFeatures) {
+	public VersionReleaseNotes newFeatures(List<VersionReleaseNoteIssues> newFeatures) {
 		this.newFeatures = newFeatures;
 		return this;
 	}
 
-	public List<JiraVersionReleaseNoteIssues> getNewFeatures() {
+	public List<VersionReleaseNoteIssues> getNewFeatures() {
 		return newFeatures;
 	}
 
-	public void setNewFeatures(List<JiraVersionReleaseNoteIssues> newFeatures) {
+	public void setNewFeatures(List<VersionReleaseNoteIssues> newFeatures) {
 		this.newFeatures = newFeatures;
 	}
 
-	public JiraVersionReleaseNotes improvements(List<JiraVersionReleaseNoteIssues> improvements) {
+	public VersionReleaseNotes improvements(List<VersionReleaseNoteIssues> improvements) {
 		this.improvements = improvements;
 		return this;
 	}
 
-	public List<JiraVersionReleaseNoteIssues> getImprovements() {
+	public List<VersionReleaseNoteIssues> getImprovements() {
 		return improvements;
 	}
 
-	public void setImprovements(List<JiraVersionReleaseNoteIssues> improvements) {
+	public void setImprovements(List<VersionReleaseNoteIssues> improvements) {
 		this.improvements = improvements;
 	}
 
-	public JiraVersionReleaseNotes bugs(List<JiraVersionReleaseNoteIssues> bugs) {
+	public VersionReleaseNotes bugs(List<VersionReleaseNoteIssues> bugs) {
 		this.bugs = bugs;
 		return this;
 	}
 
-	public List<JiraVersionReleaseNoteIssues> getBugs() {
+	public List<VersionReleaseNoteIssues> getBugs() {
 		return bugs;
 	}
 
-	public void setBugs(List<JiraVersionReleaseNoteIssues> bugs) {
+	public void setBugs(List<VersionReleaseNoteIssues> bugs) {
 		this.bugs = bugs;
 	}
 
-	public JiraVersionReleaseNotes minorChanges(List<JiraVersionReleaseNoteIssues> minorChanges) {
+	public VersionReleaseNotes minorChanges(List<VersionReleaseNoteIssues> minorChanges) {
 		this.minorChanges = minorChanges;
 		return this;
 	}
 
-	public List<JiraVersionReleaseNoteIssues> getMinorChanges() {
+	public List<VersionReleaseNoteIssues> getMinorChanges() {
 		return minorChanges;
 	}
 
-	public void setMinorChanges(List<JiraVersionReleaseNoteIssues> minorChanges) {
+	public void setMinorChanges(List<VersionReleaseNoteIssues> minorChanges) {
 		this.minorChanges = minorChanges;
 	}
 
-	public JiraVersionReleaseNotes jql(String jql) {
+	public VersionReleaseNotes jql(String jql) {
 		this.jql = jql;
 		return this;
 	}
@@ -232,7 +233,7 @@ public class JiraVersionReleaseNotes {
 		if (o == null || getClass() != o.getClass()) {
 			return false;
 		}
-		JiraVersionReleaseNotes jiraUser = (JiraVersionReleaseNotes) o;
+		VersionReleaseNotes jiraUser = (VersionReleaseNotes) o;
 		return Objects.equals(this.project, jiraUser.project) && 
 				Objects.equals(this.issueKey, jiraUser.issueKey) &&
 				Objects.equals(this.gitlabProjectId, jiraUser.gitlabProjectId) &&
