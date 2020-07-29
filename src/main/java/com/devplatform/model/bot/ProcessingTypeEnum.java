@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 public enum ProcessingTypeEnum {
 	ERROR("Error"),
 	INFO("Info"),
+	DEBUG("Debug"),
 	WARNING("Warn");
 
 	private String value;

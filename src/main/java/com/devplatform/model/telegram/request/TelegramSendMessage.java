@@ -7,6 +7,7 @@ import javax.validation.constraints.NotNull;
 
 import org.springframework.validation.annotation.Validated;
 
+import com.devplatform.model.telegram.TelegramMessageParseModeEnum;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import io.swagger.annotations.ApiModelProperty;
@@ -27,7 +28,7 @@ public class TelegramSendMessage {
 	private String text = null;
 	
 	@JsonProperty("parse_mode")
-	private String parse_mode = "MarkdownV2";
+	private String parse_mode = TelegramMessageParseModeEnum.MARKDOWN_V2.toString();
 
 	@JsonProperty("disable_web_page_preview")
 	private Boolean disable_web_page_preview = false;

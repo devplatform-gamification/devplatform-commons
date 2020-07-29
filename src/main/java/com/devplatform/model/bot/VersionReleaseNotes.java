@@ -20,6 +20,9 @@ public class VersionReleaseNotes {
 	@JsonProperty("gitlab-project-id")
 	private String gitlabProjectId = null;
 
+	@JsonProperty("affected-version")
+	private String affectedVersion = null;
+
 	@JsonProperty("version")
 	private String version = null;
 
@@ -40,6 +43,9 @@ public class VersionReleaseNotes {
 
 	@JsonProperty("jql")
 	private String jql = null;
+
+	@JsonProperty("url")
+	private String url = null;
 
 	@JsonProperty("new-features")
 	private List<VersionReleaseNoteIssues> newFeatures = null;
@@ -95,6 +101,14 @@ public class VersionReleaseNotes {
 		this.version = version;
 	}
 	
+	public String getAffectedVersion() {
+		return affectedVersion;
+	}
+
+	public void setAffectedVersion(String affectedVersion) {
+		this.affectedVersion = affectedVersion;
+	}
+
 	public VersionReleaseNotes nextVersion(String nextVersion) {
 		this.nextVersion = nextVersion;
 		return this;
@@ -212,6 +226,19 @@ public class VersionReleaseNotes {
 		this.minorChanges = minorChanges;
 	}
 
+	public VersionReleaseNotes url(String url) {
+		this.url = url;
+		return this;
+	}
+	
+	public String getUrl() {
+		return url;
+	}
+
+	public void setUrl(String url) {
+		this.url = url;
+	}
+
 	public VersionReleaseNotes jql(String jql) {
 		this.jql = jql;
 		return this;
@@ -238,18 +265,20 @@ public class VersionReleaseNotes {
 				Objects.equals(this.issueKey, jiraUser.issueKey) &&
 				Objects.equals(this.gitlabProjectId, jiraUser.gitlabProjectId) &&
 				Objects.equals(this.version, jiraUser.version) && 
+				Objects.equals(this.affectedVersion, jiraUser.affectedVersion) &&
 				Objects.equals(this.nextVersion, jiraUser.nextVersion) &&
 				Objects.equals(this.releaseDate, jiraUser.releaseDate)
 				&& Objects.equals(this.versionType, jiraUser.versionType)
 				&& Objects.equals(this.author, jiraUser.author) && Objects.equals(this.versionHighlights, jiraUser.versionHighlights)
 				&& Objects.equals(this.newFeatures, jiraUser.newFeatures) && Objects.equals(this.improvements, jiraUser.improvements)
 				&& Objects.equals(this.bugs, jiraUser.bugs) && Objects.equals(this.minorChanges, jiraUser.minorChanges)
-				&& Objects.equals(this.jql, jiraUser.jql);
+				&& Objects.equals(this.jql, jiraUser.jql)
+				&& Objects.equals(this.url, jiraUser.url);
 	}
 	
 	@Override
 	public int hashCode() {
-		return Objects.hash(project, issueKey, gitlabProjectId, version, nextVersion, releaseDate, versionType, author, versionHighlights, 
+		return Objects.hash(project, issueKey, gitlabProjectId, version, affectedVersion, nextVersion, releaseDate, versionType, author, versionHighlights, 
 				newFeatures, improvements, bugs, minorChanges, jql);
 	}
 
@@ -261,6 +290,7 @@ public class VersionReleaseNotes {
 		sb.append("    issueKey: ").append(toIndentedString(issueKey)).append("\n");
 		sb.append("    gitlabProjectId: ").append(toIndentedString(gitlabProjectId)).append("\n");
 		sb.append("    version: ").append(toIndentedString(version)).append("\n");
+		sb.append("    affectedVersion: ").append(toIndentedString(affectedVersion)).append("\n");
 		sb.append("    nextVersion: ").append(toIndentedString(nextVersion)).append("\n");
 		sb.append("    releaseDate: ").append(toIndentedString(releaseDate)).append("\n");
 		sb.append("    versionType: ").append(toIndentedString(versionType)).append("\n");
@@ -271,6 +301,7 @@ public class VersionReleaseNotes {
 		sb.append("    bugs: ").append(toIndentedString(bugs)).append("\n");
 		sb.append("    minorChanges: ").append(toIndentedString(minorChanges)).append("\n");
 		sb.append("    jql: ").append(toIndentedString(jql)).append("\n");
+		sb.append("    url: ").append(toIndentedString(url)).append("\n");
 		sb.append("}");
 		return sb.toString();
 	}

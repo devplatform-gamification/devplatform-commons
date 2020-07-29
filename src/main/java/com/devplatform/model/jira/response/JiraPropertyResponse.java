@@ -1,6 +1,5 @@
 package com.devplatform.model.jira.response;
 
-import java.util.List;
 import java.util.Objects;
 
 import javax.annotation.Generated;

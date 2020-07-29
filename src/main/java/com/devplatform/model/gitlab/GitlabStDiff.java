@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModelProperty;
 
 public class GitlabStDiff {
-	@JsonProperty("id")
+	@JsonProperty("diff")
 	private String diff = null;
 
 	@JsonProperty("new_path")

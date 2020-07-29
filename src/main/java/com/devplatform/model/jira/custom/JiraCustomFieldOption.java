@@ -9,6 +9,8 @@ import javax.validation.constraints.NotNull;
 
 import org.springframework.validation.annotation.Validated;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import io.swagger.annotations.ApiModelProperty;
@@ -20,21 +22,26 @@ import io.swagger.annotations.ApiModelProperty;
 @javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2020-03-18T01:03:28.811Z[GMT]")
 public class JiraCustomFieldOption {
 	@JsonProperty("id")
+	@JsonInclude(Include.NON_NULL)
 	private BigDecimal id = null;
 
 	@JsonProperty("sequence")
+	@JsonInclude(Include.NON_NULL)
 	private Integer sequence = null;
 
 	@JsonProperty("self")
+	@JsonInclude(Include.NON_NULL)
 	private String self = null;
 
 	@JsonProperty("value")
 	private String value = null;
 
 	@JsonProperty("enabled")
+	@JsonInclude(Include.NON_NULL)
 	private Boolean enabled = null;
 
 	@JsonProperty("cascadingOptions")
+	@JsonInclude(Include.NON_NULL)
 	private List<JiraCustomFieldOption> cascadingOptions = null;
 
 	public JiraCustomFieldOption id(BigDecimal id) {
