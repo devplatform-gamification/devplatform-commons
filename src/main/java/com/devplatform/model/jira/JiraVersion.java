@@ -8,7 +8,9 @@ import javax.validation.constraints.NotNull;
 
 import org.springframework.validation.annotation.Validated;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
 import io.swagger.annotations.ApiModelProperty;
 
@@ -19,36 +21,51 @@ import io.swagger.annotations.ApiModelProperty;
 @javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2020-03-18T01:03:28.811Z[GMT]")
 public class JiraVersion {
 	@JsonProperty("id")
+	@JsonInclude(Include.NON_NULL)
 	private BigDecimal id = null;
 
 	@JsonProperty("projectId")
+	@JsonInclude(Include.NON_NULL)
 	private BigDecimal projectId = null;
 
 	@JsonProperty("name")
+	@JsonInclude(Include.NON_NULL)
 	private String name = null;
 
 	@JsonProperty("description")
+	@JsonInclude(Include.NON_NULL)
 	private String description = null;
 
 	@JsonProperty("archived")
+	@JsonInclude(Include.NON_NULL)
 	private Boolean archived = null;
 
 	@JsonProperty("released")
+	@JsonInclude(Include.NON_NULL)
 	private Boolean released = null;
 
 	@JsonProperty("releaseDate")
+	@JsonInclude(Include.NON_NULL)
 	private String releaseDate = null;
 
 	@JsonProperty("overdue")
+	@JsonInclude(Include.NON_NULL)
 	private Boolean overdue = null;
 
+	@JsonProperty("startDate")
+	@JsonInclude(Include.NON_NULL)
+	private String startDate = null;
+
 	@JsonProperty("userStartDate")
+	@JsonInclude(Include.NON_NULL)
 	private String userStartDate = null;
 
 	@JsonProperty("userReleaseDate")
+	@JsonInclude(Include.NON_NULL)
 	private String userReleaseDate = null;
 
 	@JsonProperty("self")
+	@JsonInclude(Include.NON_NULL)
 	private String self = null;
 
 	public JiraVersion id(BigDecimal id) {
@@ -183,6 +200,21 @@ public class JiraVersion {
 		this.releaseDate = releaseDate;
 	}
 
+	public JiraVersion startDate(String startDate) {
+		this.startDate = startDate;
+		return this;
+	}
+
+	@ApiModelProperty(value = "")
+	@Valid
+	public String getStartDate() {
+		return startDate;
+	}
+
+	public void setStartDate(String startDate) {
+		this.startDate = startDate;
+	}
+
 	public JiraVersion userStartDate(String userStartDate) {
 		this.userStartDate = userStartDate;
 		return this;
@@ -265,6 +297,7 @@ public class JiraVersion {
 				&& Objects.equals(this.released, jiraVersion.released)
 				&& Objects.equals(this.releaseDate, jiraVersion.releaseDate)
 				&& Objects.equals(this.userStartDate, jiraVersion.userStartDate)
+				&& Objects.equals(this.startDate, jiraVersion.startDate)
 				&& Objects.equals(this.userReleaseDate, jiraVersion.userReleaseDate)
 				&& Objects.equals(this.overdue, jiraVersion.overdue)
 				&& Objects.equals(this.self, jiraVersion.self);
@@ -272,7 +305,7 @@ public class JiraVersion {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(id, projectId, name, description, archived, released, releaseDate, userStartDate, userReleaseDate, overdue, self);
+		return Objects.hash(id, projectId, name, description, archived, released, releaseDate, startDate, userStartDate, userReleaseDate, overdue, self);
 	}
 
 	@Override
@@ -284,11 +317,12 @@ public class JiraVersion {
 		sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
 		sb.append("    name: ").append(toIndentedString(name)).append("\n");
 		sb.append("    description: ").append(toIndentedString(description)).append("\n");
-		sb.append("    archived: ").append(toIndentedString(archived)).append("\n");
-		sb.append("    released: ").append(toIndentedString(released)).append("\n");
+		sb.append("    startDate: ").append(toIndentedString(startDate)).append("\n");
 		sb.append("    releaseDate: ").append(toIndentedString(releaseDate)).append("\n");
 		sb.append("    userStartDate: ").append(toIndentedString(userStartDate)).append("\n");
 		sb.append("    userReleaseDate: ").append(toIndentedString(userReleaseDate)).append("\n");
+		sb.append("    released: ").append(toIndentedString(released)).append("\n");
+		sb.append("    archived: ").append(toIndentedString(archived)).append("\n");
 		sb.append("    overdue: ").append(toIndentedString(overdue)).append("\n");
 		sb.append("    self: ").append(toIndentedString(self)).append("\n");
 		sb.append("}");

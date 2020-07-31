@@ -16,20 +16,20 @@ import io.swagger.annotations.ApiModelProperty;
  */
 @Validated
 @javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2020-03-18T01:03:28.811Z[GMT]")
-public class JiraIssueFields {
+public class JiraIssueFieldsRequest {
 	@JsonProperty("fields")
 	protected Map<String, Object> fields = null;
 
-	public JiraIssueFields() {
+	public JiraIssueFieldsRequest() {
 		super();
 	}
 
-	public JiraIssueFields(Map<String, Object> fields) {
+	public JiraIssueFieldsRequest(Map<String, Object> fields) {
 		super();
 		this.fields = fields;
 	}
 
-	public JiraIssueFields fields(Map<String, Object> fields) {
+	public JiraIssueFieldsRequest fields(Map<String, Object> fields) {
 		this.fields = fields;
 		return this;
 	}
@@ -57,7 +57,7 @@ public class JiraIssueFields {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		JiraIssueFields other = (JiraIssueFields) obj;
+		JiraIssueFieldsRequest other = (JiraIssueFieldsRequest) obj;
 		return Objects.equals(fields, other.fields);
 	}
 

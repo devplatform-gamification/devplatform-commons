@@ -134,15 +134,15 @@ public class JiraIssueFields {
 
 	@JsonProperty("customfield_13500")
 	private Object desenvolvimento = null;
-	
-	@JsonProperty("customfield_14002")
-	private List<JiraIssueFieldOption> gerarVersaoAutomaticamente = null;
 
 	@JsonProperty("customfield_13605")
 	private Object gitBranch = null;
 
 	@JsonProperty("customfield_13606")
 	private Object gitCommitsReferenced = null;
+	
+	@JsonProperty("customfield_13006")
+	private String imagemDocker = null;
 
 	@JsonProperty("timeestimate")
 	private BigDecimal timeestimate = null;
@@ -193,20 +193,18 @@ public class JiraIssueFields {
 	@JsonProperty("customfield_12800")
 	private JiraIssueFieldSimple grupoAtribuicao = null;
 
+	/* início - lancamento de versao */
 	@JsonProperty("customfield_13906")
 	private JiraIssueFieldOption tipoVersao = null;
 
 	@JsonProperty("customfield_13913")
 	private String versaoSeraLancada = null;
+	
+	@JsonProperty("customfield_14002")
+	private List<JiraIssueFieldOption> gerarVersaoAutomaticamente = null;
 
 	@JsonProperty("customfield_13917")
 	private String proximaVersao = null;
-	
-	@JsonProperty("customfield_13910")
-	private String dtGeracaoReleaseNotes = null;
-
-	@JsonProperty("customfield_13911")
-	private String urlReleaseNotes = null;
 	
 	@JsonProperty("customfield_13912")
 	private String dtGeracaoCodigoFonte = null;
@@ -216,7 +214,34 @@ public class JiraIssueFields {
 	
 	@JsonProperty("customfield_13903")
 	private JiraUser responsavelExecucao = null;
+	
+	/* fim - lancamento versao */
+	/* inicio - documentacao */
+	@JsonProperty("customfield_14004")
+	private JiraIssueFieldOptionWithChild estruturaDocumentacao = null;
 
+	@JsonProperty("customfield_14006")
+	private String nomeParaExibicaoDocumentacao = null;
+
+	@JsonProperty("customfield_14005")
+	private String pathDiretorioPrincipal = null;
+
+	@JsonProperty("customfield_13910")
+	private String dtDisponibilizacaoDocumentacao = null;
+
+	@JsonProperty("customfield_13911")
+	private String urlPublicacaoDocumentacao = null;
+
+	@JsonProperty("customfield_14008")
+	private String dtDisponibilizacaoHomologacaoDocumentacao = null;
+
+	@JsonProperty("customfield_14007")
+	private String urlHomologacaoDocumentacao = null;
+
+	@JsonProperty("customfield_14009")
+	private List<JiraIssueFieldOption> publicarDocumentacaoAutomaticamente = null;
+	/* fim documentacao */
+	
 	@JsonProperty("comment")
 	private JiraIssueFieldsComment comment = null;
 
@@ -1428,30 +1453,30 @@ public class JiraIssueFields {
 		this.proximaVersao = proximaVersao;
 	}
 
-	public JiraIssueFields dtGeracaoReleaseNotes(String dtGeracaoReleaseNotes) {
-		this.dtGeracaoReleaseNotes = dtGeracaoReleaseNotes;
+	public JiraIssueFields dtDisponibilizacaoDocumentacao(String dtDisponibilizacaoDocumentacao) {
+		this.dtDisponibilizacaoDocumentacao = dtDisponibilizacaoDocumentacao;
 		return this;
 	}
 
-	public String getDtGeracaoReleaseNotes() {
-		return dtGeracaoReleaseNotes;
+	public String getDtDisponibilizacaoDocumentacao() {
+		return dtDisponibilizacaoDocumentacao;
 	}
 
-	public void setDtGeracaoReleaseNotes(String dtGeracaoReleaseNotes) {
-		this.dtGeracaoReleaseNotes = dtGeracaoReleaseNotes;
+	public void setDtDisponibilizacaoDocumentacao(String dtDisponibilizacaoDocumentacao) {
+		this.dtDisponibilizacaoDocumentacao = dtDisponibilizacaoDocumentacao;
 	}
 
-	public JiraIssueFields urlReleaseNotes(String urlReleaseNotes) {
-		this.urlReleaseNotes = urlReleaseNotes;
+	public JiraIssueFields urlPublicacaoDocumentacao(String urlPublicacaoDocumentacao) {
+		this.urlPublicacaoDocumentacao = urlPublicacaoDocumentacao;
 		return this;
 	}
 
-	public String getUrlReleaseNotes() {
-		return urlReleaseNotes;
+	public String getUrlPublicacaoDocumentacao() {
+		return urlPublicacaoDocumentacao;
 	}
 
-	public void setUrlReleaseNotes(String urlReleaseNotes) {
-		this.urlReleaseNotes = urlReleaseNotes;
+	public void setUrlPublicacaoDocumentacao(String urlPublicacaoDocumentacao) {
+		this.urlPublicacaoDocumentacao = urlPublicacaoDocumentacao;
 	}
 
 	public JiraIssueFields dtGeracaoCodigoFonte(String dtGeracaoCodigoFonte) {
@@ -1575,8 +1600,8 @@ public class JiraIssueFields {
 				&& Objects.equals(this.tipoVersao, jiraIssueFields.tipoVersao)
 				&& Objects.equals(this.versaoSeraLancada, jiraIssueFields.versaoSeraLancada)
 				&& Objects.equals(this.proximaVersao, jiraIssueFields.proximaVersao)
-				&& Objects.equals(this.dtGeracaoReleaseNotes, jiraIssueFields.dtGeracaoReleaseNotes)
-				&& Objects.equals(this.urlReleaseNotes, jiraIssueFields.urlReleaseNotes)
+				&& Objects.equals(this.dtDisponibilizacaoDocumentacao, jiraIssueFields.dtDisponibilizacaoDocumentacao)
+				&& Objects.equals(this.urlPublicacaoDocumentacao, jiraIssueFields.urlPublicacaoDocumentacao)
 				&& Objects.equals(this.dtGeracaoCodigoFonte, jiraIssueFields.dtGeracaoCodigoFonte)
 				&& Objects.equals(this.tagCodigoFonte, jiraIssueFields.tagCodigoFonte)
 				&& Objects.equals(this.responsavelExecucao, jiraIssueFields.responsavelExecucao)
@@ -1595,7 +1620,7 @@ public class JiraIssueFields {
 				timespent, duedate, fabricaTeste, responsavelTeste, aprovacoesNecessarias, aprovacoesRealizadas,
 				aprovadoPor, resolution, resolutiondate, notasRelease, fixVersions, destaquesReleaseNotes, 
 				grupoAtribuicao, msgLancamentoGenerico, msgLancamentoTelegram, tipoVersao, versaoSeraLancada, 
-				proximaVersao, dtGeracaoReleaseNotes, urlReleaseNotes, dtGeracaoCodigoFonte, tagCodigoFonte,
+				proximaVersao, dtDisponibilizacaoDocumentacao, urlPublicacaoDocumentacao, dtGeracaoCodigoFonte, tagCodigoFonte,
 				responsavelExecucao, comment);
 	}
 
@@ -1659,8 +1684,8 @@ public class JiraIssueFields {
 		sb.append("    tipoVersao: ").append(toIndentedString(tipoVersao)).append("\n");
 		sb.append("    versaoSeraLancada: ").append(toIndentedString(versaoSeraLancada)).append("\n");
 		sb.append("    proximaVersao: ").append(toIndentedString(proximaVersao)).append("\n");
-		sb.append("    dtGeracaoReleaseNotes: ").append(toIndentedString(dtGeracaoReleaseNotes)).append("\n");
-		sb.append("    urlReleaseNotes: ").append(toIndentedString(urlReleaseNotes)).append("\n");
+		sb.append("    dtDisponibilizacaoDocumentacao: ").append(toIndentedString(dtDisponibilizacaoDocumentacao)).append("\n");
+		sb.append("    urlPublicacaoDocumentacao: ").append(toIndentedString(urlPublicacaoDocumentacao)).append("\n");
 		sb.append("    dtGeracaoCodigoFonte: ").append(toIndentedString(dtGeracaoCodigoFonte)).append("\n");
 		sb.append("    tagCodigoFonte: ").append(toIndentedString(tagCodigoFonte)).append("\n");
 		sb.append("    responsavelExecucao: ").append(toIndentedString(responsavelExecucao)).append("\n");
