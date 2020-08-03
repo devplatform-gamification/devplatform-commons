@@ -102,7 +102,7 @@ public class JiraIssueFields {
 
 	@JsonProperty("issuelinks")
 	@Valid
-	private List<Object> issuelinks = null;
+	private List<JiraIssueLink> issuelinks = null;
 
 	@JsonProperty("customfield_11700")
 	@Valid
@@ -788,14 +788,14 @@ public class JiraIssueFields {
 		this.complexidade = complexidade;
 	}
 
-	public JiraIssueFields issuelinks(List<Object> issuelinks) {
+	public JiraIssueFields issuelinks(List<JiraIssueLink> issuelinks) {
 		this.issuelinks = issuelinks;
 		return this;
 	}
 
-	public JiraIssueFields addIssuelinksItem(Object issuelinksItem) {
+	public JiraIssueFields addIssuelinksItem(JiraIssueLink issuelinksItem) {
 		if (this.issuelinks == null) {
-			this.issuelinks = new ArrayList<Object>();
+			this.issuelinks = new ArrayList<JiraIssueLink>();
 		}
 		this.issuelinks.add(issuelinksItem);
 		return this;
@@ -808,11 +808,11 @@ public class JiraIssueFields {
 	 **/
 	@ApiModelProperty(value = "Pendências Linkadas")
 
-	public List<Object> getIssuelinks() {
+	public List<JiraIssueLink> getIssuelinks() {
 		return issuelinks;
 	}
 
-	public void setIssuelinks(List<Object> issuelinks) {
+	public void setIssuelinks(List<JiraIssueLink> issuelinks) {
 		this.issuelinks = issuelinks;
 	}
 
