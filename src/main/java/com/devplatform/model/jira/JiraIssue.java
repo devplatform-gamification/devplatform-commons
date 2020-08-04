@@ -7,7 +7,9 @@ import javax.validation.constraints.NotNull;
 
 import org.springframework.validation.annotation.Validated;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
 import io.swagger.annotations.ApiModelProperty;
 
@@ -16,6 +18,7 @@ import io.swagger.annotations.ApiModelProperty;
  */
 @Validated
 @javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2020-03-18T01:03:28.811Z[GMT]")
+@JsonInclude(Include.NON_NULL)
 public class JiraIssue   {
   @JsonProperty("id")
   private Long id = null;

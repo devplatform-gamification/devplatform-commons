@@ -25,10 +25,10 @@ public class JiraIssueLinkTypeRequest {
 	@JsonProperty("name")
 	private String name = null;
 
-	@JsonProperty("outwardName")
+	@JsonProperty("outward")
 	private String outwardName = null;
 
-	@JsonProperty("inwardname")
+	@JsonProperty("inward")
 	private String inwardName = null;
 
 	public JiraIssueLinkTypeRequest id(String id) {
