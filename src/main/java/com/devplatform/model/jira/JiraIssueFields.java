@@ -145,6 +145,15 @@ public class JiraIssueFields {
 	@JsonProperty("customfield_13006")
 	private String imagemDocker = null;
 
+	@JsonProperty("customfield_13005")
+	private String branchsRelacionados = null;
+
+	@JsonProperty("customfield_12509")
+	private String mrAbertos = null;
+
+	@JsonProperty("customfield_12505")
+	private String mrAceitos = null;
+
 	@JsonProperty("timeestimate")
 	private BigDecimal timeestimate = null;
 
@@ -1518,6 +1527,121 @@ public class JiraIssueFields {
 	public void setResponsavelExecucao(JiraUser responsavelExecucao) {
 		this.responsavelExecucao = responsavelExecucao;
 	}
+	
+	public String getBranchsRelacionados() {
+		return branchsRelacionados;
+	}
+
+	public void setBranchsRelacionados(String branchsRelacionados) {
+		this.branchsRelacionados = branchsRelacionados;
+	}
+	
+	public String getMrAbertos() {
+		return mrAbertos;
+	}
+
+	public void setMrAbertos(String mrAbertos) {
+		this.mrAbertos = mrAbertos;
+	}
+
+	public String getMrAceitos() {
+		return mrAceitos;
+	}
+
+	public void setMrAceitos(String mrAceitos) {
+		this.mrAceitos = mrAceitos;
+	}
+
+	public JiraIssueFields imagemDocker(String imagemDocker) {
+		this.imagemDocker = imagemDocker;
+		return this;
+	}
+
+	public String getImagemDocker() {
+		return imagemDocker;
+	}
+
+	public void setImagemDocker(String imagemDocker) {
+		this.imagemDocker = imagemDocker;
+	}
+
+	public JiraIssueFields estruturaDocumentacao(JiraIssueFieldOptionWithChild estruturaDocumentacao) {
+		this.estruturaDocumentacao = estruturaDocumentacao;
+		return this;
+	}
+
+	public JiraIssueFieldOptionWithChild getEstruturaDocumentacao() {
+		return estruturaDocumentacao;
+	}
+
+	public void setEstruturaDocumentacao(JiraIssueFieldOptionWithChild estruturaDocumentacao) {
+		this.estruturaDocumentacao = estruturaDocumentacao;
+	}
+
+	public JiraIssueFields nomeParaExibicaoDocumentacao(String nomeParaExibicaoDocumentacao) {
+		this.nomeParaExibicaoDocumentacao = nomeParaExibicaoDocumentacao;
+		return this;
+	}
+
+	public String getNomeParaExibicaoDocumentacao() {
+		return nomeParaExibicaoDocumentacao;
+	}
+
+	public void setNomeParaExibicaoDocumentacao(String nomeParaExibicaoDocumentacao) {
+		this.nomeParaExibicaoDocumentacao = nomeParaExibicaoDocumentacao;
+	}
+
+	public JiraIssueFields pathDiretorioPrincipal(String pathDiretorioPrincipal) {
+		this.pathDiretorioPrincipal = pathDiretorioPrincipal;
+		return this;
+	}
+
+	public String getPathDiretorioPrincipal() {
+		return pathDiretorioPrincipal;
+	}
+
+	public void setPathDiretorioPrincipal(String pathDiretorioPrincipal) {
+		this.pathDiretorioPrincipal = pathDiretorioPrincipal;
+	}
+
+	public JiraIssueFields dtDisponibilizacaoHomologacaoDocumentacao(String dtDisponibilizacaoHomologacaoDocumentacao) {
+		this.dtDisponibilizacaoHomologacaoDocumentacao = dtDisponibilizacaoHomologacaoDocumentacao;
+		return this;
+	}
+
+	public String getDtDisponibilizacaoHomologacaoDocumentacao() {
+		return dtDisponibilizacaoHomologacaoDocumentacao;
+	}
+
+	public void setDtDisponibilizacaoHomologacaoDocumentacao(String dtDisponibilizacaoHomologacaoDocumentacao) {
+		this.dtDisponibilizacaoHomologacaoDocumentacao = dtDisponibilizacaoHomologacaoDocumentacao;
+	}
+
+	public JiraIssueFields urlHomologacaoDocumentacao(String urlHomologacaoDocumentacao) {
+		this.urlHomologacaoDocumentacao = urlHomologacaoDocumentacao;
+		return this;
+	}
+
+	public String getUrlHomologacaoDocumentacao() {
+		return urlHomologacaoDocumentacao;
+	}
+
+	public void setUrlHomologacaoDocumentacao(String urlHomologacaoDocumentacao) {
+		this.urlHomologacaoDocumentacao = urlHomologacaoDocumentacao;
+	}
+
+	public JiraIssueFields publicarDocumentacaoAutomaticamente(List<JiraIssueFieldOption> publicarDocumentacaoAutomaticamente) {
+		this.publicarDocumentacaoAutomaticamente = publicarDocumentacaoAutomaticamente;
+		return this;
+	}
+
+	public List<JiraIssueFieldOption> getPublicarDocumentacaoAutomaticamente() {
+		return publicarDocumentacaoAutomaticamente;
+	}
+
+	public void setPublicarDocumentacaoAutomaticamente(List<JiraIssueFieldOption> publicarDocumentacaoAutomaticamente) {
+		this.publicarDocumentacaoAutomaticamente = publicarDocumentacaoAutomaticamente;
+	}
 
 	public JiraIssueFields comment(JiraIssueFieldsComment comment) {
 		this.comment = comment;
@@ -1606,6 +1730,17 @@ public class JiraIssueFields {
 				&& Objects.equals(this.dtGeracaoCodigoFonte, jiraIssueFields.dtGeracaoCodigoFonte)
 				&& Objects.equals(this.tagCodigoFonte, jiraIssueFields.tagCodigoFonte)
 				&& Objects.equals(this.responsavelExecucao, jiraIssueFields.responsavelExecucao)
+
+				&& Objects.equals(this.branchsRelacionados, jiraIssueFields.branchsRelacionados)
+				&& Objects.equals(this.mrAbertos, jiraIssueFields.mrAbertos)
+				&& Objects.equals(this.mrAceitos, jiraIssueFields.mrAceitos)
+				&& Objects.equals(this.imagemDocker, jiraIssueFields.imagemDocker)
+				&& Objects.equals(this.estruturaDocumentacao, jiraIssueFields.estruturaDocumentacao)
+				&& Objects.equals(this.nomeParaExibicaoDocumentacao, jiraIssueFields.nomeParaExibicaoDocumentacao)
+				&& Objects.equals(this.pathDiretorioPrincipal, jiraIssueFields.pathDiretorioPrincipal)
+				&& Objects.equals(this.dtDisponibilizacaoHomologacaoDocumentacao, jiraIssueFields.dtDisponibilizacaoHomologacaoDocumentacao)
+				&& Objects.equals(this.urlHomologacaoDocumentacao, jiraIssueFields.urlHomologacaoDocumentacao)
+				&& Objects.equals(this.publicarDocumentacaoAutomaticamente, jiraIssueFields.publicarDocumentacaoAutomaticamente)
 				
 				&& Objects.equals(this.comment, jiraIssueFields.comment);
 	}
@@ -1622,7 +1757,13 @@ public class JiraIssueFields {
 				aprovadoPor, resolution, resolutiondate, notasRelease, fixVersions, destaquesReleaseNotes, 
 				grupoAtribuicao, msgLancamentoGenerico, msgLancamentoTelegram, tipoVersao, versaoSeraLancada, 
 				proximaVersao, dtDisponibilizacaoDocumentacao, urlPublicacaoDocumentacao, dtGeracaoCodigoFonte, tagCodigoFonte,
-				responsavelExecucao, comment);
+				responsavelExecucao,
+				
+				branchsRelacionados, mrAbertos, mrAceitos,
+				imagemDocker, estruturaDocumentacao, nomeParaExibicaoDocumentacao, pathDiretorioPrincipal,
+				dtDisponibilizacaoHomologacaoDocumentacao, urlHomologacaoDocumentacao, publicarDocumentacaoAutomaticamente,
+				
+				comment);
 	}
 
 	@Override
@@ -1690,11 +1831,25 @@ public class JiraIssueFields {
 		sb.append("    dtGeracaoCodigoFonte: ").append(toIndentedString(dtGeracaoCodigoFonte)).append("\n");
 		sb.append("    tagCodigoFonte: ").append(toIndentedString(tagCodigoFonte)).append("\n");
 		sb.append("    responsavelExecucao: ").append(toIndentedString(responsavelExecucao)).append("\n");
+
+		sb.append("    branchsRelacionados: ").append(toIndentedString(branchsRelacionados)).append("\n");
+		
+		sb.append("    mrAbertos: ").append(toIndentedString(mrAbertos)).append("\n");
+		sb.append("    mrAceitos: ").append(toIndentedString(mrAceitos)).append("\n");
+		
+		sb.append("    imagemDocker: ").append(toIndentedString(imagemDocker)).append("\n");
+		sb.append("    estruturaDocumentacao: ").append(toIndentedString(estruturaDocumentacao)).append("\n");
+		sb.append("    nomeParaExibicaoDocumentacao: ").append(toIndentedString(nomeParaExibicaoDocumentacao)).append("\n");
+		sb.append("    pathDiretorioPrincipal: ").append(toIndentedString(pathDiretorioPrincipal)).append("\n");
+		sb.append("    dtDisponibilizacaoHomologacaoDocumentacao: ").append(toIndentedString(dtDisponibilizacaoHomologacaoDocumentacao)).append("\n");
+		sb.append("    urlHomologacaoDocumentacao: ").append(toIndentedString(urlHomologacaoDocumentacao)).append("\n");
+		sb.append("    publicarDocumentacaoAutomaticamente: ").append(toIndentedString(publicarDocumentacaoAutomaticamente)).append("\n");
+		
 		sb.append("    comment: ").append(toIndentedString(comment)).append("\n");
 		sb.append("}");
 		return sb.toString();
 	}
-
+	
 	/**
 	 * Convert the given object to string with each line indented by 4 spaces
 	 * (except the first line).
