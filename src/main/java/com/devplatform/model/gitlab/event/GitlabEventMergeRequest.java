@@ -46,6 +46,9 @@ public class GitlabEventMergeRequest extends GitlabEvent{
 	@JsonProperty("repository")
 	private GitlabRepository repository = null;
 
+	@JsonProperty("assignees")
+	private List<GitlabUser> assignees = null;
+
 	public GitlabEventMergeRequest eventType(GitlabEventTypeEnum eventType) {
 		this.eventType = eventType;
 		return this;

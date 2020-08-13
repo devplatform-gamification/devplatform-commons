@@ -133,6 +133,9 @@ public class JiraIssueFields {
 	@JsonProperty("customfield_12303")
 	private JiraUser responsavelCodificacao = null;
 
+	@JsonProperty("customfield_12200")
+	private JiraUser responsavelRevisao = null;
+
 	@JsonProperty("customfield_13500")
 	private Object desenvolvimento = null;
 
@@ -146,7 +149,10 @@ public class JiraIssueFields {
 	private String imagemDocker = null;
 
 	@JsonProperty("customfield_13005")
-	private String branchsRelacionados = null;
+	private String branchesRelacionados = null;
+	
+	@JsonProperty("customfield_12101")
+	private List<JiraVersion> integradoNosBranches = null;
 
 	@JsonProperty("customfield_12509")
 	private String mrAbertos = null;
@@ -1528,14 +1534,30 @@ public class JiraIssueFields {
 		this.responsavelExecucao = responsavelExecucao;
 	}
 	
-	public String getBranchsRelacionados() {
-		return branchsRelacionados;
+	public String getBranchesRelacionados() {
+		return branchesRelacionados;
 	}
 
-	public void setBranchsRelacionados(String branchsRelacionados) {
-		this.branchsRelacionados = branchsRelacionados;
+	public void setBranchesRelacionados(String branchesRelacionados) {
+		this.branchesRelacionados = branchesRelacionados;
 	}
 	
+	public JiraUser getResponsavelRevisao() {
+		return responsavelRevisao;
+	}
+
+	public void setResponsavelRevisao(JiraUser responsavelRevisao) {
+		this.responsavelRevisao = responsavelRevisao;
+	}
+
+	public List<JiraVersion> getIntegradoNosBranches() {
+		return integradoNosBranches;
+	}
+
+	public void setIntegradoNosBranches(List<JiraVersion> integradoNosBranches) {
+		this.integradoNosBranches = integradoNosBranches;
+	}
+
 	public String getMrAbertos() {
 		return mrAbertos;
 	}
@@ -1708,6 +1730,8 @@ public class JiraIssueFields {
 				&& Objects.equals(this.timeestimate, jiraIssueFields.timeestimate)
 				&& Objects.equals(this.timespent, jiraIssueFields.timespent)
 				&& Objects.equals(this.duedate, jiraIssueFields.duedate)
+				
+				&& Objects.equals(this.responsavelRevisao, jiraIssueFields.responsavelRevisao)
 				&& Objects.equals(this.fabricaTeste, jiraIssueFields.fabricaTeste)
 				&& Objects.equals(this.responsavelTeste, jiraIssueFields.responsavelTeste)
 				&& Objects.equals(this.aprovacoesNecessarias, jiraIssueFields.aprovacoesNecessarias)
@@ -1731,7 +1755,8 @@ public class JiraIssueFields {
 				&& Objects.equals(this.tagCodigoFonte, jiraIssueFields.tagCodigoFonte)
 				&& Objects.equals(this.responsavelExecucao, jiraIssueFields.responsavelExecucao)
 
-				&& Objects.equals(this.branchsRelacionados, jiraIssueFields.branchsRelacionados)
+				&& Objects.equals(this.branchesRelacionados, jiraIssueFields.branchesRelacionados)
+				&& Objects.equals(this.integradoNosBranches, jiraIssueFields.integradoNosBranches)
 				&& Objects.equals(this.mrAbertos, jiraIssueFields.mrAbertos)
 				&& Objects.equals(this.mrAceitos, jiraIssueFields.mrAceitos)
 				&& Objects.equals(this.imagemDocker, jiraIssueFields.imagemDocker)
@@ -1753,13 +1778,13 @@ public class JiraIssueFields {
 				issuelinks, tribunalRequisitante, votes, watches, assignee, status, updated, fabricaDesenvolvimento,
 				sprintGrupo, responsavelCodificacao, desenvolvimento, gerarVersaoAutomaticamente,
 				gitBranch, gitCommitsReferenced, timeestimate,
-				timespent, duedate, fabricaTeste, responsavelTeste, aprovacoesNecessarias, aprovacoesRealizadas,
+				timespent, duedate, responsavelRevisao, fabricaTeste, responsavelTeste, aprovacoesNecessarias, aprovacoesRealizadas,
 				aprovadoPor, resolution, resolutiondate, notasRelease, fixVersions, destaquesReleaseNotes, 
 				grupoAtribuicao, msgLancamentoGenerico, msgLancamentoTelegram, tipoVersao, versaoSeraLancada, 
 				proximaVersao, dtDisponibilizacaoDocumentacao, urlPublicacaoDocumentacao, dtGeracaoCodigoFonte, tagCodigoFonte,
 				responsavelExecucao,
 				
-				branchsRelacionados, mrAbertos, mrAceitos,
+				branchesRelacionados, integradoNosBranches, mrAbertos, mrAceitos,
 				imagemDocker, estruturaDocumentacao, nomeParaExibicaoDocumentacao, pathDiretorioPrincipal,
 				dtDisponibilizacaoHomologacaoDocumentacao, urlHomologacaoDocumentacao, publicarDocumentacaoAutomaticamente,
 				
@@ -1811,6 +1836,7 @@ public class JiraIssueFields {
 		sb.append("    timeestimate: ").append(toIndentedString(timeestimate)).append("\n");
 		sb.append("    timespent: ").append(toIndentedString(timespent)).append("\n");
 		sb.append("    duedate: ").append(toIndentedString(duedate)).append("\n");
+		sb.append("    responsavelRevisao: ").append(toIndentedString(responsavelRevisao)).append("\n");
 		sb.append("    fabricaTeste: ").append(toIndentedString(fabricaTeste)).append("\n");
 		sb.append("    responsavelTeste: ").append(toIndentedString(responsavelTeste)).append("\n");
 		sb.append("    aprovacoesNecessarias: ").append(toIndentedString(aprovacoesNecessarias)).append("\n");
@@ -1832,7 +1858,8 @@ public class JiraIssueFields {
 		sb.append("    tagCodigoFonte: ").append(toIndentedString(tagCodigoFonte)).append("\n");
 		sb.append("    responsavelExecucao: ").append(toIndentedString(responsavelExecucao)).append("\n");
 
-		sb.append("    branchsRelacionados: ").append(toIndentedString(branchsRelacionados)).append("\n");
+		sb.append("    branchesRelacionados: ").append(toIndentedString(branchesRelacionados)).append("\n");
+		sb.append("    integradoNosBranches: ").append(toIndentedString(integradoNosBranches)).append("\n");
 		
 		sb.append("    mrAbertos: ").append(toIndentedString(mrAbertos)).append("\n");
 		sb.append("    mrAceitos: ").append(toIndentedString(mrAceitos)).append("\n");
