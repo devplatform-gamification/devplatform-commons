@@ -15,9 +15,9 @@ import io.swagger.annotations.ApiModelProperty;
 @javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2020-03-18T01:03:28.811Z[GMT]")
 public class GitlabMergeRequestAttributesMergeParams   {
   @JsonProperty("force_remove_source_branch")
-  private Integer forceRemoveSourceBranch = null;
+  private Boolean forceRemoveSourceBranch = null;
 
-  public GitlabMergeRequestAttributesMergeParams forceRemoveSourceBranch(Integer forceRemoveSourceBranch) {
+  public GitlabMergeRequestAttributesMergeParams forceRemoveSourceBranch(Boolean forceRemoveSourceBranch) {
     this.forceRemoveSourceBranch = forceRemoveSourceBranch;
     return this;
   }
@@ -28,11 +28,11 @@ public class GitlabMergeRequestAttributesMergeParams   {
   **/
   @ApiModelProperty(value = "")
   
-    public Integer getForceRemoveSourceBranch() {
+    public Boolean getForceRemoveSourceBranch() {
     return forceRemoveSourceBranch;
   }
 
-  public void setForceRemoveSourceBranch(Integer forceRemoveSourceBranch) {
+  public void setForceRemoveSourceBranch(Boolean forceRemoveSourceBranch) {
     this.forceRemoveSourceBranch = forceRemoveSourceBranch;
   }
 
