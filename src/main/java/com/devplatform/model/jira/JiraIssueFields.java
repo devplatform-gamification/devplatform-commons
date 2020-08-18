@@ -219,6 +219,9 @@ public class JiraIssueFields {
 	@JsonProperty("customfield_14002")
 	private List<JiraIssueFieldOption> gerarVersaoAutomaticamente = null;
 
+	@JsonProperty("customfield_14011")
+	private List<JiraIssueFieldOption> iniciarProximaVersaoAutomaticamente = null;
+
 	@JsonProperty("customfield_13917")
 	private String proximaVersao = null;
 	
@@ -1069,12 +1072,34 @@ public class JiraIssueFields {
 	public void setGerarVersaoAutomaticamente(List<JiraIssueFieldOption> gerarVersaoAutomaticamente) {
 		this.gerarVersaoAutomaticamente = gerarVersaoAutomaticamente;
 	}
+	
+	public JiraIssueFields iniciarProximaVersaoAutomaticamente(List<JiraIssueFieldOption> iniciarProximaVersaoAutomaticamente) {
+		this.iniciarProximaVersaoAutomaticamente = iniciarProximaVersaoAutomaticamente;
+		return this;
+	}
+
+	public JiraIssueFields addIniciarProximaVersaoAutomaticamenteItem(JiraIssueFieldOption iniciarProximaVersaoAutomaticamenteItem) {
+		if (this.iniciarProximaVersaoAutomaticamente == null) {
+			this.iniciarProximaVersaoAutomaticamente = new ArrayList<JiraIssueFieldOption>();
+		}
+		this.iniciarProximaVersaoAutomaticamente.add(iniciarProximaVersaoAutomaticamenteItem);
+		return this;
+	}
+
+	@ApiModelProperty(value = "Iniciar proxima versao Automaticamente")
+	public List<JiraIssueFieldOption> getIniciarProximaVersaoAutomaticamente() {
+		return iniciarProximaVersaoAutomaticamente;
+	}
+
+	public void setIniciarProximaVersaoAutomaticamente(List<JiraIssueFieldOption> iniciarProximaVersaoAutomaticamente) {
+		this.iniciarProximaVersaoAutomaticamente = iniciarProximaVersaoAutomaticamente;
+	}
 
 	public JiraIssueFields gitBranch(Object gitBranch) {
 		this.gitBranch = gitBranch;
 		return this;
 	}
-
+	
 	/**
 	 * gitBranch
 	 * 
@@ -1724,6 +1749,7 @@ public class JiraIssueFields {
 				&& Objects.equals(this.responsavelCodificacao, jiraIssueFields.responsavelCodificacao)
 				&& Objects.equals(this.desenvolvimento, jiraIssueFields.desenvolvimento)
 				&& Objects.equals(this.gerarVersaoAutomaticamente, jiraIssueFields.gerarVersaoAutomaticamente)
+				&& Objects.equals(this.iniciarProximaVersaoAutomaticamente, jiraIssueFields.iniciarProximaVersaoAutomaticamente)
 				
 				&& Objects.equals(this.gitBranch, jiraIssueFields.gitBranch)
 				&& Objects.equals(this.gitCommitsReferenced, jiraIssueFields.gitCommitsReferenced)
@@ -1776,7 +1802,7 @@ public class JiraIssueFields {
 				summary, description, attachment, versions, labels, sistema, servico, parentLink, subtasks,
 				informacoesPendentes, priority, businessValue, epicTheme, potencialDiminuicaoIssues, complexidade,
 				issuelinks, tribunalRequisitante, votes, watches, assignee, status, updated, fabricaDesenvolvimento,
-				sprintGrupo, responsavelCodificacao, desenvolvimento, gerarVersaoAutomaticamente,
+				sprintGrupo, responsavelCodificacao, desenvolvimento, gerarVersaoAutomaticamente, iniciarProximaVersaoAutomaticamente,
 				gitBranch, gitCommitsReferenced, timeestimate,
 				timespent, duedate, responsavelRevisao, fabricaTeste, responsavelTeste, aprovacoesNecessarias, aprovacoesRealizadas,
 				aprovadoPor, resolution, resolutiondate, notasRelease, fixVersions, destaquesReleaseNotes, 
@@ -1831,6 +1857,7 @@ public class JiraIssueFields {
 		sb.append("    responsavelCodificacao: ").append(toIndentedString(responsavelCodificacao)).append("\n");
 		sb.append("    desenvolvimento: ").append(toIndentedString(desenvolvimento)).append("\n");
 		sb.append("    gerarVersaoAutomaticamente: ").append(toIndentedString(gerarVersaoAutomaticamente)).append("\n");
+		sb.append("    iniciarProximaVersaoAutomaticamente: ").append(toIndentedString(iniciarProximaVersaoAutomaticamente)).append("\n");
 		sb.append("    gitBranch: ").append(toIndentedString(gitBranch)).append("\n");
 		sb.append("    gitCommitsReferenced: ").append(toIndentedString(gitCommitsReferenced)).append("\n");
 		sb.append("    timeestimate: ").append(toIndentedString(timeestimate)).append("\n");
