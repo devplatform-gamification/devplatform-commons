@@ -222,6 +222,9 @@ public class JiraIssueFields {
 	@JsonProperty("customfield_14011")
 	private List<JiraIssueFieldOption> iniciarProximaVersaoAutomaticamente = null;
 
+	@JsonProperty("customfield_14012")
+	private List<JiraIssueFieldOption> comunicarLancamentoVersao = null;
+
 	@JsonProperty("customfield_13917")
 	private String proximaVersao = null;
 	
@@ -1094,6 +1097,20 @@ public class JiraIssueFields {
 	public void setIniciarProximaVersaoAutomaticamente(List<JiraIssueFieldOption> iniciarProximaVersaoAutomaticamente) {
 		this.iniciarProximaVersaoAutomaticamente = iniciarProximaVersaoAutomaticamente;
 	}
+	
+	public JiraIssueFields comunicarLancamentoVersao(List<JiraIssueFieldOption> comunicarLancamentoVersao) {
+		this.comunicarLancamentoVersao = comunicarLancamentoVersao;
+		return this;
+	}
+
+	@ApiModelProperty(value = "Comunicar lançamento da versão")
+	public List<JiraIssueFieldOption> getComunicarLancamentoVersao() {
+		return comunicarLancamentoVersao;
+	}
+
+	public void setComunicarLancamentoVersao(List<JiraIssueFieldOption> comunicarLancamentoVersao) {
+		this.comunicarLancamentoVersao = comunicarLancamentoVersao;
+	}
 
 	public JiraIssueFields gitBranch(Object gitBranch) {
 		this.gitBranch = gitBranch;
@@ -1750,6 +1767,7 @@ public class JiraIssueFields {
 				&& Objects.equals(this.desenvolvimento, jiraIssueFields.desenvolvimento)
 				&& Objects.equals(this.gerarVersaoAutomaticamente, jiraIssueFields.gerarVersaoAutomaticamente)
 				&& Objects.equals(this.iniciarProximaVersaoAutomaticamente, jiraIssueFields.iniciarProximaVersaoAutomaticamente)
+				&& Objects.equals(this.comunicarLancamentoVersao, jiraIssueFields.comunicarLancamentoVersao)
 				
 				&& Objects.equals(this.gitBranch, jiraIssueFields.gitBranch)
 				&& Objects.equals(this.gitCommitsReferenced, jiraIssueFields.gitCommitsReferenced)
@@ -1803,7 +1821,7 @@ public class JiraIssueFields {
 				informacoesPendentes, priority, businessValue, epicTheme, potencialDiminuicaoIssues, complexidade,
 				issuelinks, tribunalRequisitante, votes, watches, assignee, status, updated, fabricaDesenvolvimento,
 				sprintGrupo, responsavelCodificacao, desenvolvimento, gerarVersaoAutomaticamente, iniciarProximaVersaoAutomaticamente,
-				gitBranch, gitCommitsReferenced, timeestimate,
+				comunicarLancamentoVersao, gitBranch, gitCommitsReferenced, timeestimate,
 				timespent, duedate, responsavelRevisao, fabricaTeste, responsavelTeste, aprovacoesNecessarias, aprovacoesRealizadas,
 				aprovadoPor, resolution, resolutiondate, notasRelease, fixVersions, destaquesReleaseNotes, 
 				grupoAtribuicao, msgLancamentoGenerico, msgLancamentoTelegram, tipoVersao, versaoSeraLancada, 
@@ -1858,6 +1876,8 @@ public class JiraIssueFields {
 		sb.append("    desenvolvimento: ").append(toIndentedString(desenvolvimento)).append("\n");
 		sb.append("    gerarVersaoAutomaticamente: ").append(toIndentedString(gerarVersaoAutomaticamente)).append("\n");
 		sb.append("    iniciarProximaVersaoAutomaticamente: ").append(toIndentedString(iniciarProximaVersaoAutomaticamente)).append("\n");
+		sb.append("    comunicarLancamentoVersao: ").append(toIndentedString(comunicarLancamentoVersao)).append("\n");
+		
 		sb.append("    gitBranch: ").append(toIndentedString(gitBranch)).append("\n");
 		sb.append("    gitCommitsReferenced: ").append(toIndentedString(gitCommitsReferenced)).append("\n");
 		sb.append("    timeestimate: ").append(toIndentedString(timeestimate)).append("\n");
