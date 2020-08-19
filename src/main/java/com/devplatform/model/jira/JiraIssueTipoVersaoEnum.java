@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 public enum JiraIssueTipoVersaoEnum {
-	ORDINARIA("Ordinaria"),
+	ORDINARIA("Ordinária"),
 	HOTFIX("Hotfix");
 
 	private String value;

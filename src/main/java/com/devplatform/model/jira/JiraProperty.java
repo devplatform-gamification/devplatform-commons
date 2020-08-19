@@ -15,7 +15,7 @@ import io.swagger.annotations.ApiModelProperty;
  */
 @Validated
 @javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2020-03-18T01:03:28.811Z[GMT]")
-public class JiraIssueTransitionProperty {
+public class JiraProperty {
 	@JsonProperty("id")
 	private String id = null;
 
@@ -25,7 +25,7 @@ public class JiraIssueTransitionProperty {
 	@JsonProperty("value")
 	private String value = null;
 
-	public JiraIssueTransitionProperty id(String id) {
+	public JiraProperty id(String id) {
 		this.id = id;
 		return this;
 	}
@@ -40,7 +40,7 @@ public class JiraIssueTransitionProperty {
 		this.id = id;
 	}
 
-	public JiraIssueTransitionProperty key(String key) {
+	public JiraProperty key(String key) {
 		this.key = key;
 		return this;
 	}
@@ -55,7 +55,7 @@ public class JiraIssueTransitionProperty {
 		this.key = key;
 	}
 
-	public JiraIssueTransitionProperty value(String value) {
+	public JiraProperty value(String value) {
 		this.value = value;
 		return this;
 	}
@@ -78,7 +78,7 @@ public class JiraIssueTransitionProperty {
 		if (o == null || getClass() != o.getClass()) {
 			return false;
 		}
-		JiraIssueTransitionProperty jiraIssueComment = (JiraIssueTransitionProperty) o;
+		JiraProperty jiraIssueComment = (JiraProperty) o;
 		return Objects.equals(this.id, jiraIssueComment.id) 
 				&& Objects.equals(this.key, jiraIssueComment.key)
 				&& Objects.equals(this.value, jiraIssueComment.value);
@@ -92,7 +92,7 @@ public class JiraIssueTransitionProperty {
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
-		sb.append("class JiraIssueTransitionProperty {\n");
+		sb.append("class JiraProperty {\n");
 		sb.append("    id: ").append(toIndentedString(id)).append("\n");
 		sb.append("    key: ").append(toIndentedString(key)).append("\n");
 		sb.append("    value: ").append(toIndentedString(value)).append("\n");
