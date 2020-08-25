@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.dev-platform</groupId>
   <artifactId>devplatform-commons</artifactId>
-  <version>0.2.4-SNAPSHOT</version>
+  <version>0.2.5-SNAPSHOT</version>
   <name>Common classes</name>
   <description>This package contains POJOs and other classes that are commons between dev-platform projects</description>
 

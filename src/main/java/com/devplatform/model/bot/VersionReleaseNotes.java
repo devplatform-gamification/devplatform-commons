@@ -19,6 +19,9 @@ public class VersionReleaseNotes {
 
 	@JsonProperty("gitlab-project-id")
 	private String gitlabProjectId = null;
+	
+	@JsonProperty("gitlab-project-url")
+	private String gitlabProjectUrl = null;
 
 	@JsonProperty("affected-version")
 	private String affectedVersion = null;
@@ -86,6 +89,14 @@ public class VersionReleaseNotes {
 
 	public void setGitlabProjectId(String gitlabProjectId) {
 		this.gitlabProjectId = gitlabProjectId;
+	}
+	
+	public String getGitlabProjectUrl() {
+		return gitlabProjectUrl;
+	}
+
+	public void setGitlabProjectUrl(String gitlabProjectUrl) {
+		this.gitlabProjectUrl = gitlabProjectUrl;
 	}
 
 	public VersionReleaseNotes version(String version) {
@@ -264,6 +275,7 @@ public class VersionReleaseNotes {
 		return Objects.equals(this.project, jiraUser.project) && 
 				Objects.equals(this.issueKey, jiraUser.issueKey) &&
 				Objects.equals(this.gitlabProjectId, jiraUser.gitlabProjectId) &&
+				Objects.equals(this.gitlabProjectUrl, jiraUser.gitlabProjectUrl) &&
 				Objects.equals(this.version, jiraUser.version) && 
 				Objects.equals(this.affectedVersion, jiraUser.affectedVersion) &&
 				Objects.equals(this.nextVersion, jiraUser.nextVersion) &&
@@ -278,7 +290,7 @@ public class VersionReleaseNotes {
 	
 	@Override
 	public int hashCode() {
-		return Objects.hash(project, issueKey, gitlabProjectId, version, affectedVersion, nextVersion, releaseDate, versionType, author, versionHighlights, 
+		return Objects.hash(project, issueKey, gitlabProjectId, gitlabProjectUrl, version, affectedVersion, nextVersion, releaseDate, versionType, author, versionHighlights, 
 				newFeatures, improvements, bugs, minorChanges, jql);
 	}
 
@@ -289,6 +301,7 @@ public class VersionReleaseNotes {
 		sb.append("    project: ").append(toIndentedString(project)).append("\n");
 		sb.append("    issueKey: ").append(toIndentedString(issueKey)).append("\n");
 		sb.append("    gitlabProjectId: ").append(toIndentedString(gitlabProjectId)).append("\n");
+		sb.append("    gitlabProjectUrl: ").append(toIndentedString(gitlabProjectUrl)).append("\n");
 		sb.append("    version: ").append(toIndentedString(version)).append("\n");
 		sb.append("    affectedVersion: ").append(toIndentedString(affectedVersion)).append("\n");
 		sb.append("    nextVersion: ").append(toIndentedString(nextVersion)).append("\n");

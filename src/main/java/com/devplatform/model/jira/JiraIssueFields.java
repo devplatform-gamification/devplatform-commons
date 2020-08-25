@@ -201,10 +201,13 @@ public class JiraIssueFields {
 	private String destaquesReleaseNotes = null;
 
 	@JsonProperty("customfield_13908")
-	private String msgLancamentoGenerico = null;
+	private String mensagemRocketchat = null;
 
 	@JsonProperty("customfield_13916")
-	private String msgLancamentoTelegram = null;
+	private String mensagemTelegram = null;
+
+	@JsonProperty("customfield_14013")
+	private String mensagemSlack = null;
 
 	@JsonProperty("customfield_12800")
 	private JiraIssueFieldSimple grupoAtribuicao = null;
@@ -1446,30 +1449,43 @@ public class JiraIssueFields {
 	}
 
 
-	public JiraIssueFields msgLancamentoGenerico(String msgLancamentoGenerico) {
-		this.msgLancamentoGenerico = msgLancamentoGenerico;
+	public JiraIssueFields mensagemRocketchat(String mensagemRocketchat) {
+		this.mensagemRocketchat = mensagemRocketchat;
 		return this;
 	}
 
-	public String getMsgLancamentoGenerico() {
-		return msgLancamentoGenerico;
+	public String getMensagemRocketchat() {
+		return mensagemRocketchat;
 	}
 
-	public void setMsgLancamentoGenerico(String msgLancamentoGenerico) {
-		this.msgLancamentoGenerico = msgLancamentoGenerico;
+	public void setMensagemRocketchat(String mensagemRocketchat) {
+		this.mensagemRocketchat = mensagemRocketchat;
 	}
 
-	public JiraIssueFields msgLancamentoTelegram(String msgLancamentoTelegram) {
-		this.msgLancamentoTelegram = msgLancamentoTelegram;
+	public JiraIssueFields mensagemTelegram(String mensagemTelegram) {
+		this.mensagemTelegram = mensagemTelegram;
 		return this;
 	}
 
-	public String getMsgLancamentoTelegram() {
-		return msgLancamentoTelegram;
+	public String getMensagemTelegram() {
+		return mensagemTelegram;
 	}
 
-	public void setMsgLancamentoTelegram(String msgLancamentoTelegram) {
-		this.msgLancamentoTelegram = msgLancamentoTelegram;
+	public void setMensagemTelegram(String mensagemTelegram) {
+		this.mensagemTelegram = mensagemTelegram;
+	}
+	
+	public JiraIssueFields mensagemSlack(String mensagemSlack) {
+		this.mensagemSlack = mensagemSlack;
+		return this;
+	}
+
+	public String getMensagemSlack() {
+		return mensagemSlack;
+	}
+
+	public void setMensagemSlack(String mensagemSlack) {
+		this.mensagemSlack = mensagemSlack;
 	}
 
 	public JiraIssueFields tipoVersao(JiraIssueFieldOption tipoVersao) {
@@ -1787,8 +1803,10 @@ public class JiraIssueFields {
 				&& Objects.equals(this.fixVersions, jiraIssueFields.fixVersions)
 				&& Objects.equals(this.destaquesReleaseNotes, jiraIssueFields.destaquesReleaseNotes)
 				
-				&& Objects.equals(this.msgLancamentoGenerico, jiraIssueFields.msgLancamentoGenerico)
-				&& Objects.equals(this.msgLancamentoTelegram, jiraIssueFields.msgLancamentoTelegram)
+				&& Objects.equals(this.mensagemRocketchat, jiraIssueFields.mensagemRocketchat)
+				&& Objects.equals(this.mensagemTelegram, jiraIssueFields.mensagemTelegram)
+				&& Objects.equals(this.mensagemSlack, jiraIssueFields.mensagemSlack)
+				
 				&& Objects.equals(this.grupoAtribuicao, jiraIssueFields.grupoAtribuicao)
 				&& Objects.equals(this.tipoVersao, jiraIssueFields.tipoVersao)
 				&& Objects.equals(this.versaoSeraLancada, jiraIssueFields.versaoSeraLancada)
@@ -1824,7 +1842,7 @@ public class JiraIssueFields {
 				comunicarLancamentoVersao, gitBranch, gitCommitsReferenced, timeestimate,
 				timespent, duedate, responsavelRevisao, fabricaTeste, responsavelTeste, aprovacoesNecessarias, aprovacoesRealizadas,
 				aprovadoPor, resolution, resolutiondate, notasRelease, fixVersions, destaquesReleaseNotes, 
-				grupoAtribuicao, msgLancamentoGenerico, msgLancamentoTelegram, tipoVersao, versaoSeraLancada, 
+				grupoAtribuicao, mensagemRocketchat, mensagemTelegram, mensagemSlack, tipoVersao, versaoSeraLancada, 
 				proximaVersao, dtDisponibilizacaoDocumentacao, urlPublicacaoDocumentacao, dtGeracaoCodigoFonte, tagCodigoFonte,
 				responsavelExecucao,
 				
@@ -1894,8 +1912,10 @@ public class JiraIssueFields {
 		sb.append("    notasRelease: ").append(toIndentedString(notasRelease)).append("\n");
 		sb.append("    fixVersions: ").append(toIndentedString(fixVersions)).append("\n");
 		sb.append("    destaquesReleaseNotes: ").append(toIndentedString(destaquesReleaseNotes)).append("\n");
-		sb.append("    msgLancamentoGenerico: ").append(toIndentedString(msgLancamentoGenerico)).append("\n");
-		sb.append("    msgLancamentoTelegram: ").append(toIndentedString(msgLancamentoTelegram)).append("\n");
+		sb.append("    mensagemRocketchat: ").append(toIndentedString(mensagemRocketchat)).append("\n");
+		sb.append("    mensagemTelegram: ").append(toIndentedString(mensagemTelegram)).append("\n");
+		sb.append("    mensagemSlack: ").append(toIndentedString(mensagemSlack)).append("\n");
+		
 		sb.append("    tipoVersao: ").append(toIndentedString(tipoVersao)).append("\n");
 		sb.append("    versaoSeraLancada: ").append(toIndentedString(versaoSeraLancada)).append("\n");
 		sb.append("    proximaVersao: ").append(toIndentedString(proximaVersao)).append("\n");
