@@ -18,6 +18,12 @@ public class JiraGroup {
 
 	@JsonProperty("self")
 	private String self = null;
+	
+	@JsonProperty("users")
+	private JiraUsers users = null;
+	
+	@JsonProperty("expand")
+	private String expand = null;
 
 	public JiraGroup name(String name) {
 		this.name = name;
@@ -48,6 +54,34 @@ public class JiraGroup {
 	public void setSelf(String self) {
 		this.self = self;
 	}
+	
+	public JiraGroup users(JiraUsers users) {
+		this.users = users;
+		return this;
+	}
+
+	@ApiModelProperty(value = "")
+	public JiraUsers getUsers() {
+		return users;
+	}
+
+	public void setUsers(JiraUsers users) {
+		this.users = users;
+	}
+
+	public JiraGroup expand(String expand) {
+		this.expand = expand;
+		return this;
+	}
+
+	@ApiModelProperty(value = "")
+	public String getExpand() {
+		return expand;
+	}
+
+	public void setExpand(String expand) {
+		this.expand = expand;
+	}
 
 	@Override
 	public boolean equals(java.lang.Object o) {
@@ -58,7 +92,10 @@ public class JiraGroup {
 			return false;
 		}
 		JiraGroup jiraUser = (JiraGroup) o;
-		return Objects.equals(this.self, jiraUser.self) && Objects.equals(this.name, jiraUser.name);
+		return Objects.equals(this.self, jiraUser.self)
+				&& Objects.equals(this.name, jiraUser.name)
+				 && Objects.equals(this.users, jiraUser.users)
+				 && Objects.equals(this.expand, jiraUser.expand);
 	}
 
 	@Override
@@ -70,9 +107,10 @@ public class JiraGroup {
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
 		sb.append("class JiraGroup {\n");
-
 		sb.append("    self: ").append(toIndentedString(self)).append("\n");
 		sb.append("    name: ").append(toIndentedString(name)).append("\n");
+		sb.append("    users: ").append(toIndentedString(users)).append("\n");
+		sb.append("    expand: ").append(toIndentedString(expand)).append("\n");
 		sb.append("}");
 		return sb.toString();
 	}

@@ -1,6 +1,7 @@
 package com.devplatform.model.rocketchat.request;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 import javax.validation.constraints.NotNull;
@@ -17,7 +18,7 @@ import io.swagger.annotations.ApiModelProperty;
  */
 @Validated
 @javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2020-03-18T01:03:28.811Z[GMT]")
-public class RocketchatSendMessage {
+public class RocketchatSendMessageRequest {
 	/**
 	 * Gets or Sets type
 	 */
@@ -31,15 +32,15 @@ public class RocketchatSendMessage {
 	private String id = null;
 
 	@JsonProperty("params")
-	private ArrayList<RocketchatMessage> params = null;
+	private List<RocketchatMessage> params = null;
 
-	public RocketchatSendMessage(String rid, String msg) {
+	public RocketchatSendMessageRequest(String rid, String msg) {
 		super();
 		this.params = new ArrayList<>();
 		this.params.add(new RocketchatMessage(rid, msg));
 	}
 
-	public RocketchatSendMessage msg(String msg) {
+	public RocketchatSendMessageRequest msg(String msg) {
 		this.msg = msg;
 		return this;
 	}
@@ -54,7 +55,7 @@ public class RocketchatSendMessage {
 		this.msg = msg;
 	}
 
-	public RocketchatSendMessage method(String method) {
+	public RocketchatSendMessageRequest method(String method) {
 		this.method = method;
 		return this;
 	}
@@ -69,7 +70,7 @@ public class RocketchatSendMessage {
 		this.method = method;
 	}
 
-	public RocketchatSendMessage id(String id) {
+	public RocketchatSendMessageRequest id(String id) {
 		this.id = id;
 		return this;
 	}
@@ -84,14 +85,14 @@ public class RocketchatSendMessage {
 		this.id = id;
 	}
 
-	public RocketchatSendMessage params(ArrayList<RocketchatMessage> params) {
+	public RocketchatSendMessageRequest params(List<RocketchatMessage> params) {
 		this.params = params;
 		return this;
 	}
 
 	@ApiModelProperty(required = true, value = "")
 	@NotNull
-	public ArrayList<RocketchatMessage> getParams() {
+	public List<RocketchatMessage> getParams() {
 		return params;
 	}
 
@@ -107,7 +108,7 @@ public class RocketchatSendMessage {
 		if (o == null || getClass() != o.getClass()) {
 			return false;
 		}
-		RocketchatSendMessage slackChannelMessage = (RocketchatSendMessage) o;
+		RocketchatSendMessageRequest slackChannelMessage = (RocketchatSendMessageRequest) o;
 		return Objects.equals(this.msg, slackChannelMessage.msg)
 				&& Objects.equals(this.method, slackChannelMessage.method)
 				&& Objects.equals(this.id, slackChannelMessage.id)

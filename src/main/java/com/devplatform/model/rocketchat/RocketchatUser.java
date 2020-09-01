@@ -2,12 +2,15 @@ package com.devplatform.model.rocketchat;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Objects;
 
 import javax.validation.constraints.NotNull;
 
 import org.springframework.validation.annotation.Validated;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import io.swagger.annotations.ApiModelProperty;
@@ -21,88 +24,128 @@ public class RocketchatUser {
 	/**
 	 * Gets or Sets type
 	 */
+	@JsonInclude(Include.NON_NULL)
 	@JsonProperty("_id")
-	private String _id = null;
+	private String id = null;
 
+	@JsonInclude(Include.NON_NULL)
 	@JsonProperty("createdAt")
 	private String createdAt = null;
 	
+	@JsonInclude(Include.NON_NULL)
 	@JsonProperty("roles")
 	private ArrayList<String> roles = null;
 
+	@JsonInclude(Include.NON_NULL)
 	@JsonProperty("type")
 	private String type = null;
 
+	@JsonInclude(Include.NON_NULL)
 	@JsonProperty("active")
 	private Boolean active = null;
 
+	@JsonInclude(Include.NON_NULL)
 	@JsonProperty("username")
 	private String username = null;
 	
+	@JsonInclude(Include.NON_NULL)
 	@JsonProperty("name")
 	private String name = null;
 
+	@JsonInclude(Include.NON_NULL)
 	@JsonProperty("services")
 	private Object services = null;
 
+	@JsonInclude(Include.NON_NULL)
 	@JsonProperty("emails")
-	private ArrayList<Object> emails = null;
+	private List<RocketchatEmail> emails = null;
 
+	@JsonInclude(Include.NON_NULL)
 	@JsonProperty("status")
 	private String status = null;
 
+	@JsonInclude(Include.NON_NULL)
 	@JsonProperty("statusConnection")
 	private String statusConnection = null;
 
+	@JsonInclude(Include.NON_NULL)
 	@JsonProperty("lastLogin")
 	private String lastLogin = null;
 
+	@JsonInclude(Include.NON_NULL)
 	@JsonProperty("avatarOrigin")
 	private String avatarOrigin = null;
 	
+	@JsonInclude(Include.NON_NULL)
 	@JsonProperty("utcOffset")
 	private Integer utcOffset = null;
 	
+	@JsonInclude(Include.NON_NULL)
 	@JsonProperty("language")
 	private String language = null;
 
-	@JsonProperty("statusDefault")
-	private String statusDefault = null;
+	@JsonInclude(Include.NON_NULL)
+	@JsonProperty("avatarETag")
+	private String avatarETag = null;
 
+	@JsonInclude(Include.NON_NULL)
+	@JsonProperty("statusText")
+	private String statusText = null;
+
+	@JsonInclude(Include.NON_NULL)
+	@JsonProperty("bio")
+	private String bio = null;
+
+	@JsonInclude(Include.NON_NULL)
 	@JsonProperty("oauth")
 	private Object oauth = null;
 	
+	@JsonInclude(Include.NON_NULL)
 	@JsonProperty("_updatedAt")
-	private String _updatedAt = null;
+	private String updatedAt = null;
 	
+	@JsonInclude(Include.NON_NULL)
 	@JsonProperty("statusLivechat")
 	private String statusLivechat = null;
 	
+	@JsonInclude(Include.NON_NULL)
 	@JsonProperty("e2e")
 	private Object e2e = null;
 
+	@JsonInclude(Include.NON_NULL)
 	@JsonProperty("requirePasswordChange")
 	private Boolean requirePasswordChange = null;
 
+	@JsonInclude(Include.NON_NULL)
 	@JsonProperty("customFields")
 	private HashMap<String, Object> customFields = null;
 
+	@JsonInclude(Include.NON_NULL)
 	@JsonProperty("settings")
 	private Object settings = null;
 	
-	public RocketchatUser _id(String _id) {
-		this._id = _id;
+	@JsonInclude(Include.NON_NULL)
+	@JsonProperty("banners")
+	private List<RocketchatBanner> banners = null;
+
+	@JsonInclude(Include.NON_NULL)
+	@JsonProperty("__rooms")
+	private List<String> rooms = null;
+	
+
+	public RocketchatUser id(String id) {
+		this.id = id;
 		return this;
 	}
 
 	@ApiModelProperty(required = true, value = "")
 	@NotNull
-	public String get_id() {
-		return _id;
+	public String getId() {
+		return id;
 	}
 
-	public void set_id(String _id) {
-		this._id = _id;
+	public void setId(String id) {
+		this.id = id;
 	}
 
 	public RocketchatUser createdAt(String createdAt) {
@@ -210,18 +253,18 @@ public class RocketchatUser {
 		this.services = services;
 	}
 
-	public RocketchatUser emails(ArrayList<Object> emails) {
+	public RocketchatUser emails(List<RocketchatEmail> emails) {
 		this.emails = emails;
 		return this;
 	}
 
 	@ApiModelProperty(value = "")
 	@NotNull
-	public ArrayList<Object> getEmails() {
+	public List<RocketchatEmail> getEmails() {
 		return emails;
 	}
 
-	public void setEmails(ArrayList<Object> emails) {
+	public void setEmails(List<RocketchatEmail> emails) {
 		this.emails = emails;
 	}
 
@@ -300,19 +343,19 @@ public class RocketchatUser {
 		this.utcOffset = utcOffset;
 	}
 
-	public RocketchatUser statusDefault(String statusDefault) {
-		this.statusDefault = statusDefault;
+	public RocketchatUser statusText(String statusText) {
+		this.statusText = statusText;
 		return this;
 	}
 
 	@ApiModelProperty(value = "")
 	@NotNull
-	public String getStatusDefault() {
-		return statusDefault;
+	public String getStatusText() {
+		return statusText;
 	}
 
-	public void setStatusDefault(String statusDefault) {
-		this.statusDefault = statusDefault;
+	public void setStatusText(String statusText) {
+		this.statusText = statusText;
 	}
 
 	public RocketchatUser language(String language) {
@@ -345,19 +388,19 @@ public class RocketchatUser {
 		this.oauth = oauth;
 	}
 
-	public RocketchatUser _updatedAt(String _updatedAt) {
-		this._updatedAt = _updatedAt;
+	public RocketchatUser updatedAt(String updatedAt) {
+		this.updatedAt = updatedAt;
 		return this;
 	}
 
 	@ApiModelProperty(value = "")
 	@NotNull
-	public String get_updatedAt() {
-		return _updatedAt;
+	public String getUpdatedAt() {
+		return updatedAt;
 	}
 
-	public void set_updatedAt(String _updatedAt) {
-		this._updatedAt = _updatedAt;
+	public void setUpdatedAt(String updatedAt) {
+		this.updatedAt = updatedAt;
 	}
 
 	public RocketchatUser statusLivechat(String statusLivechat) {
@@ -434,6 +477,66 @@ public class RocketchatUser {
 	public void setSettings(Object settings) {
 		this.settings = settings;
 	}
+	
+	public RocketchatUser settings(String avatarETag) {
+		this.avatarETag = avatarETag;
+		return this;
+	}
+
+	@ApiModelProperty(value = "")
+	@NotNull
+	public String getAvatarETag() {
+		return avatarETag;
+	}
+
+	public void setAvatarETag(String avatarETag) {
+		this.avatarETag = avatarETag;
+	}
+
+	public RocketchatUser bio(String bio) {
+		this.bio = bio;
+		return this;
+	}
+
+	@ApiModelProperty(value = "")
+	@NotNull
+	public String getBio() {
+		return bio;
+	}
+
+	public void setBio(String bio) {
+		this.bio = bio;
+	}
+
+	public RocketchatUser banners(List<RocketchatBanner> banners) {
+		this.banners = banners;
+		return this;
+	}
+
+	@ApiModelProperty(value = "")
+	@NotNull
+	public List<RocketchatBanner> getBanners() {
+		return banners;
+	}
+
+	public void setBanners(List<RocketchatBanner> banners) {
+		this.banners = banners;
+	}
+
+	public RocketchatUser rooms(List<String> rooms) {
+		this.rooms = rooms;
+		return this;
+	}
+
+	@ApiModelProperty(value = "")
+	@NotNull
+	public List<String> getRooms() {
+		return rooms;
+	}
+
+	public void setRooms(List<String> rooms) {
+		this.rooms = rooms;
+	}
 
 	@Override
 	public boolean equals(java.lang.Object o) {
@@ -444,7 +547,7 @@ public class RocketchatUser {
 			return false;
 		}
 		RocketchatUser slackChannelMessage = (RocketchatUser) o;
-		return Objects.equals(this._id, slackChannelMessage._id)
+		return Objects.equals(this.id, slackChannelMessage.id)
 				&& Objects.equals(this.createdAt, slackChannelMessage.createdAt)
 				&& Objects.equals(this.roles, slackChannelMessage.roles)
 				&& Objects.equals(this.type, slackChannelMessage.type)
@@ -459,22 +562,27 @@ public class RocketchatUser {
 				&& Objects.equals(this.avatarOrigin, slackChannelMessage.avatarOrigin)
 				&& Objects.equals(this.utcOffset, slackChannelMessage.utcOffset)
 				&& Objects.equals(this.language, slackChannelMessage.language)
-				&& Objects.equals(this.statusDefault, slackChannelMessage.statusDefault)
+				&& Objects.equals(this.statusText, slackChannelMessage.statusText)
 				&& Objects.equals(this.oauth, slackChannelMessage.oauth)
-				&& Objects.equals(this._updatedAt, slackChannelMessage._updatedAt)
+				&& Objects.equals(this.updatedAt, slackChannelMessage.updatedAt)
 				&& Objects.equals(this.statusLivechat, slackChannelMessage.statusLivechat)
 				&& Objects.equals(this.e2e, slackChannelMessage.e2e)
 				&& Objects.equals(this.requirePasswordChange, slackChannelMessage.requirePasswordChange)
 				&& Objects.equals(this.customFields, slackChannelMessage.customFields)
-				&& Objects.equals(this.settings, slackChannelMessage.settings);
+				&& Objects.equals(this.settings, slackChannelMessage.settings)
+				
+				&& Objects.equals(this.avatarETag, slackChannelMessage.avatarETag)
+				&& Objects.equals(this.bio, slackChannelMessage.bio)
+				&& Objects.equals(this.banners, slackChannelMessage.banners)
+				&& Objects.equals(this.rooms, slackChannelMessage.rooms);
 	}
-
+		
 	@Override
 	public int hashCode() {
-		return Objects.hash(_id, createdAt, roles, type, active, username, name, services, emails, 
+		return Objects.hash(id, createdAt, roles, type, active, username, name, services, emails, 
 				status, statusConnection, lastLogin, avatarOrigin, utcOffset, language, 
-				statusDefault, oauth, _updatedAt, statusLivechat, e2e, requirePasswordChange, 
-				customFields, settings);
+				statusText, oauth, updatedAt, statusLivechat, e2e, requirePasswordChange, 
+				customFields, settings, avatarETag, bio, banners, rooms);
 	}
 
 	@Override
@@ -482,7 +590,7 @@ public class RocketchatUser {
 		StringBuilder sb = new StringBuilder();
 		sb.append("class RocketchatUser {\n");
 
-		sb.append("    _id: ").append(toIndentedString(_id)).append("\n");
+		sb.append("    id: ").append(toIndentedString(id)).append("\n");
 		sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
 		sb.append("    roles: ").append(toIndentedString(roles)).append("\n");
 		sb.append("    type: ").append(toIndentedString(type)).append("\n");
@@ -497,14 +605,19 @@ public class RocketchatUser {
 		sb.append("    avatarOrigin: ").append(toIndentedString(avatarOrigin)).append("\n");
 		sb.append("    utcOffset: ").append(toIndentedString(utcOffset)).append("\n");
 		sb.append("    language: ").append(toIndentedString(language)).append("\n");
-		sb.append("    statusDefault: ").append(toIndentedString(statusDefault)).append("\n");
+		sb.append("    statusText: ").append(toIndentedString(statusText)).append("\n");
 		sb.append("    oauth: ").append(toIndentedString(oauth)).append("\n");
-		sb.append("    _updatedAt: ").append(toIndentedString(_updatedAt)).append("\n");
+		sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
 		sb.append("    statusLivechat: ").append(toIndentedString(statusLivechat)).append("\n");
 		sb.append("    e2e: ").append(toIndentedString(e2e)).append("\n");
 		sb.append("    requirePasswordChange: ").append(toIndentedString(requirePasswordChange)).append("\n");
 		sb.append("    customFields: ").append(toIndentedString(customFields)).append("\n");
 		sb.append("    settings: ").append(toIndentedString(settings)).append("\n");
+
+		sb.append("    avatarETag: ").append(toIndentedString(avatarETag)).append("\n");
+		sb.append("    bio: ").append(toIndentedString(bio)).append("\n");
+		sb.append("    banners: ").append(toIndentedString(banners)).append("\n");
+		sb.append("    rooms: ").append(toIndentedString(rooms)).append("\n");
 		sb.append("}");
 		return sb.toString();
 	}

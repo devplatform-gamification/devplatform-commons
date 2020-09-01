@@ -130,6 +130,9 @@ public class JiraIssueFields {
 	@JsonProperty("customfield_11401")
 	private JiraIssueFieldOption sprintGrupo = null;
 
+	@JsonProperty("customfield_14014")
+	private JiraIssueFieldOption raiaDoFluxo = null;
+
 	@JsonProperty("customfield_12303")
 	private JiraUser responsavelCodificacao = null;
 
@@ -995,18 +998,27 @@ public class JiraIssueFields {
 		this.fabricaDesenvolvimento = fabricaDesenvolvimento;
 	}
 
+	public JiraIssueFields raiaDoFluxo(JiraIssueFieldOption raiaDoFluxo) {
+		this.raiaDoFluxo = raiaDoFluxo;
+		return this;
+	}
+
+	@ApiModelProperty(value = "")
+	@Valid
+	public JiraIssueFieldOption getRaiaDoFluxo() {
+		return raiaDoFluxo;
+	}
+
+	public void setRaiaDoFluxo(JiraIssueFieldOption raiaDoFluxo) {
+		this.raiaDoFluxo = raiaDoFluxo;
+	}
+
 	public JiraIssueFields sprintGrupo(JiraIssueFieldOption sprintGrupo) {
 		this.sprintGrupo = sprintGrupo;
 		return this;
 	}
 
-	/**
-	 * Get sprintGrupo
-	 * 
-	 * @return sprintGrupo
-	 **/
 	@ApiModelProperty(value = "")
-
 	@Valid
 	public JiraIssueFieldOption getSprintGrupo() {
 		return sprintGrupo;
@@ -1776,6 +1788,8 @@ public class JiraIssueFields {
 				&& Objects.equals(this.watches, jiraIssueFields.watches)
 				&& Objects.equals(this.assignee, jiraIssueFields.assignee)
 				&& Objects.equals(this.status, jiraIssueFields.status)
+				&& Objects.equals(this.raiaDoFluxo, jiraIssueFields.raiaDoFluxo)
+				
 				&& Objects.equals(this.updated, jiraIssueFields.updated)
 				&& Objects.equals(this.fabricaDesenvolvimento, jiraIssueFields.fabricaDesenvolvimento)
 				&& Objects.equals(this.sprintGrupo, jiraIssueFields.sprintGrupo)
@@ -1837,7 +1851,7 @@ public class JiraIssueFields {
 		return Objects.hash(project, issuetype, environment, funcionalidade, perfil, creator, reporter, created,
 				summary, description, attachment, versions, labels, sistema, servico, parentLink, subtasks,
 				informacoesPendentes, priority, businessValue, epicTheme, potencialDiminuicaoIssues, complexidade,
-				issuelinks, tribunalRequisitante, votes, watches, assignee, status, updated, fabricaDesenvolvimento,
+				issuelinks, tribunalRequisitante, votes, watches, assignee, status, raiaDoFluxo, updated, fabricaDesenvolvimento,
 				sprintGrupo, responsavelCodificacao, desenvolvimento, gerarVersaoAutomaticamente, iniciarProximaVersaoAutomaticamente,
 				comunicarLancamentoVersao, gitBranch, gitCommitsReferenced, timeestimate,
 				timespent, duedate, responsavelRevisao, fabricaTeste, responsavelTeste, aprovacoesNecessarias, aprovacoesRealizadas,
@@ -1886,6 +1900,8 @@ public class JiraIssueFields {
 		sb.append("    watches: ").append(toIndentedString(watches)).append("\n");
 		sb.append("    assignee: ").append(toIndentedString(assignee)).append("\n");
 		sb.append("    status: ").append(toIndentedString(status)).append("\n");
+		sb.append("    raiaDoFluxo: ").append(toIndentedString(raiaDoFluxo)).append("\n");
+		
 		sb.append("    updated: ").append(toIndentedString(updated)).append("\n");
 		sb.append("    sprintGrupo: ").append(toIndentedString(sprintGrupo)).append("\n");
 		sb.append("    grupoAtribuicao: ").append(toIndentedString(grupoAtribuicao)).append("\n");

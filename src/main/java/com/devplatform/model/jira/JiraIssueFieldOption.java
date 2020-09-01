@@ -7,7 +7,9 @@ import javax.validation.Valid;
 
 import org.springframework.validation.annotation.Validated;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
 import io.swagger.annotations.ApiModelProperty;
 
@@ -18,12 +20,15 @@ import io.swagger.annotations.ApiModelProperty;
 @javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2020-03-18T01:03:28.811Z[GMT]")
 public class JiraIssueFieldOption {
 	@JsonProperty("id")
+	@JsonInclude(Include.NON_NULL)
 	protected BigDecimal id = null;
 
 	@JsonProperty("value")
+	@JsonInclude(Include.NON_NULL)
 	protected String value = null;
 
 	@JsonProperty("self")
+	@JsonInclude(Include.NON_NULL)
 	protected String self = null;
 
 	public JiraIssueFieldOption id(BigDecimal id) {

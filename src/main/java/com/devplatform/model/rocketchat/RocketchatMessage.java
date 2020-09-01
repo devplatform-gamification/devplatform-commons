@@ -1,6 +1,7 @@
 package com.devplatform.model.rocketchat;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 
 import javax.validation.constraints.NotNull;
@@ -22,7 +23,7 @@ public class RocketchatMessage {
 	 */
 	// The _id of message
 	@JsonProperty("_id")
-	private String _id = null;
+	private String id = null;
 
 	@JsonProperty("rid")
 	// The room id of where the message is to be sent
@@ -48,8 +49,32 @@ public class RocketchatMessage {
 	// If provided, this will make the avatar use the provided image url.
 	private String avatar = null;
 	
+	@JsonProperty("ts")
+	private String createdAt = null;
+	
+	@JsonProperty("u")
+	private RocketchatUser createdBy = null;
+	
+	@JsonProperty("_updatedAt")
+	private String updatedAt = null;
+	
+	@JsonProperty("urls")
+	private List<Map<String, Object>> urls = null;
+	
+	@JsonProperty("mentions")
+	private List<Map<String, String>> mentions = null;
+
+	@JsonProperty("channels")
+	private List<Map<String, String>> channels = null;
+	
+	@JsonProperty("editedAt")
+	private String editedAt = null;
+
+	@JsonProperty("editedBy")
+	private RocketchatUser editedBy = null;
+
 	@JsonProperty("attachments")
-	private List<Object> attachments = null;
+	private List<RocketchatMessageAttachment> attachments = null;
 
 	public RocketchatMessage(String rid, String msg) {
 		super();
@@ -57,32 +82,23 @@ public class RocketchatMessage {
 		this.msg = msg;
 	}
 	
-	public RocketchatMessage(String _id, String rid, String tmid, String msg, String alias, String emoji, String avatar,
-			List<Object> attachments) {
+	public RocketchatMessage() {
 		super();
-		this._id = _id;
-		this.rid = rid;
-		this.tmid = tmid;
-		this.msg = msg;
-		this.alias = alias;
-		this.emoji = emoji;
-		this.avatar = avatar;
-		this.attachments = attachments;
 	}
 
-	public RocketchatMessage _id(String _id) {
-		this._id = _id;
+	public RocketchatMessage id(String id) {
+		this.id = id;
 		return this;
 	}
 
 	@ApiModelProperty(required = true, value = "")
 	@NotNull
-	public String get_id() {
-		return _id;
+	public String getId() {
+		return id;
 	}
 
-	public void set_id(String _id) {
-		this._id = _id;
+	public void setId(String id) {
+		this.id = id;
 	}
 
 	public RocketchatMessage rid(String rid) {
@@ -174,19 +190,139 @@ public class RocketchatMessage {
 	public void setAvatar(String avatar) {
 		this.avatar = avatar;
 	}
+	
+	public RocketchatMessage createdAt(String createdAt) {
+		this.createdAt = createdAt;
+		return this;
+	}
 
-	public RocketchatMessage attachments(List<Object> attachments) {
+	@ApiModelProperty(value = "")
+	@NotNull
+	public String getCreatedAt() {
+		return createdAt;
+	}
+
+	public void setCreatedAt(String createdAt) {
+		this.createdAt = createdAt;
+	}
+
+	public RocketchatMessage createdBy(RocketchatUser createdBy) {
+		this.createdBy = createdBy;
+		return this;
+	}
+
+	@ApiModelProperty(value = "")
+	@NotNull
+	public RocketchatUser getCreatedBy() {
+		return createdBy;
+	}
+
+	public void setCreatedBy(RocketchatUser createdBy) {
+		this.createdBy = createdBy;
+	}
+
+	public RocketchatMessage updatedAt(String updatedAt) {
+		this.updatedAt = updatedAt;
+		return this;
+	}
+
+	@ApiModelProperty(value = "")
+	@NotNull
+	public String getUpdatedAt() {
+		return updatedAt;
+	}
+
+	public void setUpdatedAt(String updatedAt) {
+		this.updatedAt = updatedAt;
+	}
+
+	public RocketchatMessage urls(List<Map<String, Object>> urls) {
+		this.urls = urls;
+		return this;
+	}
+
+	@ApiModelProperty(value = "")
+	@NotNull
+	public List<Map<String, Object>> getUrls() {
+		return urls;
+	}
+
+	public void setUrls(List<Map<String, Object>> urls) {
+		this.urls = urls;
+	}
+
+	public RocketchatMessage mentions(List<Map<String, String>> mentions) {
+		this.mentions = mentions;
+		return this;
+	}
+
+	@ApiModelProperty(value = "")
+	@NotNull
+	public List<Map<String, String>> getMentions() {
+		return mentions;
+	}
+
+	public void setMentions(List<Map<String, String>> mentions) {
+		this.mentions = mentions;
+	}
+
+	public RocketchatMessage channels(List<Map<String, String>> channels) {
+		this.channels = channels;
+		return this;
+	}
+
+	@ApiModelProperty(value = "")
+	@NotNull
+	public List<Map<String, String>> getChannels() {
+		return channels;
+	}
+
+	public void setChannels(List<Map<String, String>> channels) {
+		this.channels = channels;
+	}
+
+	public RocketchatMessage editedAt(String editedAt) {
+		this.editedAt = editedAt;
+		return this;
+	}
+
+	@ApiModelProperty(value = "")
+	@NotNull
+	public String getEditedAt() {
+		return editedAt;
+	}
+
+	public void setEditedAt(String editedAt) {
+		this.editedAt = editedAt;
+	}
+
+	public RocketchatMessage editedBy(RocketchatUser editedBy) {
+		this.editedBy = editedBy;
+		return this;
+	}
+
+	@ApiModelProperty(value = "")
+	@NotNull
+	public RocketchatUser getEditedBy() {
+		return editedBy;
+	}
+
+	public void setEditedBy(RocketchatUser editedBy) {
+		this.editedBy = editedBy;
+	}
+
+	public RocketchatMessage attachments(List<RocketchatMessageAttachment> attachments) {
 		this.attachments = attachments;
 		return this;
 	}
 
 	@ApiModelProperty(value = "")
 	@NotNull
-	public List<Object> getAttachments() {
+	public List<RocketchatMessageAttachment> getAttachments() {
 		return attachments;
 	}
 
-	public void setAttachments(List<Object> attachments) {
+	public void setAttachments(List<RocketchatMessageAttachment> attachments) {
 		this.attachments = attachments;
 	}
 
@@ -199,33 +335,51 @@ public class RocketchatMessage {
 			return false;
 		}
 		RocketchatMessage slackChannelMessage = (RocketchatMessage) o;
-		return Objects.equals(this._id, slackChannelMessage._id)
+		return Objects.equals(this.id, slackChannelMessage.id)
 				&& Objects.equals(this.rid, slackChannelMessage.rid)
 				&& Objects.equals(this.tmid, slackChannelMessage.tmid)
 				&& Objects.equals(this.msg, slackChannelMessage.msg)
 				&& Objects.equals(this.alias, slackChannelMessage.alias)
 				&& Objects.equals(this.emoji, slackChannelMessage.emoji)
 				&& Objects.equals(this.avatar, slackChannelMessage.avatar)
+				
+				&& Objects.equals(this.createdAt, slackChannelMessage.createdAt)
+				&& Objects.equals(this.createdBy, slackChannelMessage.createdBy)
+				&& Objects.equals(this.updatedAt, slackChannelMessage.updatedAt)
+				&& Objects.equals(this.urls, slackChannelMessage.urls)
+				&& Objects.equals(this.mentions, slackChannelMessage.mentions)
+				&& Objects.equals(this.channels, slackChannelMessage.channels)
+				&& Objects.equals(this.editedAt, slackChannelMessage.editedAt)
+				&& Objects.equals(this.editedBy, slackChannelMessage.editedBy)
+				
 				&& Objects.equals(this.attachments, slackChannelMessage.attachments);
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(_id, rid, tmid, msg, alias, emoji, avatar, attachments);
+		return Objects.hash(id, rid, tmid, msg, alias, emoji, avatar,
+				createdAt, createdBy, updatedAt, urls, mentions, channels, editedAt, editedBy, attachments);
 	}
 
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
 		sb.append("class RocketchatMessage {\n");
-
-		sb.append("    _id: ").append(toIndentedString(_id)).append("\n");
+		sb.append("    id: ").append(toIndentedString(id)).append("\n");
 		sb.append("    rid: ").append(toIndentedString(rid)).append("\n");
 		sb.append("    tmid: ").append(toIndentedString(tmid)).append("\n");
 		sb.append("    msg: ").append(toIndentedString(msg)).append("\n");
 		sb.append("    alias: ").append(toIndentedString(alias)).append("\n");
 		sb.append("    emoji: ").append(toIndentedString(emoji)).append("\n");
 		sb.append("    avatar: ").append(toIndentedString(avatar)).append("\n");
+		sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
+		sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
+		sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
+		sb.append("    urls: ").append(toIndentedString(urls)).append("\n");
+		sb.append("    mentions: ").append(toIndentedString(mentions)).append("\n");
+		sb.append("    channels: ").append(toIndentedString(channels)).append("\n");
+		sb.append("    editedAt: ").append(toIndentedString(editedAt)).append("\n");
+		sb.append("    editedBy: ").append(toIndentedString(editedBy)).append("\n");
 		sb.append("    attachments: ").append(toIndentedString(attachments)).append("\n");
 		sb.append("}");
 		return sb.toString();
