@@ -7,6 +7,7 @@ import java.util.Objects;
 
 import org.springframework.validation.annotation.Validated;
 
+import com.devplatform.model.jira.request.ProcessingTypeEnum;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 @Validated

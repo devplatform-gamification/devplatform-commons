@@ -1,4 +1,4 @@
-package com.devplatform.model.bot;
+package com.devplatform.model.jira.request;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
