@@ -1,5 +1,8 @@
 package com.devplatform.model.gitlab;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.validation.annotation.Validated;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -44,6 +47,61 @@ public class GitlabEventChangedItem<E> {
 	public GitlabEventChangedItem<E> current(E current) {
 		this.current = current;
 		return this;
+	}
+	
+	@SuppressWarnings("unchecked")
+	public E getAddedItems(){
+		E addedValue = null;
+		if(getCurrent() instanceof List) {
+			List<Object> currentList = (List<Object>) getCurrent();
+			List<Object> previousList = (List<Object>) getPrevious();
+
+			List<Object> addedItems = new ArrayList<>();
+
+			if(currentList != null) {
+				if(previousList == null) {
+					addedItems = currentList;
+				}else {
+					for (Object c : currentList) {
+						if(!previousList.contains(c)) {
+							addedItems.add(c);
+						}
+					}
+				}
+			}
+			addedValue = (E) addedItems;
+		}else if(getCurrent() != null) {
+			addedValue = getCurrent();
+		}
+		
+		return addedValue;
+	}
+
+	@SuppressWarnings("unchecked")
+	public E getRemovedItems(){
+		E removedValue = null;
+		if(getCurrent() instanceof List) {
+			List<Object> currentList = (List<Object>) getCurrent();
+			List<Object> previousList = (List<Object>) getPrevious();
+
+			List<Object> removedItems = new ArrayList<>();
+
+			if(previousList != null) {
+				if(currentList == null) {
+					removedItems = previousList;
+				}else {
+					for (Object p : previousList) {
+						if(!currentList.contains(p)) {
+							removedItems.add(p);
+						}
+					}
+				}
+			}
+			removedValue = (E) removedItems;
+		}else if(getPrevious() != null) {
+			removedValue = getPrevious();
+		}
+		return removedValue;
 	}
 
 	@Override

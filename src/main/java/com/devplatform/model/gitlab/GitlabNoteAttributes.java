@@ -4,9 +4,7 @@ import java.math.BigDecimal;
 
 import org.springframework.validation.annotation.Validated;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
  * GitlabMergeRequestAttributes
@@ -27,7 +25,7 @@ public class GitlabNoteAttributes {
 	private String note = null;
 
 	@JsonProperty("noteable_type")
-	private NoteableTypeEnum noteableType = null;
+	private GitlabNoteableTypeEnum noteableType = null;
 
 	@JsonProperty("description")
 	private String description = null;
@@ -78,7 +76,7 @@ public class GitlabNoteAttributes {
 	private Boolean system = null;
 
 	@JsonProperty("type")
-	private String type = null;
+	private GitlabNoteTypeEnum type = null;
 
 	@JsonProperty("url")
 	private String url = null;
@@ -138,16 +136,16 @@ public class GitlabNoteAttributes {
 		this.note = note;
 	}
 
-	public GitlabNoteAttributes noteableType(NoteableTypeEnum noteableType) {
+	public GitlabNoteAttributes noteableType(GitlabNoteableTypeEnum noteableType) {
 		this.noteableType = noteableType;
 		return this;
 	}
 	
-	public NoteableTypeEnum getNoteableType() {
+	public GitlabNoteableTypeEnum getNoteableType() {
 		return noteableType;
 	}
 
-	public void setNoteableType(NoteableTypeEnum noteableType) {
+	public void setNoteableType(GitlabNoteableTypeEnum noteableType) {
 		this.noteableType = noteableType;
 	}
 
@@ -359,16 +357,16 @@ public class GitlabNoteAttributes {
 		this.system = system;
 	}
 	
-	public GitlabNoteAttributes type(String type) {
+	public GitlabNoteAttributes type(GitlabNoteTypeEnum type) {
 		this.type = type;
 		return this;
 	}
 	
-	public String getType() {
+	public GitlabNoteTypeEnum getType() {
 		return type;
 	}
 
-	public void setType(String type) {
+	public void setType(GitlabNoteTypeEnum type) {
 		this.type = type;
 	}
 
@@ -601,41 +599,5 @@ public class GitlabNoteAttributes {
 			return "null";
 		}
 		return o.toString().replace("\n", "\n    ");
-	}
-
-	/**
-	 * Gets or Sets mergeStatus
-	 */
-	public enum NoteableTypeEnum {
-
-		MERGE_REQUEST("merge_request"),
-
-		COMMIT("Commit"),
-
-		ISSUE("Issue"),
-
-		CODE_SNIPPET("Snippet");
-
-		private String value;
-
-		NoteableTypeEnum(String value) {
-			this.value = value;
-		}
-
-		@Override
-		@JsonValue
-		public String toString() {
-			return String.valueOf(value);
-		}
-
-		@JsonCreator
-		public static NoteableTypeEnum fromValue(String text) {
-			for (NoteableTypeEnum b : NoteableTypeEnum.values()) {
-				if (String.valueOf(b.value).equals(text)) {
-					return b;
-				}
-			}
-			return null;
-		}
 	}
 }

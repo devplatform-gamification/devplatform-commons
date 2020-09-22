@@ -11,7 +11,7 @@ public class GitlabMergeRequestVO{
 	public GitlabMergeRequestVO(String projectNamespace, String mrIID) {
 		super();
 		this.projectNamespace = projectNamespace;
-		if(StringUtils.isNotBlank(mrIID)) {
+		if(StringUtils.isNotBlank(mrIID) && StringUtils.isNumeric(mrIID)) {
 			this.mrIId = new BigDecimal(mrIID);
 		}
 	}

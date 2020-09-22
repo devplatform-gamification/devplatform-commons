@@ -24,6 +24,9 @@ public class RocketchatBanner {
 	@JsonProperty("id")
 	private String id = null;
 
+	@JsonProperty("priority")
+	private BigInteger priority = null;
+	
 	@JsonProperty("title")
 	private String title = null;
 	
@@ -32,9 +35,6 @@ public class RocketchatBanner {
 
 	@JsonProperty("textArguments")
 	private List<String> textArguments = null;
-
-	@JsonProperty("priority")
-	private BigInteger priority = null;
 
 	@JsonProperty("link")
 	private String link = null;

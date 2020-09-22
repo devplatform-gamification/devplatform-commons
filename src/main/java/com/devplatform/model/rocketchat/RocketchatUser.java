@@ -3,9 +3,8 @@ package com.devplatform.model.rocketchat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
-
-import javax.validation.constraints.NotNull;
 
 import org.springframework.validation.annotation.Validated;
 
@@ -126,7 +125,7 @@ public class RocketchatUser {
 	
 	@JsonInclude(Include.NON_NULL)
 	@JsonProperty("banners")
-	private List<RocketchatBanner> banners = null;
+	private Map<String, RocketchatBanner> banners = null;
 
 	@JsonInclude(Include.NON_NULL)
 	@JsonProperty("__rooms")
@@ -139,7 +138,6 @@ public class RocketchatUser {
 	}
 
 	@ApiModelProperty(required = true, value = "")
-	@NotNull
 	public String getId() {
 		return id;
 	}
@@ -154,7 +152,6 @@ public class RocketchatUser {
 	}
 
 	@ApiModelProperty(required = true, value = "")
-	@NotNull
 	public String getCreatedAt() {
 		return createdAt;
 	}
@@ -169,7 +166,6 @@ public class RocketchatUser {
 	}
 
 	@ApiModelProperty(required = true, value = "")
-	@NotNull
 	public ArrayList<String> getRoles() {
 		return roles;
 	}
@@ -184,7 +180,6 @@ public class RocketchatUser {
 	}
 
 	@ApiModelProperty(required = true, value = "")
-	@NotNull
 	public String getType() {
 		return type;
 	}
@@ -199,7 +194,6 @@ public class RocketchatUser {
 	}
 
 	@ApiModelProperty(required = true, value = "")
-	@NotNull
 	public Boolean getActive() {
 		return active;
 	}
@@ -214,7 +208,6 @@ public class RocketchatUser {
 	}
 
 	@ApiModelProperty(value = "")
-	@NotNull
 	public String getUsername() {
 		return username;
 	}
@@ -229,7 +222,6 @@ public class RocketchatUser {
 	}
 
 	@ApiModelProperty(value = "")
-	@NotNull
 	public String getName() {
 		return name;
 	}
@@ -244,7 +236,6 @@ public class RocketchatUser {
 	}
 
 	@ApiModelProperty(value = "")
-	@NotNull
 	public Object getServices() {
 		return services;
 	}
@@ -259,7 +250,6 @@ public class RocketchatUser {
 	}
 
 	@ApiModelProperty(value = "")
-	@NotNull
 	public List<RocketchatEmail> getEmails() {
 		return emails;
 	}
@@ -274,7 +264,6 @@ public class RocketchatUser {
 	}
 
 	@ApiModelProperty(value = "")
-	@NotNull
 	public String getStatus() {
 		return status;
 	}
@@ -289,7 +278,6 @@ public class RocketchatUser {
 	}
 
 	@ApiModelProperty(value = "")
-	@NotNull
 	public String getStatusConnection() {
 		return statusConnection;
 	}
@@ -304,7 +292,6 @@ public class RocketchatUser {
 	}
 
 	@ApiModelProperty(value = "")
-	@NotNull
 	public String getLastLogin() {
 		return lastLogin;
 	}
@@ -319,7 +306,7 @@ public class RocketchatUser {
 	}
 
 	@ApiModelProperty(value = "")
-	@NotNull
+
 	public String getAvatarOrigin() {
 		return avatarOrigin;
 	}
@@ -334,7 +321,7 @@ public class RocketchatUser {
 	}
 
 	@ApiModelProperty(value = "")
-	@NotNull
+	
 	public Integer getUtcOffset() {
 		return utcOffset;
 	}
@@ -349,7 +336,7 @@ public class RocketchatUser {
 	}
 
 	@ApiModelProperty(value = "")
-	@NotNull
+	
 	public String getStatusText() {
 		return statusText;
 	}
@@ -364,7 +351,7 @@ public class RocketchatUser {
 	}
 
 	@ApiModelProperty(value = "")
-	@NotNull
+	
 	public String getLanguage() {
 		return language;
 	}
@@ -379,7 +366,7 @@ public class RocketchatUser {
 	}
 
 	@ApiModelProperty(value = "")
-	@NotNull
+	
 	public Object getOauth() {
 		return oauth;
 	}
@@ -394,7 +381,7 @@ public class RocketchatUser {
 	}
 
 	@ApiModelProperty(value = "")
-	@NotNull
+	
 	public String getUpdatedAt() {
 		return updatedAt;
 	}
@@ -409,7 +396,7 @@ public class RocketchatUser {
 	}
 
 	@ApiModelProperty(value = "")
-	@NotNull
+	
 	public String getStatusLivechat() {
 		return statusLivechat;
 	}
@@ -424,7 +411,7 @@ public class RocketchatUser {
 	}
 
 	@ApiModelProperty(value = "")
-	@NotNull
+	
 	public Object getE2e() {
 		return e2e;
 	}
@@ -439,7 +426,7 @@ public class RocketchatUser {
 	}
 
 	@ApiModelProperty(value = "")
-	@NotNull
+	
 	public Boolean getRequirePasswordChange() {
 		return requirePasswordChange;
 	}
@@ -454,7 +441,7 @@ public class RocketchatUser {
 	}
 
 	@ApiModelProperty(value = "")
-	@NotNull
+	
 	public HashMap<String, Object> getCustomFields() {
 		return customFields;
 	}
@@ -469,7 +456,7 @@ public class RocketchatUser {
 	}
 
 	@ApiModelProperty(value = "")
-	@NotNull
+	
 	public Object getSettings() {
 		return settings;
 	}
@@ -484,7 +471,7 @@ public class RocketchatUser {
 	}
 
 	@ApiModelProperty(value = "")
-	@NotNull
+	
 	public String getAvatarETag() {
 		return avatarETag;
 	}
@@ -499,7 +486,7 @@ public class RocketchatUser {
 	}
 
 	@ApiModelProperty(value = "")
-	@NotNull
+	
 	public String getBio() {
 		return bio;
 	}
@@ -508,18 +495,17 @@ public class RocketchatUser {
 		this.bio = bio;
 	}
 
-	public RocketchatUser banners(List<RocketchatBanner> banners) {
+	public RocketchatUser banners(Map<String, RocketchatBanner> banners) {
 		this.banners = banners;
 		return this;
 	}
 
 	@ApiModelProperty(value = "")
-	@NotNull
-	public List<RocketchatBanner> getBanners() {
+	public Map<String, RocketchatBanner> getBanners() {
 		return banners;
 	}
 
-	public void setBanners(List<RocketchatBanner> banners) {
+	public void setBanners(Map<String, RocketchatBanner> banners) {
 		this.banners = banners;
 	}
 
@@ -529,7 +515,7 @@ public class RocketchatUser {
 	}
 
 	@ApiModelProperty(value = "")
-	@NotNull
+	
 	public List<String> getRooms() {
 		return rooms;
 	}

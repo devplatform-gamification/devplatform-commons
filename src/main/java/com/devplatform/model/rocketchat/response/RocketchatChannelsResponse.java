@@ -1,6 +1,5 @@
 package com.devplatform.model.rocketchat.response;
 
-import java.math.BigInteger;
 import java.util.List;
 import java.util.Objects;
 
@@ -26,13 +25,13 @@ public class RocketchatChannelsResponse {
 	private List<RocketchatRoom> channels;
 
 	@JsonProperty("count")
-	private BigInteger count;
+	private Integer count;
 
 	@JsonProperty("offset")
-	private BigInteger offset;
+	private Integer offset;
 
 	@JsonProperty("total")
-	private BigInteger total;
+	private Integer total;
 
 	@JsonInclude(Include.NON_NULL)
 	@JsonProperty("success")
@@ -57,48 +56,48 @@ public class RocketchatChannelsResponse {
 		this.channels = channels;
 	}
 
-	public RocketchatChannelsResponse count(BigInteger count) {
+	public RocketchatChannelsResponse count(Integer count) {
 		this.count = count;
 		return this;
 	}
 
 	@ApiModelProperty(value = "")
 	@NotNull
-	public BigInteger getCount() {
+	public Integer getCount() {
 		return count;
 	}
 
-	public void setCount(BigInteger count) {
+	public void setCount(Integer count) {
 		this.count = count;
 	}
 
-	public RocketchatChannelsResponse offset(BigInteger offset) {
+	public RocketchatChannelsResponse offset(Integer offset) {
 		this.offset = offset;
 		return this;
 	}
 
 	@ApiModelProperty(value = "")
 	@NotNull
-	public BigInteger getOffset() {
+	public Integer getOffset() {
 		return offset;
 	}
 
-	public void setOffset(BigInteger offset) {
+	public void setOffset(Integer offset) {
 		this.offset = offset;
 	}
 
-	public RocketchatChannelsResponse total(BigInteger total) {
+	public RocketchatChannelsResponse total(Integer total) {
 		this.total = total;
 		return this;
 	}
 
 	@ApiModelProperty(value = "")
 	@NotNull
-	public BigInteger getTotal() {
+	public Integer getTotal() {
 		return total;
 	}
 
-	public void setTotal(BigInteger total) {
+	public void setTotal(Integer total) {
 		this.total = total;
 	}
 

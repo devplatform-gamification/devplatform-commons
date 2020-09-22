@@ -138,6 +138,13 @@ public class JiraIssueFields {
 
 	@JsonProperty("customfield_12200")
 	private JiraUser responsavelRevisao = null;
+	
+	@JsonProperty("customfield_14017")
+	private List<JiraUser> responsaveisRevisao = null;
+
+	@JsonProperty("customfield_14018")
+	@Valid
+	private List<JiraIssueFieldOption> tribunaisResponsaveisRevisao = null;
 
 	@JsonProperty("customfield_13500")
 	private Object desenvolvimento = null;
@@ -863,7 +870,6 @@ public class JiraIssueFields {
 	 * @return tribunalRequisitante
 	 **/
 	@ApiModelProperty(value = "Tribunal requisitante")
-
 	public List<JiraIssueFieldOption> getTribunalRequisitante() {
 		return tribunalRequisitante;
 	}
@@ -1619,6 +1625,36 @@ public class JiraIssueFields {
 	public void setResponsavelRevisao(JiraUser responsavelRevisao) {
 		this.responsavelRevisao = responsavelRevisao;
 	}
+	
+	public List<JiraUser> getResponsaveisRevisao() {
+		return responsaveisRevisao;
+	}
+
+	public void setResponsaveisRevisao(List<JiraUser> responsaveisRevisao) {
+		this.responsaveisRevisao = responsaveisRevisao;
+	}
+
+	public JiraIssueFields tribunaisResponsaveisRevisao(List<JiraIssueFieldOption> tribunaisResponsaveisRevisao) {
+		this.tribunaisResponsaveisRevisao = tribunaisResponsaveisRevisao;
+		return this;
+	}
+
+	public JiraIssueFields addTribunaisResponsaveisRevisaoItem(JiraIssueFieldOption tribunaisResponsaveisRevisao) {
+		if (this.tribunaisResponsaveisRevisao == null) {
+			this.tribunaisResponsaveisRevisao = new ArrayList<JiraIssueFieldOption>();
+		}
+		this.tribunaisResponsaveisRevisao.add(tribunaisResponsaveisRevisao);
+		return this;
+	}
+
+	@ApiModelProperty(value = "Tribunais responsáveis revisão")
+	public List<JiraIssueFieldOption> getTribunaisResponsaveisRevisao() {
+		return tribunaisResponsaveisRevisao;
+	}
+
+	public void setTribunaisResponsaveisRevisao(List<JiraIssueFieldOption> tribunaisResponsaveisRevisao) {
+		this.tribunaisResponsaveisRevisao = tribunaisResponsaveisRevisao;
+	}
 
 	public List<JiraVersion> getIntegradoNosBranches() {
 		return integradoNosBranches;
@@ -1806,6 +1842,8 @@ public class JiraIssueFields {
 				&& Objects.equals(this.duedate, jiraIssueFields.duedate)
 				
 				&& Objects.equals(this.responsavelRevisao, jiraIssueFields.responsavelRevisao)
+				&& Objects.equals(this.responsaveisRevisao, jiraIssueFields.responsaveisRevisao)
+				&& Objects.equals(this.tribunaisResponsaveisRevisao, jiraIssueFields.tribunaisResponsaveisRevisao)
 				&& Objects.equals(this.fabricaTeste, jiraIssueFields.fabricaTeste)
 				&& Objects.equals(this.responsavelTeste, jiraIssueFields.responsavelTeste)
 				&& Objects.equals(this.aprovacoesNecessarias, jiraIssueFields.aprovacoesNecessarias)
@@ -1854,7 +1892,9 @@ public class JiraIssueFields {
 				issuelinks, tribunalRequisitante, votes, watches, assignee, status, raiaDoFluxo, updated, fabricaDesenvolvimento,
 				sprintGrupo, responsavelCodificacao, desenvolvimento, gerarVersaoAutomaticamente, iniciarProximaVersaoAutomaticamente,
 				comunicarLancamentoVersao, gitBranch, gitCommitsReferenced, timeestimate,
-				timespent, duedate, responsavelRevisao, fabricaTeste, responsavelTeste, aprovacoesNecessarias, aprovacoesRealizadas,
+				
+				timespent, duedate, responsavelRevisao, responsaveisRevisao, tribunaisResponsaveisRevisao,
+				fabricaTeste, responsavelTeste, aprovacoesNecessarias, aprovacoesRealizadas,
 				aprovadoPor, resolution, resolutiondate, notasRelease, fixVersions, destaquesReleaseNotes, 
 				grupoAtribuicao, mensagemRocketchat, mensagemTelegram, mensagemSlack, tipoVersao, versaoSeraLancada, 
 				proximaVersao, dtDisponibilizacaoDocumentacao, urlPublicacaoDocumentacao, dtGeracaoCodigoFonte, tagCodigoFonte,
@@ -1918,6 +1958,8 @@ public class JiraIssueFields {
 		sb.append("    timespent: ").append(toIndentedString(timespent)).append("\n");
 		sb.append("    duedate: ").append(toIndentedString(duedate)).append("\n");
 		sb.append("    responsavelRevisao: ").append(toIndentedString(responsavelRevisao)).append("\n");
+		sb.append("    responsaveisRevisao: ").append(toIndentedString(responsaveisRevisao)).append("\n");
+		sb.append("    tribunaisResponsaveisRevisao: ").append(toIndentedString(tribunaisResponsaveisRevisao)).append("\n");
 		sb.append("    fabricaTeste: ").append(toIndentedString(fabricaTeste)).append("\n");
 		sb.append("    responsavelTeste: ").append(toIndentedString(responsavelTeste)).append("\n");
 		sb.append("    aprovacoesNecessarias: ").append(toIndentedString(aprovacoesNecessarias)).append("\n");
