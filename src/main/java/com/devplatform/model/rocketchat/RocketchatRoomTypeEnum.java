@@ -9,7 +9,8 @@ import com.fasterxml.jackson.annotation.JsonValue;
 public enum RocketchatRoomTypeEnum {
 	LIVECHAT("l"),
 	CHAT("c"),
-	DIRECTMESSAGE("d");
+	DIRECTMESSAGE("d"),
+	PRIVATE("p");
 
     private String value;
 
