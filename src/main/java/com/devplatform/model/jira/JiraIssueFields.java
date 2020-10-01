@@ -179,6 +179,27 @@ public class JiraIssueFields {
 	@JsonProperty("duedate")
 	private String duedate = null;
 
+	@JsonProperty("customfield_14100")
+	private String dataAtribuicaoResponsavel = null;
+
+	@JsonProperty("customfield_14101")
+	private String tempoAtribuicaoPorResponsavel = null;
+
+	@JsonProperty("customfield_14102")
+	private String dataAtribuicaoRaia = null;
+
+	@JsonProperty("customfield_14103")
+	private String tempoAtribuicaoPorRaia = null;
+
+	@JsonProperty("customfield_14104")
+	private String responsavelPorRaia = null;
+
+	@JsonProperty("customfield_14106")
+	private String dataUltimaVerificacao = null;
+
+	@JsonProperty("customfield_14107")
+	private String dataProximaVerificacao = null;
+
 	@JsonProperty("customfield_11901")
 	private JiraIssueFieldOption fabricaTeste = null;
 
@@ -1226,7 +1247,6 @@ public class JiraIssueFields {
 	 * @return duedate
 	 **/
 	@ApiModelProperty(value = "Data para Ficar Pronto")
-
 	@Valid
 	public String getDuedate() {
 		return duedate;
@@ -1234,6 +1254,104 @@ public class JiraIssueFields {
 
 	public void setDuedate(String duedate) {
 		this.duedate = duedate;
+	}
+
+	public JiraIssueFields dataAtribuicaoResponsavel(String dataAtribuicaoResponsavel) {
+		this.dataAtribuicaoResponsavel = dataAtribuicaoResponsavel;
+		return this;
+	}
+
+	@Valid
+	public String getDataAtribuicaoResponsavel() {
+		return dataAtribuicaoResponsavel;
+	}
+
+	public void setDataAtribuicaoResponsavel(String dataAtribuicaoResponsavel) {
+		this.dataAtribuicaoResponsavel = dataAtribuicaoResponsavel;
+	}
+
+	public JiraIssueFields tempoAtribuicaoPorResponsavel(String tempoAtribuicaoPorResponsavel) {
+		this.tempoAtribuicaoPorResponsavel = tempoAtribuicaoPorResponsavel;
+		return this;
+	}
+
+	@Valid
+	public String getTempoAtribuicaoPorResponsavel() {
+		return tempoAtribuicaoPorResponsavel;
+	}
+
+	public void setTempoAtribuicaoPorResponsavel(String tempoAtribuicaoPorResponsavel) {
+		this.tempoAtribuicaoPorResponsavel = tempoAtribuicaoPorResponsavel;
+	}
+
+	public JiraIssueFields dataAtribuicaoRaia(String dataAtribuicaoRaia) {
+		this.dataAtribuicaoRaia = dataAtribuicaoRaia;
+		return this;
+	}
+
+	@Valid
+	public String getDataAtribuicaoRaia() {
+		return dataAtribuicaoRaia;
+	}
+
+	public void setDataAtribuicaoRaia(String dataAtribuicaoRaia) {
+		this.dataAtribuicaoRaia = dataAtribuicaoRaia;
+	}
+
+	public JiraIssueFields tempoAtribuicaoPorRaia(String tempoAtribuicaoPorRaia) {
+		this.tempoAtribuicaoPorRaia = tempoAtribuicaoPorRaia;
+		return this;
+	}
+
+	@Valid
+	public String getTempoAtribuicaoPorRaia() {
+		return tempoAtribuicaoPorRaia;
+	}
+
+	public void setTempoAtribuicaoPorRaia(String tempoAtribuicaoPorRaia) {
+		this.tempoAtribuicaoPorRaia = tempoAtribuicaoPorRaia;
+	}
+
+	public JiraIssueFields responsavelPorRaia(String responsavelPorRaia) {
+		this.responsavelPorRaia = responsavelPorRaia;
+		return this;
+	}
+
+	@Valid
+	public String getResponsavelPorRaia() {
+		return responsavelPorRaia;
+	}
+
+	public void setResponsavelPorRaia(String responsavelPorRaia) {
+		this.responsavelPorRaia = responsavelPorRaia;
+	}
+
+	public JiraIssueFields dataUltimaVerificacao(String dataUltimaVerificacao) {
+		this.dataUltimaVerificacao = dataUltimaVerificacao;
+		return this;
+	}
+
+	@Valid
+	public String getDataUltimaVerificacao() {
+		return dataUltimaVerificacao;
+	}
+
+	public void setDataUltimaVerificacao(String dataUltimaVerificacao) {
+		this.dataUltimaVerificacao = dataUltimaVerificacao;
+	}
+
+	public JiraIssueFields dataProximaVerificacao(String dataProximaVerificacao) {
+		this.dataProximaVerificacao = dataProximaVerificacao;
+		return this;
+	}
+
+	@Valid
+	public String getDataProximaVerificacao() {
+		return dataProximaVerificacao;
+	}
+
+	public void setDataProximaVerificacao(String dataProximaVerificacao) {
+		this.dataProximaVerificacao = dataProximaVerificacao;
 	}
 
 	public JiraIssueFields fabricaTeste(JiraIssueFieldOption fabricaTeste) {
@@ -1840,7 +1958,15 @@ public class JiraIssueFields {
 				&& Objects.equals(this.timeestimate, jiraIssueFields.timeestimate)
 				&& Objects.equals(this.timespent, jiraIssueFields.timespent)
 				&& Objects.equals(this.duedate, jiraIssueFields.duedate)
-				
+
+				&& Objects.equals(this.dataAtribuicaoResponsavel, jiraIssueFields.dataAtribuicaoResponsavel)
+				&& Objects.equals(this.tempoAtribuicaoPorResponsavel, jiraIssueFields.tempoAtribuicaoPorResponsavel)
+				&& Objects.equals(this.dataAtribuicaoRaia, jiraIssueFields.dataAtribuicaoRaia)
+				&& Objects.equals(this.tempoAtribuicaoPorRaia, jiraIssueFields.tempoAtribuicaoPorRaia)
+				&& Objects.equals(this.responsavelPorRaia, jiraIssueFields.responsavelPorRaia)
+				&& Objects.equals(this.dataUltimaVerificacao, jiraIssueFields.dataUltimaVerificacao)
+				&& Objects.equals(this.dataProximaVerificacao, jiraIssueFields.dataProximaVerificacao)
+
 				&& Objects.equals(this.responsavelRevisao, jiraIssueFields.responsavelRevisao)
 				&& Objects.equals(this.responsaveisRevisao, jiraIssueFields.responsaveisRevisao)
 				&& Objects.equals(this.tribunaisResponsaveisRevisao, jiraIssueFields.tribunaisResponsaveisRevisao)
@@ -1891,9 +2017,12 @@ public class JiraIssueFields {
 				informacoesPendentes, priority, businessValue, epicTheme, potencialDiminuicaoIssues, complexidade,
 				issuelinks, tribunalRequisitante, votes, watches, assignee, status, raiaDoFluxo, updated, fabricaDesenvolvimento,
 				sprintGrupo, responsavelCodificacao, desenvolvimento, gerarVersaoAutomaticamente, iniciarProximaVersaoAutomaticamente,
-				comunicarLancamentoVersao, gitBranch, gitCommitsReferenced, timeestimate,
+				comunicarLancamentoVersao, gitBranch, gitCommitsReferenced, 
 				
-				timespent, duedate, responsavelRevisao, responsaveisRevisao, tribunaisResponsaveisRevisao,
+				timeestimate, timespent, duedate, dataAtribuicaoResponsavel, tempoAtribuicaoPorResponsavel, dataAtribuicaoRaia,
+				tempoAtribuicaoPorRaia, responsavelPorRaia, dataUltimaVerificacao, dataProximaVerificacao,
+				
+				responsavelRevisao, responsaveisRevisao, tribunaisResponsaveisRevisao,
 				fabricaTeste, responsavelTeste, aprovacoesNecessarias, aprovacoesRealizadas,
 				aprovadoPor, resolution, resolutiondate, notasRelease, fixVersions, destaquesReleaseNotes, 
 				grupoAtribuicao, mensagemRocketchat, mensagemTelegram, mensagemSlack, tipoVersao, versaoSeraLancada, 
@@ -1954,9 +2083,18 @@ public class JiraIssueFields {
 		
 		sb.append("    gitBranch: ").append(toIndentedString(gitBranch)).append("\n");
 		sb.append("    gitCommitsReferenced: ").append(toIndentedString(gitCommitsReferenced)).append("\n");
+		
 		sb.append("    timeestimate: ").append(toIndentedString(timeestimate)).append("\n");
 		sb.append("    timespent: ").append(toIndentedString(timespent)).append("\n");
-		sb.append("    duedate: ").append(toIndentedString(duedate)).append("\n");
+		sb.append("    duedate: ").append(toIndentedString(duedate)).append("\n");		
+		sb.append("    dataAtribuicaoResponsavel: ").append(toIndentedString(dataAtribuicaoResponsavel)).append("\n");
+		sb.append("    tempoAtribuicaoPorResponsavel: ").append(toIndentedString(tempoAtribuicaoPorResponsavel)).append("\n");
+		sb.append("    dataAtribuicaoRaia: ").append(toIndentedString(dataAtribuicaoRaia)).append("\n");
+		sb.append("    tempoAtribuicaoPorRaia: ").append(toIndentedString(tempoAtribuicaoPorRaia)).append("\n");
+		sb.append("    responsavelPorRaia: ").append(toIndentedString(responsavelPorRaia)).append("\n");
+		sb.append("    dataUltimaVerificacao: ").append(toIndentedString(dataUltimaVerificacao)).append("\n");
+		sb.append("    dataProximaVerificacao: ").append(toIndentedString(dataProximaVerificacao)).append("\n");
+		
 		sb.append("    responsavelRevisao: ").append(toIndentedString(responsavelRevisao)).append("\n");
 		sb.append("    responsaveisRevisao: ").append(toIndentedString(responsaveisRevisao)).append("\n");
 		sb.append("    tribunaisResponsaveisRevisao: ").append(toIndentedString(tribunaisResponsaveisRevisao)).append("\n");

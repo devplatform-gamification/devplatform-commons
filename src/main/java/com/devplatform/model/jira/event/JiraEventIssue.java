@@ -35,6 +35,7 @@ public class JiraEventIssue extends JiraEvent{
 		ISSUE_CLOSED("issue_closed"),
 		ISSUE_GENERIC("issue_generic"),
 		ISSUE_COMMENTED("issue_commented"),
+		ISSUE_MOVED("issue_moved"),
 		ISSUE_COMMENT_EDITED("issue_comment_edited"),
 		ISSUE_COMMENT_DELETED("issue_comment_deleted");
 
