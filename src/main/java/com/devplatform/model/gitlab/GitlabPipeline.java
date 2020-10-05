@@ -25,7 +25,16 @@ public class GitlabPipeline {
 	private String ref = null;
 
 	@JsonProperty("status")
-	private String status = null;
+	private GitlabPipelineStatusEnum status = null;
+
+	@JsonProperty("created_at")
+	private String createdAt = null;
+
+	@JsonProperty("updated_at")
+	private String updatedAt = null;
+
+	@JsonProperty("web_url")
+	private String webUrl = null;
 
 	public GitlabPipeline id(BigDecimal id) {
 		this.id = id;
@@ -66,17 +75,56 @@ public class GitlabPipeline {
 		this.ref = ref;
 	}
 
-	public GitlabPipeline status(String status) {
+	public GitlabPipeline status(GitlabPipelineStatusEnum status) {
 		this.status = status;
 		return this;
 	}
 
-	public String getStatus() {
+	public GitlabPipelineStatusEnum getStatus() {
 		return status;
 	}
 
-	public void setStatus(String status) {
+	public void setStatus(GitlabPipelineStatusEnum status) {
 		this.status = status;
+	}
+	
+	public GitlabPipeline createdAt(String createdAt) {
+		this.createdAt = createdAt;
+		return this;
+	}
+
+	public String getCreatedAt() {
+		return createdAt;
+	}
+
+	public void setCreatedAt(String createdAt) {
+		this.createdAt = createdAt;
+	}
+
+	public GitlabPipeline updatedAt(String updatedAt) {
+		this.updatedAt = updatedAt;
+		return this;
+	}
+
+	public String getUpdatedAt() {
+		return updatedAt;
+	}
+
+	public void setUpdatedAt(String updatedAt) {
+		this.updatedAt = updatedAt;
+	}
+
+	public GitlabPipeline webUrl(String webUrl) {
+		this.webUrl = webUrl;
+		return this;
+	}
+
+	public String getWebUrl() {
+		return webUrl;
+	}
+
+	public void setWebUrl(String webUrl) {
+		this.webUrl = webUrl;
 	}
 
 	@Override
@@ -89,13 +137,15 @@ public class GitlabPipeline {
 		}
 		GitlabPipeline gitlabCommit = (GitlabPipeline) o;
 		return Objects.equals(this.status, gitlabCommit.status) && Objects.equals(this.sha, gitlabCommit.sha)
-				&& Objects.equals(this.ref, gitlabCommit.ref) && Objects.equals(this.status, gitlabCommit.status);
+				&& Objects.equals(this.ref, gitlabCommit.ref) && Objects.equals(this.status, gitlabCommit.status)
+				&& Objects.equals(this.createdAt, gitlabCommit.createdAt) && Objects.equals(this.updatedAt, gitlabCommit.updatedAt)
+				&& Objects.equals(this.webUrl, gitlabCommit.webUrl);
 	}
 
 	@JsonProperty("status")
 	@Override
 	public int hashCode() {
-		return Objects.hash(status, sha, ref, status);
+		return Objects.hash(status, sha, ref, status, createdAt, updatedAt, webUrl);
 	}
 	
 	@Override
@@ -106,6 +156,9 @@ public class GitlabPipeline {
 		sb.append("    sha: ").append(toIndentedString(sha)).append("\n");
 		sb.append("    ref: ").append(toIndentedString(ref)).append("\n");
 		sb.append("    status: ").append(toIndentedString(status)).append("\n");
+		sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
+		sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
+		sb.append("    webUrl: ").append(toIndentedString(webUrl)).append("\n");
 		sb.append("}");
 		return sb.toString();
 	}
