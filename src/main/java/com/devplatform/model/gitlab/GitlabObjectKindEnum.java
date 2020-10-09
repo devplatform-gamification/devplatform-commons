@@ -8,8 +8,8 @@ public enum GitlabObjectKindEnum {
 	COMMENT("note"),
 	TAG_PUSH("tag_push"),
 	PUSH("push"),
-	JOB_CHANGES("job_changes"),
-	PIPELINE_CHANGES("pipeline_changes");
+	JOB_CHANGES("build"),
+	PIPELINE_CHANGES("pipeline");
 
 	private String value;
 
