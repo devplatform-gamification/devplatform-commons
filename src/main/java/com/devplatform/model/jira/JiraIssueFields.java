@@ -179,6 +179,9 @@ public class JiraIssueFields {
 	@JsonProperty("duedate")
 	private String duedate = null;
 
+	@JsonProperty("customfield_11107")
+	private float percentDone;
+	
 	@JsonProperty("customfield_14100")
 	private String dataAtribuicaoResponsavel = null;
 
@@ -1241,11 +1244,6 @@ public class JiraIssueFields {
 		return this;
 	}
 
-	/**
-	 * Data para Ficar Pronto
-	 * 
-	 * @return duedate
-	 **/
 	@ApiModelProperty(value = "Data para Ficar Pronto")
 	@Valid
 	public String getDuedate() {
@@ -1254,6 +1252,21 @@ public class JiraIssueFields {
 
 	public void setDuedate(String duedate) {
 		this.duedate = duedate;
+	}
+	
+	public JiraIssueFields percentDone(float percentDone) {
+		this.percentDone = percentDone;
+		return this;
+	}
+
+	@ApiModelProperty(value = "Percentual de conclusao")
+	@Valid
+	public float getPercentDone() {
+		return percentDone;
+	}
+
+	public void setPercentDone(float percentDone) {
+		this.percentDone = percentDone;
 	}
 
 	public JiraIssueFields dataAtribuicaoResponsavel(String dataAtribuicaoResponsavel) {
@@ -1958,7 +1971,8 @@ public class JiraIssueFields {
 				&& Objects.equals(this.timeestimate, jiraIssueFields.timeestimate)
 				&& Objects.equals(this.timespent, jiraIssueFields.timespent)
 				&& Objects.equals(this.duedate, jiraIssueFields.duedate)
-
+				&& Objects.equals(this.percentDone, jiraIssueFields.percentDone)
+				
 				&& Objects.equals(this.dataAtribuicaoResponsavel, jiraIssueFields.dataAtribuicaoResponsavel)
 				&& Objects.equals(this.tempoAtribuicaoPorResponsavel, jiraIssueFields.tempoAtribuicaoPorResponsavel)
 				&& Objects.equals(this.dataAtribuicaoRaia, jiraIssueFields.dataAtribuicaoRaia)
@@ -2019,7 +2033,8 @@ public class JiraIssueFields {
 				sprintGrupo, responsavelCodificacao, desenvolvimento, gerarVersaoAutomaticamente, iniciarProximaVersaoAutomaticamente,
 				comunicarLancamentoVersao, gitBranch, gitCommitsReferenced, 
 				
-				timeestimate, timespent, duedate, dataAtribuicaoResponsavel, tempoAtribuicaoPorResponsavel, dataAtribuicaoRaia,
+				timeestimate, timespent, duedate, percentDone, 
+				dataAtribuicaoResponsavel, tempoAtribuicaoPorResponsavel, dataAtribuicaoRaia,
 				tempoAtribuicaoPorRaia, responsavelPorRaia, dataUltimaVerificacao, dataProximaVerificacao,
 				
 				responsavelRevisao, responsaveisRevisao, tribunaisResponsaveisRevisao,
@@ -2087,6 +2102,8 @@ public class JiraIssueFields {
 		sb.append("    timeestimate: ").append(toIndentedString(timeestimate)).append("\n");
 		sb.append("    timespent: ").append(toIndentedString(timespent)).append("\n");
 		sb.append("    duedate: ").append(toIndentedString(duedate)).append("\n");		
+		sb.append("    percentDone: ").append(toIndentedString(percentDone)).append("\n");		
+
 		sb.append("    dataAtribuicaoResponsavel: ").append(toIndentedString(dataAtribuicaoResponsavel)).append("\n");
 		sb.append("    tempoAtribuicaoPorResponsavel: ").append(toIndentedString(tempoAtribuicaoPorResponsavel)).append("\n");
 		sb.append("    dataAtribuicaoRaia: ").append(toIndentedString(dataAtribuicaoRaia)).append("\n");
