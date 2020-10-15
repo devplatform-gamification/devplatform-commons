@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 public enum GitlabMergeRequestStatusEnum {
 	CAN_BE_MERGED("can_be_merged"),
 	UNCHECKED("unchecked"),
-	CAN_NOT__BE_MERGED("can(not)_be_merged"),
+	CAN_NOT_BE_MERGED("cannot_be_merged"),
 	CHECKING("checking");
 
 	private String value;

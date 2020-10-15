@@ -37,4 +37,13 @@ public enum GitlabPipelineStatusEnum {
 		}
 		return null;
 	}
+	
+	public static Boolean statusFailed(GitlabPipelineStatusEnum status) {
+		return (status != null 
+				&& (
+					status.equals(GitlabPipelineStatusEnum.FAILED) 
+					|| status.equals(GitlabPipelineStatusEnum.CANCELED) 
+					|| status.equals(GitlabPipelineStatusEnum.SKIPPED)
+				));
+	}
 }
