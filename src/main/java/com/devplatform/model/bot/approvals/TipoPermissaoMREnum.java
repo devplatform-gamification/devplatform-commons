@@ -7,7 +7,8 @@ public enum TipoPermissaoMREnum {
 	SEM_PERMISSAO_AUTOR_COMMIT("sem_permissao_autor_commit"),
 	SEM_PERMISSAO_RESPONSAVEL_CODIFICACAO("sem_permissao_codificador_responsavel"),
 	SEM_PERMISSAO_ALTEROU_LABEL_ERRADA("sem_permissao_alterou_label_errada"),
-	SEM_PERMISSAO_MERGE_NAO_MERGEAVEL("sem_permissao_merge_nao_mergeavel");
+	SEM_PERMISSAO_MERGE_NAO_MERGEAVEL("sem_permissao_merge_nao_mergeavel"),
+	SEM_PERMISSAO_NAO_EH_REVISOR("sem_permissao_nao_revisor");
 
 
 	private String value;

@@ -12,6 +12,10 @@ bin/
 # eclipse files
 .settings/
 .settings/*
+.project
+
+# vscode
+.vscode/
 
 # BlueJ files
 *.ctxt
